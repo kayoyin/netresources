@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://whatismyipaddress.com/dhcp -->
+<html lang="en" class="gr__whatismyipaddress_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/jquery.color-2.1.2.min.js"></script><script src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/jquery.color-2.1.2.min(1).js"></script><script async="" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/apstag.js"></script><script async="" type="text/javascript" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/prebid-analytics-1.33.5.js"></script><script async="" type="text/javascript" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/gpt.js"></script>
+<title>Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners</title>
+<meta name="description" content="DHCP provides dynamic IP address assignment from a pool of available IP addresses from the ISP or router.">
+<meta name="thumbnail" content="https://cdn.whatismyipaddress.com/images-v4/12-23_dhcp.jpg">
+<meta property="og:title" content="Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://whatismyipaddress.com/dhcp">
+<meta property="og:image" content="https://cdn.whatismyipaddress.com/images-v4/12-23_dhcp.jpg">
+<meta property="og:description" content="DHCP provides dynamic IP address assignment from a pool of available IP addresses from the ISP or router.">
+<meta property="og:site_name" content="WhatIsMyIPAddress.com">
+<meta property="fb:admins" content="607824267">
+<meta property="article:publisher" content="https://www.facebook.com/whatismyipaddress">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@wimia">
+<meta name="twitter:title" content="Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners">
+<meta name="twitter:description" content="DHCP provides dynamic IP address assignment from a pool of available IP addresses from the ISP or router.">
+<meta name="twitter:creator" content="@wimia">
+<meta name="twitter:domain" content="WhatIsMyIPAddress.com">
+<meta name="twitter:image:src" content="https://cdn.whatismyipaddress.com/images-v4/12-23_dhcp.jpg">
+<link rel="publisher" href="https://plus.google.com/+whatismyipaddress">
+<link rel="shortcut icon" href="https://cdn.whatismyipaddress.com/favicon.ico">
+<link rel="image_src" type="image/png" href="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/12-23_dhcp.webp">
+<link rel="canonical" href="https://whatismyipaddress.com/dhcp">
+<link rel="stylesheet" type="text/css" href="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/myip_v4_10pre1.css">
+<link rel="glossary" href="https://whatismyipaddress.com/glossary/a">
+<script src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/1998.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/linkid.js"></script><script async="" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/uwt.js"></script><script async="" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/fbevents.js"></script><script async="" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/pubfig.min.js"></script><script src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/platform.js" async="" defer="" gapi_processed="true"></script>
+<script type="text/javascript">if (top.location!= self.location) {top.location = self.location.href;}</script>
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-226290-1', 'whatismyipaddress.com');
+ga('require', 'displayfeatures');
+ga('require', 'linkid');
+ga('require', 'cleanUrlTracker');
+ga('require', 'outboundLinkTracker');
+ga('send', 'pageview');
+</script>
+<script async="" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/analytics.js"></script>
+<script async="" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/autotrack.js"></script>
+<script data-cfasync="false" type="text/javascript">
+  var freestar = freestar || {};
+  freestar.hitTime = Date.now();
+  freestar.queue = freestar.queue || [];
+  freestar.config = freestar.config || {};
+  freestar.debug = window.location.search.indexOf('fsdebug') === -1 ? false : true;
+
+  // Tag IDs set here, must match Tags served in the Body for proper setup
+  freestar.config.enabled_slots = [
+
+    "whatismyipaddress_728x90_Desktop_BTF",
+    "whatismyipaddress_300x250_300x600_160x600_Desktop_Right_1",
+    "whatismyipaddress_300x250_300x600_160x600_Desktop_Right_2",
+    "whatismyipaddress_160x600_Desktop_Left"
+
+
+  ];
+
+  !function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/whatismyipaddress-com";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);
+</script>
+<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '808803909253458');
+	fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=808803909253458&ev=PageView&noscript=1"/></noscript>
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','ny9st');
+twq('track','PageView');
+</script>
+<style>* {margin:0;padding:0;-webkit-font-smoothing:antialiased;}</style>
+<link rel="stylesheet" type="text/css" href="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/cookieconsent.min.css">
+<script src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/cookieconsent.min.js"></script><script>(function(){var a=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(){this.requestMethod=arguments[0],a.apply(this,arguments)};var h=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.send=function(){var i=this.onreadystatechange;return this.onreadystatechange=function(){if(4===this.readyState){var j='detector',k={posdMessageId:'PANELOS_MESSAGE',type:'VIDEO_XHR_CANDIDATE',from:j,to:j.substring(0,j.length-2),content:{requestMethod:this.requestMethod,url:this.responseURL,type:this.getResponseHeader('content-type'),content:this.response}};window.postMessage(k,'*')}return i?i.apply(this,arguments):void 0},h.apply(this,arguments)}})();</script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "theme": "classic",
+  "content": {
+    "href": "https://whatismyipaddress.com/privacy-policy"
+  }
+})});
+</script>
+<script id="omapi-script" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/api.min.js" async=""></script><style type="text/css">.fs-pushdown {
+    background-color:rgba(247,247,247,.9);
+    top:0;
+    padding-top:2px;
+    position:fixed;
+    left:0;
+    right:0;
+    text-align:center;
+}
+.freestar_report_button {
+  display: block;
+  border: none;
+  font-family: sans-serif;
+  font-size: 9px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 3px;
+  padding: 2px 0px 3px;
+  cursor: pointer;
+  color: #646464;
+  margin-top: 4px;
+  margin-left: auto;
+  max-width: 95px;
+  text-align: right;
+}
+</style><link rel="preload" href="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/f.txt" as="script"><script type="text/javascript" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/f.txt"></script><link rel="preload" href="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/f(1).txt" as="script"><script type="text/javascript" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/f(1).txt"></script><script src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/pubads_impl_2019053001.js" async=""></script><style></style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;" bis_skin_checked="1"></div><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-688238583 " style="" bis_skin_checked="1"><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">This website uses cookies to ensure you get the best experience on our website. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://whatismyipaddress.com/privacy-policy" rel="noopener noreferrer nofollow" target="_blank" bis_skin_checked="1">Learn more</a></span><div class="cc-compliance" bis_skin_checked="1"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Got it!</a></div><!--googleon: all--></div>
+<div id="outertop" bis_skin_checked="1">
+<div id="main" bis_skin_checked="1">
+<div id="wrap" bis_skin_checked="1">
+<div id="header" bis_skin_checked="1">
+<div id="logo" bis_skin_checked="1"><a href="https://whatismyipaddress.com/" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/wimia-logo-sm2.webp" width="213" height="73" alt="What Is My IP" style="padding-top:15px;"></a></div>
+<div id="slogan" bis_skin_checked="1"><a href="https://whatismyipaddress.com/media" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/slogan7.webp" alt="As seen on: PC World, The Guardian, CNN, USA Today, Digital Trends, Huffington Post, Buzzfeed, FOX Business, The Washington Post, CBS News, Gizmodo, Krebs on Security and more" width="513" height="60" style="padding-top:22px;"></a></div>
+<div id="search" bis_skin_checked="1">
+<form action="https://whatismyipaddress.com/search-results" id="cse-search-box" style="padding:13px 0px 0px 15px;">
+<div bis_skin_checked="1">
+<input type="hidden" name="cx" value="partner-pub-2377419349862372:t35o8u-g9e6">
+<input type="hidden" name="cof" value="FORID:9">
+<input type="hidden" name="ie" value="ISO-8859-1">
+<input type="text" name="q" style="width:100px;" placeholder="IP Address|Search">
+<input type="submit" name="sa" value="Search" onclick="ga(&#39;send&#39;, &#39;event&#39;, { eventCategory: &#39;Search&#39;, eventAction: &#39;Submit&#39;, eventLabel: &#39;Content Search&#39;});">
+</div>
+</form>
+<br>
+<div style="padding:13px 0px 0px 0px;" bis_skin_checked="1"><div style="text-align:center" bis_skin_checked="1"><span style="font-size:12px;"><a href="https://whatismyipaddress.com/about" style="text-decoration:none;" bis_skin_checked="1">About</a> | <a href="https://whatismyipaddress.com/media" style="text-decoration:none;" bis_skin_checked="1">Press</a> | <a href="https://whatismyipaddress.com/contact" style="text-decoration:none;" bis_skin_checked="1">Contact</a></span></div></div>
+</div>
+</div>
+<div id="menubackground" bis_skin_checked="1"></div>
+<div id="menu" bis_skin_checked="1">
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="https://whatismyipaddress.com/" bis_skin_checked="1">MY IP</a></div>
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="https://whatismyipaddress.com/ip-lookup" bis_skin_checked="1">IP LOOKUP</a></div>
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="https://whatismyipaddress.com/hide-ip" bis_skin_checked="1">HIDE MY IP</a></div>
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="https://whatismyipaddress.com/vpn-simplifier" bis_skin_checked="1">VPN SERVICE</a></div>
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="http://whatismyipaddress.com/speed-test" bis_skin_checked="1">SPEED TEST</a></div>
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="https://whatismyipaddress.com/blacklist-check" bis_skin_checked="1">BLACKLIST CHECK</a></div>
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="https://whatismyipaddress.com/trace-email" bis_skin_checked="1">TRACE EMAIL</a></div>
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="https://whatismyipaddress.com/change-ip" bis_skin_checked="1">CHANGE IP</a></div>
+<div class="menu0" bis_skin_checked="1"></div><div class="menu1" bis_skin_checked="1"><a href="https://whatismyipaddress.com/breach-check" bis_skin_checked="1">BREACH CHECK</a></div>
+</div>
+<div id="section_content" bis_skin_checked="1">
+<div id="adleft" bis_skin_checked="1">
+ 
+<div align="center" id="whatismyipaddress_160x600_Desktop_Left" bis_skin_checked="1">
+<script data-cfasync="false" type="text/javascript">
+    freestar.queue.push(function () { googletag.display('whatismyipaddress_160x600_Desktop_Left'); });
+</script>
+<div id="google_ads_iframe_/15184186/whatismyipaddress_160x600_Desktop_Left_0__container__" style="border: 0pt none; width: 160px; height: 600px;" bis_skin_checked="1"></div></div>
+</div>
+<div id="main_content_3rd" bis_skin_checked="1">
+<div id="section_right" bis_skin_checked="1">
+
+<div align="center" id="whatismyipaddress_300x250_300x600_160x600_Desktop_Right_1" bis_skin_checked="1"><script data-cfasync="false" type="text/javascript">freestar.queue.push(function () { googletag.display('whatismyipaddress_300x250_300x600_160x600_Desktop_Right_1'); });</script><div id="google_ads_iframe_/15184186/whatismyipaddress_300x250_300x600_160x600_Desktop_Right_1_0__container__" style="border: 0pt none; width: 300px; height: 250px;" bis_skin_checked="1"></div></div>
+<div style="width:300px;height:215px;padding:15px 0px 15px 0px;clear:both;" bis_skin_checked="1">
+<a href="https://whatismyipaddress.com/vpn-simplifier" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/Simplifier_banner_concept1.jpg" width="300" height="215" alt="VPN Simplifier"></a>
+</div>
+
+<div align="center" id="whatismyipaddress_300x250_300x600_160x600_Desktop_Right_2" bis_skin_checked="1">
+<script data-cfasync="false" type="text/javascript">
+    freestar.queue.push(function () { googletag.display('whatismyipaddress_300x250_300x600_160x600_Desktop_Right_2'); });
+</script>
+<div id="google_ads_iframe_/15184186/whatismyipaddress_300x250_300x600_160x600_Desktop_Right_2_0__container__" style="border: 0pt none; width: 300px; height: 250px;" bis_skin_checked="1"></div></div>
+</div>
+<div id="section_left_3rd" bis_skin_checked="1">
+<!-- google_ad_section_start -->
+<div style="font-family:arial;font-size:12px;color:#666;padding-bottom:10px;" itemscope="" itemtype="http://schema.org/BreadcrumbList" bis_skin_checked="1">
+<span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="https://whatismyipaddress.com/" itemprop="item" bis_skin_checked="1"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></span>
+&nbsp;»&nbsp; <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="https://whatismyipaddress.com/learning" itemprop="item" bis_skin_checked="1"><span itemprop="name">Learn</span></a><meta itemprop="position" content="2"></span>
+&nbsp;»&nbsp; <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="https://whatismyipaddress.com/learning/computer-terms" itemprop="item" bis_skin_checked="1"><span itemprop="name">Computer Terminology</span></a><meta itemprop="position" content="3"></span>
+&nbsp;»&nbsp; <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="item"><span itemprop="name">DHCP</span></span><meta itemprop="position" content="4"></span>
+</div>
+<h1>DHCP: The Networking Protocol That the Gives You an IP Address</h1>
+<div id="ai" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/12-23_dhcp.webp" width="100%" alt="Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners">
+<p>As long as you're learning about your IP address, you should learn a little about something called DHCP—which stands for Dynamic Host Configuration Protocol. Why bother? Because it has a direct impact on millions of IP addresses, most likely including yours.</p>
+<p>DHCP is at the heart of assigning you (and everyone) their IP address. The key word in DHCP is protocol—the guiding rules and process for Internet connections for everyone, everywhere. DHCP is consistent, accurate and works the same for every computer. Remember that without an IP address, you would not be able to receive the information you requested. As you've learned (by reading IP: 101), your IP address tells the Internet to send the information that you requested (Web page, email, data, etc.) right to the computer that requested it.</p>
+<h2>Those incredible protocols</h2>
+<p>There are more than one billion computers in the world, and each individual computer needs its own IP address whenever it's online. The TCP/IP protocols (our computers' built-in, internal networking software) include a DHCP protocol. It automatically assigns and keeps tabs of IP addresses and any "subnetworks" that require them. Nearly all IP addresses are dynamic, as opposed to "static" IP addresses that never change.</p>
+<p>DHCP is a part of the "application layer," which is just one of the several TCP/IP protocols. All of the processing and figuring out of what to send to whom happens virtually instantly.</p>
+<h2>Clients and servers</h2>
+<p>The networking world classifies computers into two distinctive categories: 1) individual computers, called "hosts," and 2) computers that help process and send data (called "servers"). A DHCP server is one computer on the network that has a number of IP address at its disposal to assign to the computers/hosts on that network. If you use a cable company for Internet access, making them your Internet Service Provider, they likely are your DHCP server.</p>
+<h2>Permission slips</h2>
+<p>Think of getting an IP address as similar to obtaining a special permission slip from the DHCP server to use the Internet. In this scenario, you are the DHCP client—whenever you want to go on the Internet, your computer automatically requests an IP address from the network's DHCP server. If there's one available, the DHCP server sends a response containing an IP address to your computer.</p>
+<h2>How DHCP works</h2>
+<p>The key word in DHCP is "dynamic." Because instead of having just one fixed and specific IP address, most computers will be assigned one that is available from a subnet or "pool" that is assigned to the network. The Internet isn't one big computer in one big location. It's an interconnected network of networks, all created to make one-on-one connections between any two clients that want to exchange information.</p>
+<p>One of the features of DHCP is that it provides IP addresses that "expire." When DHCP assigns an IP address, it actually leases that connection identifier to the user's computer for a specific amount of time. The default lease is five days.</p>
+<p>Here is how the DHCP process works when you go online:</p>
+<ol class="ra">
+<li>Your go on your computer to connect to the Internet.</li>
+<li>The network requests an IP address (this is actually referred to as a DHCP discover message).</li>
+<li>On behalf of your computer's request, the DHCP server allocates (leases) to your computer an IP address. This is referred to as the DHCP offer message.</li>
+<li>Your computer (remember—you're the DHCP client) takes the first IP address offer that comes along. It then responds with a DHCP request message that verifies the IP address that's been offered and accepted.</li>
+<li>DHCP then updates the appropriate network servers with the IP address and other configuration information for your computer.</li>
+<li>Your computer (or whatever network device you're using) accepts the IP address for the lease term.</li>
+</ol>
+<p>Typically, a DHCP server renews your lease automatically, without you (or even a network administrator) having to do anything. However, if that IP address's lease expires, you'll be assigned a new IP address using the same DHCP protocols.</p>
+<p>Here's the best part: You wouldn't even be aware of it, unless you happened to check your IP address. Your Internet usage would continue as before. DHCP takes place rather instantly, and entirely behind the scenes. We, as everyday, ordinary computer users, never have to think twice about it. We just get to enjoy this amazing and instantaneous technology that brings the Internet to our fingertips when we open our browsers. I guess you could say DHCP stands for "darn handy computer process"...or something like that.</p>
+<h2>Related Articles</h2>
+<ul class="ra">
+<li><a href="https://whatismyipaddress.com/keeps-changing" bis_skin_checked="1">Why Does my IP Address Keep Changing?</a></li>
+<li><a href="https://whatismyipaddress.com/ip-address" bis_skin_checked="1">What is a IP address?</a></li>
+<li><a href="https://whatismyipaddress.com/dynamic-static" bis_skin_checked="1">Dynamic vs Static IP Addresses</a></li>
+</ul>
+<!-- google_ad_section_end -->
+<div id="adbottom" bis_skin_checked="1"><div align="center" id="whatismyipaddress_728x90_Desktop_BTF" bis_skin_checked="1"><script data-cfasync="false" type="text/javascript">freestar.queue.push(function () { googletag.display('whatismyipaddress_728x90_Desktop_BTF'); });</script><div id="google_ads_iframe_/15184186/whatismyipaddress_728x90_Desktop_BTF_0__container__" style="border: 0pt none; width: 728px; height: 90px;" bis_skin_checked="1"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div id="foot_section" bis_skin_checked="1">
+<div id="foot_inner" bis_skin_checked="1">
+<div id="foot_copy" style="position:relative;top:5px;padding-left:5px;" bis_skin_checked="1">© 2000-2019 What Is My IP Address. All Rights Reserved.</div>
+<div id="foot_menu" style="position:relative;top:5px;" bis_skin_checked="1">
+<ul>
+<li><a href="https://whatismyipaddress.com/privacy-policy" bis_skin_checked="1">Privacy Policy</a></li>
+<li><a href="https://whatismyipaddress.com/terms-of-use" bis_skin_checked="1">Terms of Use</a></li>
+<li><a href="https://whatismyipaddress.com/media" bis_skin_checked="1">Media</a></li>
+<li><a href="https://whatismyipaddress.com/about" bis_skin_checked="1">About</a></li>
+<li><a href="https://whatismyipaddress.com/contact" bis_skin_checked="1">Contact</a></li>
+</ul>
+</div>
+<div style="clear:both;text-align:center;" bis_skin_checked="1">
+<a href="https://www.facebook.com/whatismyipaddress" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/facebook_16.webp" height="16" width="16" alt="Facebook"></a>
+<a href="https://twitter.com/wimia" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/twitter_16.png" height="16" width="16" alt="Twitter" style="margin-left:10px;"></a>
+<a href="https://www.instagram.com/whatismyipaddress/" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/instagram_16.webp" height="16" width="16" alt="Instagram" style="margin-left:10px;"></a>
+<a href="https://www.pinterest.com/whatismyipaddress/" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/pinterest_16.png" height="16" width="16" alt="Pinterest" style="margin-left:10px;"></a>
+<a href="https://www.linkedin.com/company/18200088/" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/linkedin_16.webp" height="16" width="16" alt="LinkedIn" style="margin-left:10px;"></a>
+<a href="https://www.youtube.com/channel/UCtLYc0W0ZtDaqmi8Fu5gOZw" bis_skin_checked="1"><img src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/youtube_16.png" height="16" width="16" alt="YouTube" style="margin-left:10px;"></a>
+</div>
+</div>
+</div>
+</footer>
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0021/1998.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<script>var om58bf18cdc87b0,om58bf18cdc87b0_poll=function(){var r=0;return function(n,l){clearInterval(r),r=setInterval(n,l)}}();!function(e,t,n){if(e.getElementById(n)){om58bf18cdc87b0_poll(function(){if(window['om_loaded']){if(!om58bf18cdc87b0){om58bf18cdc87b0=new OptinMonsterApp();return om58bf18cdc87b0.init({"s":"29382.58bf18cdc87b0","staging":0,"dev":0,"beta":0});}}},25);return;}var d=false,o=e.createElement(t);o.id=n,o.src="//a.optnmstr.com/app/js/api.min.js",o.async=true,o.onload=o.onreadystatechange=function(){if(!d){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){try{d=om_loaded=true;om58bf18cdc87b0=new OptinMonsterApp();om58bf18cdc87b0.init({"s":"29382.58bf18cdc87b0","staging":0,"dev":0,"beta":0});o.onload=o.onreadystatechange=null;}catch(t){}}}};(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}(document,"script","omapi-script");</script>
+
+
+</div><script type="text/javascript" src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/MathJax.js"></script><script id="texAllTheThingsPageScript" type="text/javascript" src="chrome-extension://cbimabofgmfdkicghcadidpemeenbffn/js/pageScript.js" inlinemath="[[&quot;$&quot;,&quot;$&quot;],[&quot;[;&quot;,&quot;;]&quot;]]" displaymath="[[&quot;$$&quot;,&quot;$$&quot;],[&quot;\\[&quot;,&quot;\\]&quot;]]" skiptags="[&quot;script&quot;,&quot;noscript&quot;,&quot;style&quot;,&quot;textarea&quot;,&quot;pre&quot;,&quot;code&quot;]"></script><div class="fssync" bis_skin_checked="1"><iframe src="./Overview of Dynamic Host Configuration Protocol (DHCP) for Beginners_files/sync.html" width="0" height="0" style="display: none;"></iframe></div></body></html>

@@ -1,0 +1,123 @@
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Dummies_Ad_Unit = function () {
+    function Dummies_Ad_Unit(slot, defaultSize, code, bids) {
+        _classCallCheck(this, Dummies_Ad_Unit);
+
+        this.code = code;
+        this.slot = slot;
+        this.defaultSize = defaultSize;
+        this.bids = bids;
+        this.target = [];
+        this.isSlotCreated = false;
+        this.id = false;
+        this.labelAny = [];
+        this.mediaTypes = false;
+    }
+
+    _createClass(Dummies_Ad_Unit, [{
+        key: 'setMediaTypes',
+        value: function setMediaTypes(value) {
+            this.mediaTypes = {
+                banner: {
+                    sizes: value
+                }
+            };
+        }
+    }, {
+        key: 'getMediaTypes',
+        value: function getMediaTypes() {
+            return this.mediaTypes;
+        }
+    }, {
+        key: 'setLabels',
+        value: function setLabels(value) {
+            this.labelAny.push(value);
+        }
+    }, {
+        key: 'getLabels',
+        value: function getLabels() {
+            return this.labels;
+        }
+    }, {
+        key: 'getBids',
+        value: function getBids() {
+
+            return this.bids;
+        }
+    }, {
+        key: 'setBids',
+        value: function setBids(value) {
+
+            this.bids = value;
+        }
+    }, {
+        key: 'getTarget',
+        value: function getTarget() {
+
+            return this.target;
+        }
+    }, {
+        key: 'setTarget',
+        value: function setTarget(key, values) {
+
+            this.target.push({ 'key': key, 'values': values });
+        }
+    }, {
+        key: 'getCode',
+        value: function getCode() {
+            return this.code;
+        }
+    }, {
+        key: 'setCode',
+        value: function setCode(value) {
+            this.code = value;
+        }
+    }, {
+        key: 'getSlot',
+        value: function getSlot() {
+            return this.slot;
+        }
+    }, {
+        key: 'setSlot',
+        value: function setSlot(value) {
+            this.slot = value;
+        }
+    }, {
+        key: 'getDefaultSize',
+        value: function getDefaultSize() {
+            return this.defaultSize;
+        }
+    }, {
+        key: 'setDefaultSize',
+        value: function setDefaultSize(value) {
+            this.defaultSize = value;
+        }
+    }, {
+        key: 'getScreenResolutions',
+        value: function getScreenResolutions() {
+            return this.screenResolutions;
+        }
+    }, {
+        key: 'setScreenResolutions',
+        value: function setScreenResolutions(value) {
+            this.screenResolutions = value;
+        }
+    }, {
+        key: 'getIsSlotCreated',
+        value: function getIsSlotCreated() {
+            return this.isSlotCreated;
+        }
+    }, {
+        key: 'setIsSlotCreated',
+        value: function setIsSlotCreated(value) {
+            this.isSlotCreated = value;
+        }
+    }]);
+
+    return Dummies_Ad_Unit;
+}();

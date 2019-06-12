@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en-US"
+	prefix="og: http://ogp.me/ns#" >
+<head>
+<meta charset="UTF-8">
+<title>How switches learn MAC addresses | CCNA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta name="author" content="Geek University">
+<!-- All in One SEO Pack 2.12 by Michael Torbert of Semper Fi Web Design[99,162] -->
+<meta name="description"  content="This article describes how switches learn MAC addresses by associating the MAC address of the sending device with the interface on which it was received." />
+
+<link rel="canonical" href="https://geek-university.com/ccna/how-switches-learn-mac-addresses/" />
+<meta property="og:title" content="How switches learn MAC addresses | CCNA" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://geek-university.com/ccna/how-switches-learn-mac-addresses/" />
+<meta property="og:image" content="https://geek-university.com/wp-content/uploads/2015/08/geek-univerity-logo.png" />
+<meta property="og:site_name" content="Geek University" />
+<meta property="og:description" content="This article describes how switches learn MAC addresses by associating the MAC address of the sending device with the interface on which it was received." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@geek_uni_com" />
+<meta name="twitter:domain" content="geek-university.com" />
+<meta name="twitter:title" content="How switches learn MAC addresses | CCNA" />
+<meta name="twitter:description" content="This article describes how switches learn MAC addresses by associating the MAC address of the sending device with the interface on which it was received." />
+<meta name="twitter:image" content="https://geek-university.com/wp-content/uploads/2015/08/geek-univerity-logo.png" />
+<meta itemprop="image" content="https://geek-university.com/wp-content/uploads/2015/08/geek-univerity-logo.png" />
+<!-- /all in one seo pack -->
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Geek University &raquo; Feed" href="https://geek-university.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Geek University &raquo; Comments Feed" href="https://geek-university.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Geek University &raquo; How switches learn MAC addresses Comments Feed" href="https://geek-university.com/ccna/how-switches-learn-mac-addresses/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/geek-university.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='validate-engine-css-css'  href='https://geek-university.com/wp-content/plugins/wysija-newsletters/css/validationEngine.jquery.css?x66712&amp;ver=2.11' type='text/css' media='all' />
+<link rel='stylesheet' id='edd-styles-css'  href='https://geek-university.com/wp-content/plugins/easy-digital-downloads/templates/edd.min.css?x66712&amp;ver=2.9.12' type='text/css' media='all' />
+<link rel='stylesheet' id='wplms-customizer-css-css'  href='https://geek-university.com/wp-content/plugins/wplms-customizer/css/custom.css?x66712&amp;ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bp-course-css-css'  href='https://geek-university.com/wp-content/plugins/vibe-course-module/includes/css/course_template.css?x66712&amp;ver=3.9.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wplms-style-css'  href='https://geek-university.com/wp-content/themes/wplms/assets/css/style.min.css?x66712&amp;ver=3.9.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wplms_child_theme_style-css'  href='https://geek-university.com/wp-content/themes/wplms_white/style.css?x66712&amp;ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='slb_core-css'  href='https://geek-university.com/wp-content/plugins/simple-lightbox/client/css/app.css?x66712&amp;ver=2.7.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://geek-university.com/wp-includes/js/jquery/jquery.js?x66712&amp;ver=1.12.4'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-includes/js/jquery/jquery-migrate.min.js?x66712&amp;ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BP_Confirm = {"are_you_sure":"Are you sure?"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/buddypress/bp-core/js/confirm.min.js?x66712&amp;ver=4.2.0'></script>
+<script type='text/javascript'>
+var mejsL10n = {"language":"en","strings":{"mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen-off":"Turn off Fullscreen","mejs.fullscreen-on":"Go Fullscreen","mejs.download-video":"Download Video","mejs.fullscreen":"Fullscreen","mejs.time-jump-forward":["Jump forward 1 second","Jump forward %1 seconds"],"mejs.loop":"Toggle Loop","mejs.play":"Play","mejs.pause":"Pause","mejs.close":"Close","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.time-skip-back":["Skip back 1 second","Skip back %1 seconds"],"mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.mute-toggle":"Mute Toggle","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.ad-skip":"Skip ad","mejs.ad-skip-info":["Skip in 1 second","Skip in %1 seconds"],"mejs.source-chooser":"Source Chooser","mejs.stop":"Stop","mejs.speed-rate":"Speed Rate","mejs.live-broadcast":"Live Broadcast","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?x66712&amp;ver=4.2.6-78496d1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?x66712&amp;ver=5.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/wplms-customizer/js/custom.js?x66712&amp;ver=5.1.1'></script>
+<link rel='https://api.w.org/' href='https://geek-university.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://geek-university.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://geek-university.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Layer 2 switching' href='https://geek-university.com/ccna/layer-2-switching/' />
+<link rel='next' title='How switches forward frames' href='https://geek-university.com/ccna/how-switches-forward-frames/' />
+<meta name="generator" content="WordPress 5.1.1" />
+<link rel='shortlink' href='https://geek-university.com/?p=4785' />
+<link rel="alternate" type="application/json+oembed" href="https://geek-university.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgeek-university.com%2Fccna%2Fhow-switches-learn-mac-addresses%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://geek-university.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgeek-university.com%2Fccna%2Fhow-switches-learn-mac-addresses%2F&#038;format=xml" />
+
+	<script type="text/javascript">var ajaxurl = 'https://geek-university.com/wp-admin/admin-ajax.php';</script>
+
+<meta name="generator" content="Easy Digital Downloads v2.9.12" />
+<link rel="canonical" href="https://geek-university.com/ccna/how-switches-learn-mac-addresses/"/>
+
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+		<link rel="icon" href="https://geek-university.com/wp-content/uploads/2018/06/cropped-favicon2-120x120.png?x66712" sizes="32x32" />
+<link rel="icon" href="https://geek-university.com/wp-content/uploads/2018/06/cropped-favicon2-310x310.png?x66712" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://geek-university.com/wp-content/uploads/2018/06/cropped-favicon2-310x310.png?x66712" />
+<meta name="msapplication-TileImage" content="https://geek-university.com/wp-content/uploads/2018/06/cropped-favicon2-310x310.png" />
+<style>#logo img,#alt_logo img{height:65px;max-height:65px;}#logo img,#alt_logo img{max-height:65px;}header nav>.menu>li>a,header.sleek nav>.menu>li>a,header.sleek .topmenu>li>a, header #searchicon,.mooc .topmenu>li>a, .mooc nav>.menu>li>a,#alt_logo{padding-top:30px;padding-bottom:30px;}.logged-out #vibe_bp_login .fullscreen_login,#vibe_bp_login ul+ul{background:#313b3d;}#vibe_bp_login,#wplms_custom_registration_form,#wplms_forgot_password_form,.logged-out #vibe_bp_login .fullscreen_login #vbp-login-form,.login_sidebar,#vibe_bp_login #wplms_custom_registration_form, #vibe_bp_login{background:#232b2d;}.field-visibility-settings-notoggle, .field-visibility-settings-toggle, .field-visibility-settings-toggle-1, .field-visibility-settings-toggle-2, .field-visibility-settings-toggle-3, .field-visibility-settings-toggle-4 {display:none;}.course_curriculum .course_lesson span.time {display:none;}.meta .date {display:none;}.blogpost .cats {display:none;}a.print_results, a.print_unit {display:none;}.single-course .instructor_meta a[data-original-title="Send Email"] {display:none;}.single-course .breadcrumbs {display:none;}.comment-reply-link, .comment-reply-login{display:none;}.page-template-start input[name="review_course"] {display:none;}.page-template-start input.review_course.unit_button.full.button {margin-top:15px;}#vibe_bp_login:after{ border-color:transparent transparent #313b3d transparent;}#vibe_bp_login:after{border-color:transparent transparent #232b2d;}header #trigger{top:30px !important;}header.sleek #vibe_bp_login,header.mooc #vibe_bp_login{top:60px;}header.mooc #mooc_searchform{margin-top:30px;}</style></head>
+<body class="bp-legacy post-template-default single single-post postid-4785 single-format-standard d5 logged-out">
+<div id="global" class="global">
+    <div class="pagesidebar">
+    <div class="sidebarcontent">    
+        <a id="close_menu_sidebar" title="Close"><span></span></a>
+        <div class="mobile_icons"><a id="mobile_searchicon"><i class="fa fa-search"></i></a></div><ul id="menu-mobilemenu" class="sidemenu"><li id="menu-item-7561" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7561"><a href="https://geek-university.com/course/ccent-icnd1-100-101-course/">CCNA online course</a></li>
+<li id="menu-item-8201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8201"><a href="https://geek-university.com/course/vcp5-dcv-course/">VMware ESXi online course</a></li>
+<li id="menu-item-7562" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7562"><a href="https://geek-university.com/course/free-linux-course/">Linux online course</a></li>
+<li id="menu-item-8390" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8390"><a href="https://geek-university.com/course/nmap-online-course/">Nmap online course</a></li>
+<li id="menu-item-9234" class="menu-item menu-item-type-post_type menu-item-object-course menu-item-9234"><a href="https://geek-university.com/course/apache-online-course/">Apache HTTP Server course</a></li>
+<li id="menu-item-9044" class="menu-item menu-item-type-post_type menu-item-object-course menu-item-9044"><a href="https://geek-university.com/course/splunk-online-course/">Splunk online course</a></li>
+<li id="menu-item-7563" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7563"><a href="https://geek-university.com/course/raspberry-pi-free-course/">Raspberry Pi online course</a></li>
+<li id="menu-item-8592" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8592"><a href="https://geek-university.com/course/mysql-course/">MySQL online course</a></li>
+<li id="menu-item-2945" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2945"><a href="https://geek-university.com/vmware-player/vmware-player-online-course/">VMware Player online course</a></li>
+<li id="menu-item-4077" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4077"><a href="https://geek-university.com/oracle-virtualbox/oracle-virtualbox-online-course/">Oracle VirtualBox online course</a></li>
+<li id="menu-item-4245" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4245"><a href="https://geek-university.com/python/python-online-course/">Python online course</a></li>
+<li id="menu-item-2943" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2943"><a href="https://geek-university.com/sql/sql-online-course/">SQL online course</a></li>
+<li id="menu-item-10644" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10644"><a href="https://geek-university.com/asi/">A short introduction to…</a></li>
+</ul>    </div>
+</div>      <div class="pusher">
+                <div id="headertop" class="fix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-3 col-xs-4">
+                                                    <a href="https://geek-university.com" class="homeicon"><img src="https://geek-university.com/wp-content/uploads/2018/06/header_footer_logo.png?x66712" id="header_logo" alt="Geek University"><img id="header_mobile_logo" alt="Geek University" src="https://geek-university.com/wp-content/uploads/2018/07/mobile_logo_geek_uni-1.png?x66712" class="hide" width="100" height="48" alt="Geek University" /></a> 
+                                                </div>
+                    <div class="col-md-8 col-sm-9 col-xs-8">
+                                            <ul class="topmenu">
+                            <li><a href="#login" class="vbplogin">Login</a></li>
+                            <li><a href="https://geek-university.com/register/" class="vbpregister" title="Create an account">Sign Up</a>                             </li>
+                        </ul>
+                    <ul id="menu-top-menu" class="topmenu"><li id="menu-item-2127" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2127"><a href="https://geek-university.com/courses/">Courses</a></li>
+<li id="menu-item-10446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10446"><a href="https://geek-university.com/books/">Books</a></li>
+<li id="menu-item-10064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10064"><a href="https://geek-university.com/faq/">FAQ</a></li>
+<li id="menu-item-2119" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2119"><a href="https://geek-university.com/about-us/">About</a></li>
+<li id="menu-item-10201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10201"><a href="https://geek-university.com/verification/">Verification</a></li>
+<li id="menu-item-2135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2135"><a href="https://geek-university.com/contact/">Contact</a></li>
+</ul>                    </div>
+                                        <div id="vibe_bp_login" class="default_login">
+                    
+    
+    <form name="login-form" id="vbp-login-form" class="standard-form" action="https://geek-university.com/wp-login.php?redirect_to=https%3A%2F%2Fgeek-university.com%2Fccna%2Fhow-switches-learn-mac-addresses%2F" method="post">
+      <div class="inside_login_form">
+        <label>Username<br />
+        <input type="text" name="log" id="side-user-login" class="input" tabindex="1" value="" /></label>
+  
+        <label>Password <a href="https://geek-university.com/wp-login.php?action=lostpassword" tabindex="5" class="tip vbpforgot" title="Forgot Password"><i class="icon-question"></i></a><br />
+        <input type="password" tabindex="2" name="pwd" id="sidebar-user-pass" class="input" value="" /></label>
+  
+        <div class="checkbox small">
+            <input type="checkbox" name="sidebar-rememberme" id="sidebar-rememberme" value="forever" /><label for="sidebar-rememberme">Remember Me</label>
+        </div>
+  
+                
+        <input type="submit" name="user-submit" id="sidebar-wp-submit" data-security="17c34958de" value="Log In" tabindex="100" />
+        <input type="hidden" name="user-cookie" value="1" />
+        <a href="https://geek-university.com/register/" class="vbpregister" title="Create an account" tabindex="5" >Sign Up</a> 		<div id="wplms_forgot_password_form">
+			<a class="back_to_login small">&lsaquo; back to login</a>
+			<form method="post">
+				<input type="email" placeholder="Enter registered email id" class="form_field" value="" />
+				<button id="vbp_forgot_password" class="button" data-security="2532c61a40">Get reset password link</button>
+			</form>
+		</div>
+		      </div>    
+    </form>
+    
+                       </div>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <h2 id="logo">                            <a href="https://geek-university.com/"><img src="https://geek-university.com/wp-content/uploads/2015/08/geek-univerity-logo.png?x66712" data-alt-logo="https://geek-university.com/wp-content/uploads/2018/06/header_footer_logo.png" id="header_logo" alt="Geek University"><img id="header_mobile_logo" alt="Geek University" src="https://geek-university.com/wp-content/uploads/2018/07/mobile_logo_geek_uni-1.png?x66712" class="hide" width="100" height="48" alt="Geek University" /></a>
+                        </h2>                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-8">
+                        <nav class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="main-menu-item-2144" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" data-width="100%"><a href="https://geek-university.com/courses/"><strong>All courses</strong></a>
+<ul class="sub-menu">
+	<li id="main-menu-item-7558" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/ccent-icnd1-100-101-course/">CCNA course</a></li>
+	<li id="main-menu-item-7559" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/free-linux-course/">Linux course</a></li>
+	<li id="main-menu-item-8202" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/vcp5-dcv-course/">VMware ESXi course</a></li>
+	<li id="main-menu-item-8389" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/nmap-online-course/">Nmap course</a></li>
+	<li id="main-menu-item-9233" class="menu-item menu-item-type-post_type menu-item-object-course" data-width="100%"><a href="https://geek-university.com/course/apache-online-course/">Apache HTTP Server course</a></li>
+	<li id="main-menu-item-9045" class="menu-item menu-item-type-post_type menu-item-object-course" data-width="100%"><a href="https://geek-university.com/course/splunk-online-course/">Splunk course</a></li>
+	<li id="main-menu-item-7560" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/raspberry-pi-free-course/">Raspberry Pi course</a></li>
+	<li id="main-menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/mysql-course/">MySQL course</a></li>
+	<li id="main-menu-item-2941" class="menu-item menu-item-type-post_type menu-item-object-post" data-width="100%"><a href="https://geek-university.com/vmware-player/vmware-player-online-course/">VMware Player course</a></li>
+	<li id="main-menu-item-4078" class="menu-item menu-item-type-post_type menu-item-object-post" data-width="100%"><a href="https://geek-university.com/oracle-virtualbox/oracle-virtualbox-online-course/">Oracle VirtualBox course</a></li>
+	<li id="main-menu-item-4244" class="menu-item menu-item-type-post_type menu-item-object-post" data-width="100%"><a href="https://geek-university.com/python/python-online-course/">Python course</a></li>
+	<li id="main-menu-item-2939" class="menu-item menu-item-type-post_type menu-item-object-post" data-width="100%"><a href="https://geek-university.com/sql/sql-online-course/">SQL course</a></li>
+</ul>
+</li>
+<li id="main-menu-item-10643" class="menu-item menu-item-type-post_type menu-item-object-page" data-width="100%"><a href="https://geek-university.com/asi/"><strong>A short introduction to…</strong></a></li>
+<li><a id="new_searchicon"><i class="fa fa-search"></i></a></li></ul></nav>                        <a id="trigger">
+                            <span class="lines"></span>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<section id="content">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-9 col-sm-8 right">			
+			<section id="title">
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <div class="pagetitle">
+                    <h1>How switches learn MAC addresses</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <div id="post-4785" class="post-4785 post type-post status-publish format-standard hentry category-ccna">
+                <div class="content">
+                    <p><span style="font-size: 12pt;">As you probably already know, each network card has a unique identifier called <strong>Media Access Control (MAC)</strong> address. MAC addresses are used in LANs for communication between devices on the same network segment. Devices that want to communicate need to know the MAC address of other device before sending out packets.</span></p>
+<p><span style="font-size: 12pt;">Switches also use MAC addresses to make accurate forwarding and filtering decision. When the switch receives a frame, it associates the media access control (MAC) address of the sending device with the interface on which it was received. The table that stores such associations is know as the MAC address table. This table is stored in the volatile memory, so associations will be erased after the switch is restarted.</span></p>
+<p>&nbsp;</p>
+<div style="background-color: #c3d1d6; border: 1px solid #ddd; padding: 12px;"><span style="font-size: 12pt;"><style> #icon9792{font-size:20px;background:;padding:0px;border-radius:0px;color:;}
+            #icon9792:hover{color:;background:;}</style><i class="icon-exclamation" id="icon9792"></i> You can also enter a MAC address manually into the table. These static entries are retained even after the switch is rebooted. </span></div>
+<p>&nbsp;</p>
+<p><span style="font-size: 12pt;">To better understand how switches learn MAC addresses, consider the following example:</span></p>
+<p><span style="font-size: 12pt;"><a href="https://geek-university.com/wp-content/uploads/2015/10/how_switches_learn_mac_addresses.jpg?x66712" data-slb-active="1" data-slb-asset="265730918" data-slb-internal="0"><img class="alignnone size-full wp-image-4772" src="https://geek-university.com/wp-content/uploads/2015/10/how_switches_learn_mac_addresses.jpg?x66712" alt="how switches learn mac addresses" width="732" height="233" srcset="https://geek-university.com/wp-content/uploads/2015/10/how_switches_learn_mac_addresses.jpg 732w, https://geek-university.com/wp-content/uploads/2015/10/how_switches_learn_mac_addresses-460x146.jpg 460w, https://geek-university.com/wp-content/uploads/2015/10/how_switches_learn_mac_addresses-600x191.jpg 600w, https://geek-university.com/wp-content/uploads/2015/10/how_switches_learn_mac_addresses-120x38.jpg 120w, https://geek-university.com/wp-content/uploads/2015/10/how_switches_learn_mac_addresses-310x99.jpg 310w" sizes="(max-width: 732px) 100vw, 732px" /></a></span></p>
+<p><span style="font-size: 12pt;">When SW1 is first powered on, the MAC address table will be empty:</span></p>
+<p><span style="font-size: 12pt;"><a href="https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table.jpg?x66712" data-slb-active="1" data-slb-asset="2076363074" data-slb-internal="0"><img class="alignnone size-full wp-image-4778" src="https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table.jpg?x66712" alt="show mac address table" width="461" height="124" srcset="https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table.jpg 461w, https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table-460x124.jpg 460w, https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table-120x32.jpg 120w, https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table-310x83.jpg 310w" sizes="(max-width: 461px) 100vw, 461px" /></a></span></p>
+<p><span style="font-size: 12pt;">But, when Host A sends a frame to Host B, the switch will add the HostA’s MAC address to its MAC address table, associating it with the interface <strong>Fa0/1</strong>. The switch will also learn the Host B&#8217;s MAC address when Host B responds to Host A and associate it with its interface <strong>Fa0/2</strong>:</span></p>
+<p><span style="font-size: 12pt;"><a href="https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table_command.jpg?x66712" data-slb-active="1" data-slb-asset="1121665688" data-slb-internal="0"><img class="alignnone size-full wp-image-4779" src="https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table_command.jpg?x66712" alt="show mac address table command" width="447" height="163" srcset="https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table_command.jpg 447w, https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table_command-120x44.jpg 120w, https://geek-university.com/wp-content/uploads/2015/10/show_mac_address_table_command-310x113.jpg 310w" sizes="(max-width: 447px) 100vw, 447px" /></a></span></p>
+                     <div class="tags">
+                    
+                                            <div class="social_sharing">
+                            <ul class="socialicons square color"><li><a href="http://www.facebook.com/share.php?u=https://geek-university.com/ccna/how-switches-learn-mac-addresses/" data-placement="top" title="Share on Facebook" target="_blank" class="facebook tip"><i class="fa fa-facebook"></i></a></li><li><a href="http://twitter.com/share?url=https://geek-university.com/ccna/how-switches-learn-mac-addresses/" data-placement="top" title="Share on Twitter" target="_blank" class="twitter tip"><i class="fa fa-twitter"></i></a></li><li><a href="http://www.linkedin.com/shareArticle?mini=true&url=https://geek-university.com/ccna/how-switches-learn-mac-addresses/&title=How switches learn MAC addresses&source=https://geek-university.com" data-placement="top" title="Share on LinkedIn" target="_blank" class="linkedin tip"><i class="fa fa-linkedin"></i></a></li></ul>   
+                        </div>
+                    </div>
+                </div>
+                                    <div class="prev_next_links">
+                        <ul class="prev_next">
+                            <li><a href="https://geek-university.com/ccna/layer-2-switching/" class="prev"><strong><span>Layer 2 switching</span></strong></a><li><a href="https://geek-university.com/ccna/how-switches-forward-frames/" class="next"><strong><span>How switches forward frames</span></strong></a></li>                        </ul>    
+                    </div>
+                                    </div>
+                
+                            </div>
+                        <div class="col-md-3 col-sm-3">
+                <div class="sidebar">
+                    <div class="widget"><div class="inside">			<div class="textwidget"><a href="https://geek-university.com/ccna/cisco-ccna-online-course/"><img src="https://geek-university.com/wp-content/uploads/2016/01/ccent_course_logo.jpg?x66712"></a></div>
+		</div></div><div class="widget"><div class="inside">			<div class="textwidget"><a href="https://geek-university.com/course/ccent-icnd1-100-101-course/" class="course_button button full" style="margin-bottom:0px">TAKE THIS FREE COURSE</a></div>
+		</div></div><div class="widget"><div class="inside">			<div class="textwidget"><p><a href="https://geek-university.com/ccent-icnd1-100-101-cert-guide-ebook/"><img src="https://geek-university.com/wp-content/uploads/2019/01/ebook.png?x66712" /></a></p>
+</div>
+		</div></div><div class="widget"><div class="inside"><h4 class="widgettitle"><span>CCNA course</span></h4>			<div class="textwidget"><ul>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Introduction</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/computer-network-explained">Computer network explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/osi-reference-model">OSI reference model</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/tcpip-reference-model">TCP/IP reference model</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/data-encapsulation">Data encapsulation</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/data-encapsulation-in-the-osi-model">Data encapsulation in the OSI model</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/local-area-network-lan">Local Area Network (LAN)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-ethernet">What is Ethernet?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ethernet-frame">Ethernet frame</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/mac-address">MAC address</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/unicast-multicast-broadcast-addresses">Unicast, multicast, broadcast addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/half-and-full-duplex">Half and full duplex</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Basic networking</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-a-network-hub">What is a network hub?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-a-network-bridge">What is a network bridge?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-a-network-switch">What is a network switch?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/differences-between-a-switch-and-a-bridge">Differences between a switch and a bridge</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-a-router">What is a router?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/collision-domain-explained">Collision domain explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/broadcast-domain-explained">Broadcast domain explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/csma-cd-explained">CSMA/CD explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ieee-ethernet-standards">IEEE Ethernet standards</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/cisco-three-layered-hierarchical-model">Cisco three-layered hierarchical model</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">TCP/IP</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/tcp-ip-suite-of-protocols">TCP/IP suite of protocols</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-an-ip-address-2">What is an IP address?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/private-ip-addresses">Private IP addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ip-address-classes">IP address classes</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ip-address-types">IP address types</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/transmission-control-protocol-tcp-explained">Transmission Control Protocol (TCP) explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/user-datagram-protocol-udp-explained">User Datagram Protocol (UDP)  explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/tcp-and-udp-ports">TCP and UDP ports</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Network protocols</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/telnet-protocol">Telnet protocol</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-secure-shell-ssh">Secure Shell (SSH) protocol</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/file-transfer-protocol-ftp">File Transfer Protocol (FTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/trivial-file-transfer-protocol-tftp">Trivial File Transfer Protocol (TFTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/simple-network-management-protocol-snmp">Simple Network Management Protocol (SNMP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/hypertext-transfer-protocol-http">Hypertext Transfer Protocol (HTTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/hypertext-transfer-protocol-secure-https">Hypertext Transfer Protocol Secure (HTTPS)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/network-time-protocol">Network Time Protocol (NTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/domain-name-service-dns">Domain Name Service (DNS)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/dynamic-host-configuration-protocol-dhcp">Dynamic Host Configuration Protocol (DHCP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/automatic-private-ip-addressing-apipa">Automatic Private IP Addressing (APIPA)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/internet-control-message-protocol-icmp">Internet Control Message Protocol (ICMP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/address-resolution-protocol-arp">Address Resolution Protocol (ARP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv4-header">IPv4 header</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Subnetting</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-subnetting">What is subnetting?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/subnet-mask-explained">Subnet mask explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/how-to-create-subnets">How to create subnets</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Cisco IOS</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/cisco-internetwork-operating-system-ios">Cisco Internetwork Operating System (IOS)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/access-ios">Access IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/power-on-ios-device">Power on IOS device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/command-modes-in-ios">Command modes in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/get-help-in-ios">Get help in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/display-ios-command-history">Display IOS command history</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">IOS commands</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-the-hostname-in-ios">Configure the hostname in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-banners-in-ios">Configure banners in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-passwords-in-ios">Configure passwords in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/service-password-encryption-command">service password-encryption command</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-descriptions-in-ios">Configure descriptions in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/run-privileged-commands-in-global-config-mode">Run privileged commands in global config mode</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/interfaces-on-an-ios-device">Interfaces on an IOS device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-an-ip-address-for-an-interface">Configure an IP address for an interface</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/pipe-function-in-ios">Pipe function in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/memory-on-a-cisco-device">Memory on a Cisco device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configuration-files-on-an-ios-device">Configuration files on an IOS device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ios-show-command">IOS show command</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/boot-sequence-of-a-cisco-device">Boot sequence of a Cisco device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/back-up-ios-configuration">Back up IOS configuration</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-dhcp-server-on-a-cisco-router">Configure DHCP server on a Cisco router</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-ntp-on-a-cisco-device">Configure NTP on a Cisco device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/use-cisco-discovery-protocol-cdp">Use Cisco Discovery Protocol (CDP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/mapping-hostnames-to-ip-addresses">Mapping hostnames to IP addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-dns-on-a-cisco-device">Configure DNS on a Cisco device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/use-extended-ping">Use extended ping</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/traceroute-command-in-ios">traceroute command in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/debug-command-in-ios">debug command in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/use-telnet">Use telnet</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/show-running-processes">Show running processes</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">IP routing</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ip-routing-explained">IP routing explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/routing-table-explained">Routing table explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/directly-connected-routes">Directly connected routes</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/static-routes">Static routes</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/dynamic-routes">Dynamic routes</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/types-of-routing-protocols">Types of routing protocols</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/administrative-distance-ad-explained">Administrative distance (AD) explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/routing-metric-explained">Routing metric explained</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">RIP</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/rip-routing-information-protocol-overview">RIP (Routing Information Protocol) overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/rip-configuration">RIP configuration</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/split-horizon-explained">Split horizon explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/route-poisoning-explained">Route poisoning explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/holddown-timer-explained">Holddown timer explained</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">EIGRP</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-overview">EIGRP overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-neighbors">EIGRP neighbors</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-tables">EIGRP tables</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/reported-and-feasible-distance-explained">Reported and feasible distance explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/successor-and-feasible-successor-explained">Successor and feasible successor explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-configuration">EIGRP configuration</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/wildcard-mask-explained">Wildcard mask explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-and-wildcard-masks">EIGRP and wildcard masks</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/reliable-transport-protocol-rtp">Reliable Transport Protocol (RTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/diffusing-update-algorithm-dual">Diffusing Update Algorithm (DUAL)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-auto-summary">EIGRP auto-summary</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-manual-summarization">EIGRP manual summarization</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">OSPF</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-overview">OSPF overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-neighbor-discovery">OSPF neighbor discovery</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-neighbor-states">OSPF neighbor states</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-areas-explained">OSPF areas explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/link-state-advertisement-lsa">Link-state advertisement (LSA)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/types-of-lsas-link-state-advertisements">Types of LSAs (Link-state advertisements)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-ospf">Configure OSPF</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-multiarea-ospf">Configure multiarea OSPF</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/designated-router-and-backup-designated-router">Designated router and backup designated router</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-clear-text-authentication">OSPF clear text authentication</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-md5-authentication">OSPF MD5 authentication</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-route-summarization">OSPF route summarization</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Layer 2 switching</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/layer-2-switching">Layer 2 switching</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/how-switches-learn-mac-addresses">How switches learn MAC addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/how-switches-forward-frames">How switches forward frames</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/port-security-feature">Port security feature</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/assign-the-switch-ip-address">Assign the switch IP address</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/assign-static-mac-address">Assign static MAC address</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">VLANs</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/vlans-explained">VLANs explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/access-and-trunk-ports-explained">Access and trunk ports explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/frame-tagging-explained">Frame tagging explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/inter-switch-link-isl-overview">Inter-Switch Link (ISL) overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/802-1q-overview">802.1q overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-vlans-on-switch">Configure VLANs</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-trunk-ports">Configure trunk ports</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-allowed-vlans-on-trunk">Configure allowed VLANs on trunk</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/routing-between-vlans">Routing between VLANs</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-router-on-a-stick">Configure router on a stick</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">VLAN Trunking Protocol (VTP)</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/vlan-trunking-protocol-vtp-overview">VLAN Trunking Protocol (VTP) overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/vtp-modes-explained">VTP modes explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-vtp">Configure VTP</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Access Control Lists (ACLs)</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-acl-access-control-list">What is ACL (Access Control List)?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/standard-acls">Standard ACLs</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/extended-acls">Extended ACLs</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Network Address Translation (NAT)</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/nat-definition">NAT definition</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/static-nat-configuration">Static NAT configuration</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/dynamic-nat">Dynamic NAT</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/pat-configuration">PAT configuration</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">IPv6</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-overview">IPv6 overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-address-format">IPv6 address format</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-address-types">IPv6 address types</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-global-unicast-address">IPv6 global unicast address</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-unique-local-address">IPv6 unique local address</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-link-local-addresses">IPv6 link-local addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-eui-64-calculation">IPv6 EUI-64 calculation</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-ipv6-on-a-cisco-router">Configure IPv6 on a Cisco router</a></li>
+</ul></div>
+		</div></div>                </div>
+            </div>
+                    </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="footertop">
+                <div id="wysija-2" class="col-md-4 col-sm-4"><div class="footerwidget widget_wysija"><h4 class="footertitle"><span>Subscribe to our Newsletter</span></h4><div class="widget_wysija_cont"><div id="msg-form-wysija-2" class="wysija-msg ajax"></div><form id="form-wysija-2" method="post" action="#wysija" class="widget_wysija">
+<p class="wysija-paragraph">
+    <label>Email <span class="wysija-required">*</span></label>
+    
+    	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="Email"  value="" />
+    
+    
+    
+    <span class="abs-req">
+        <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="" />
+    </span>
+    
+</p>
+<div class="g-recaptcha" data-sitekey="6LeEJRQTAAAAACpWXDJiKnf8OTfNfdLxCMONwO3a" data-size="compact"></div>
+<input class="wysija-submit wysija-submit-field" type="submit" value="Subscribe!" />
+
+    <input type="hidden" name="form_id" value="1" />
+    <input type="hidden" name="action" value="save" />
+    <input type="hidden" name="controller" value="subscribers" />
+    <input type="hidden" value="1" name="wysija-page" />
+
+    
+        <input type="hidden" name="wysija[user_list][list_ids]" value="1" />
+    
+ </form></div></div></div><div id="nav_menu-4" class="col-md-4 col-sm-4"><div class="footerwidget widget_nav_menu"><h4 class="footertitle"><span>About</span></h4><div class="menu-about-container"><ul id="menu-about" class="menu"><li id="menu-item-2161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2161"><a href="https://geek-university.com/about-us/">About</a></li>
+<li id="menu-item-10063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10063"><a href="https://geek-university.com/faq/">FAQ</a></li>
+<li id="menu-item-10200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10200"><a href="https://geek-university.com/verification/">Verification</a></li>
+<li id="menu-item-2162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2162"><a href="https://geek-university.com/contact/">Contact</a></li>
+<li id="menu-item-2168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2168"><a href="https://geek-university.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-2167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2167"><a href="https://geek-university.com/blog/">Blog</a></li>
+<li id="menu-item-9729" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9729"><a href="https://geek-university.com/donate/">Donate</a></li>
+</ul></div></div></div><div id="custom_html-11" class="widget_text col-md-4 col-sm-4"><div class="widget_text footerwidget widget_custom_html"><h4 class="footertitle"><span>Like us on Facebook</span></h4><div class="textwidget custom-html-widget"><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="https://www.facebook.com/GeekUniversityCom" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div></div></div></div>            </div>
+        </div>
+        <div class="row">
+            <div class="footerbottom">
+                                            </div>
+        </div>
+    </div> 
+    <div id="scrolltop">
+        <a><i class="icon-arrow-1-up"></i><span>top</span></a>
+    </div>
+</footer>
+<div id="footerbottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2 id="footerlogo">
+                    
+
+                    <a href="https://geek-university.com"><img src="https://geek-university.com/wp-content/uploads/2018/06/header_footer_logo.png?x66712" alt="Geek University" /></a>
+                                </h2>
+                <span style="font-size: 8pt;">Geek University 2019</span>            </div>
+            <div class="col-md-9">
+                <div id="footer_social_icons"><ul class="socialicons square color"><li><a href="https://www.facebook.com/GeekUniversityCom" title="facebook" target="_blank"  class="facebook"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/geek_uni_com" title="twitter" target="_blank"  class="twitter"><i class="fa fa-twitter"></i></a></li><li><a href="https://www.linkedin.com/company/geek-university" title="linkedin" target="_blank"  class="linkedin"><i class="fa fa-linkedin"></i></a></li></ul></div>            </div>
+        </div>
+    </div>
+</div>
+</div><!-- END PUSHER -->
+</div><!-- END MAIN -->
+	<!-- SCRIPTS -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-7651984929092887",
+          enable_page_level_ads: true
+     });
+</script>        <div id="searchdiv">
+            <form role="search" method="get" id="searchform" action="https://geek-university.com/">
+                <input type="text" value="" name="s" id="s" placeholder="Hit enter to search..." />
+                            </form>
+            <span></span>
+        </div>
+		<script type='text/javascript'>
+/* <![CDATA[ */
+var edd_scripts = {"ajaxurl":"https:\/\/geek-university.com\/wp-admin\/admin-ajax.php","position_in_cart":"","has_purchase_links":"","already_in_cart_message":"You have already added this item to your cart","empty_cart_message":"Your cart is empty","loading":"Loading","select_option":"Please select an option","is_checkout":"0","default_gateway":"paypal","redirect_to_checkout":"0","checkout_page":"https:\/\/geek-university.com\/checkout\/","permalinks":"1","quantities_enabled":"","taxes_enabled":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/easy-digital-downloads/assets/js/edd-ajax.min.js?x66712&amp;ver=2.9.12'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/geek-university.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-includes/js/thickbox/thickbox.js?x66712&amp;ver=3.1-20121105'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var vibe_shortcode_strings = {"sending_mail":"Sending mail","error_string":"Error :","invalid_string":"Invalid ","captcha_mismatch":"Captcha Mismatch"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/vibe-shortcodes/js/shortcodes.js?x66712&amp;ver=3.8.5'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/vibe-course-module/includes/js/course-module-js.min.js?x66712&amp;ver=3.9.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-includes/js/mediaelement/wp-mediaelement.min.js?x66712&amp;ver=5.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BP_DTheme = {"accepted":"Accepted","close":"Close","comments":"comments","leave_group_confirm":"Are you sure you want to leave this group?","mark_as_fav":"Favorite","my_favs":"My Favorites","rejected":"Rejected","remove_fav":"Remove Favorite","show_all":"Show all","show_all_comments":"Show all comments for this thread","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","view":"View","too_short":"Too short","weak":"Weak","good":"Good","strong":"Strong"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/themes/wplms/assets/js/old_files/buddypress.js?x66712&amp;ver=3.9.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var vibe_course_module_strings = {"timeout":"TIMEOUT","too_fast_answer":"Too Fast or Answer not marked.","answer_saved":"Answer Saved.","processing":"Processing...","saving_answer":"Saving Answer...please wait","remove_user_text":"This step is irreversible. Are you sure you want to remove the User from the course ?","remove_user_button":"Confirm, Remove User from Course","confirm":"Confirm","cancel":"Cancel","reset_user_text":"This step is irreversible. All Units, Quiz results would be reset for this user. Are you sure you want to Reset the Course for this User?","reset_user_button":"Confirm, Reset Course for this User","quiz_reset":"This step is irreversible. All Questions answers would be reset for this user. Are you sure you want to Reset the Quiz for this User? ","quiz_reset_button":"Confirm, Reset Quiz for this User","marks_saved":"Marks Saved","quiz_marks_saved":"Quiz Marks Saved","save_quiz":"Save Quiz progress","saved_quiz_progress":"Saved","submit_quiz":"Submit Quiz","sending_messages":"Sending Messages ...","adding_students":"Adding Students to Course ...","successfuly_added_students":"Students successfully added to Course","unable_add_students":"Unable to Add students to Course","select_fields":"Please select fields to download","download":"Download","theme_color":"#78c8c9","single_dark_color":"#232b2d","for_course":"for Course","active_filters":"Active Filters","clear_filters":"Clear all filters","remove_comment":"Are you sure you want to remove this note?","remove_comment_button":"Confirm, remove note","private_comment":"Make Private","add_comment":"Add your note","submit_quiz_error":"Please add questions or retake the quiz !","remove_announcement":"Are you sure you want to remove this Annoucement?","start_quiz_notification":"You're about to start the Quiz. Please click confirm to begin the quiz.","submit_quiz_notification":"Are you sure you want to submit the quiz. Submitting the quiz will freeze all your answers, you can not change them.  Please confirm.","check_results":"Check results","correct":"Correct","incorrect":"Incorrect","confirm_apply":"Are you sure you want to apply for this Course ?","instructor_uncomplete_unit":"Are you sure you want mark this unit \"incomplete\" for the user ?","instructor_complete_unit":"Are you sure you want to mark this unit \"complete\" for the user ?","unanswered_questions":"You have few unanswered questions. Are you sure you want to continue ?","enter_more_characters":"Please enter 4 or more characters ...","correct_answer":"Correct Answer","explanation":"Explanation","And":"and","go":"Go","security":"09eef84e53","confirm_course_retake":"Are you sure you want to retake course?"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/vibe-course-module/includes/js/course.js?x66712&amp;ver=3.9.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-includes/js/wp-embed.min.js?x66712&amp;ver=5.1.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/wysija-newsletters/js/validate/languages/jquery.validationEngine-en.js?x66712&amp;ver=2.11'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/wysija-newsletters/js/validate/jquery.validationEngine.js?x66712&amp;ver=2.11'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"https:\/\/geek-university.com\/wp-admin\/admin-ajax.php","loadingTrans":"Loading...","is_rtl":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/wysija-newsletters/js/front-subscribers.js?x66712&amp;ver=2.11'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/simple-lightbox/client/js/prod/lib.core.js?x66712&amp;ver=2.7.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/simple-lightbox/client/js/prod/lib.view.js?x66712&amp;ver=2.7.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wplms = {"more":"More","view_more":"View More","menu":"Menu","wplms_woocommerce_validate":"Please fill in all the required fields (indicated by *)","open_menu":"Open\/Close Menu","invalid_mail":"Invalid email entered !","signon_security":"17c34958de"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/themes/wplms/assets/js/wplms.min.js?x66712&amp;ver=3.9.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/simple-lightbox/themes/baseline/js/prod/client.js?x66712&amp;ver=2.7.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/simple-lightbox/themes/default/js/prod/client.js?x66712&amp;ver=2.7.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/simple-lightbox/template-tags/item/js/prod/tag.item.js?x66712&amp;ver=2.7.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/simple-lightbox/template-tags/ui/js/prod/tag.ui.js?x66712&amp;ver=2.7.1'></script>
+<script type='text/javascript' src='https://geek-university.com/wp-content/plugins/simple-lightbox/content-handlers/image/js/prod/handler.image.js?x66712&amp;ver=2.7.1'></script>
+<script type="text/javascript" id="slb_footer">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB && SLB.has_child('View.init') ) { SLB.View.init({"ui_autofit":true,"ui_animate":false,"slideshow_autostart":false,"slideshow_duration":"6","group_loop":false,"ui_overlay_opacity":"0.8","ui_title_default":false,"theme_default":"slb_black","ui_labels":{"loading":"Loading","close":"Close","nav_next":"Next","nav_prev":"Previous","slideshow_start":"Start slideshow","slideshow_stop":"Stop slideshow","group_status":"Item %current% of %total%"}}); }
+if ( !!window.SLB && SLB.has_child('View.assets') ) { {$.extend(SLB.View.assets, {"265730918":{"id":4772,"type":"image","source":"https:\/\/geek-university.com\/wp-content\/uploads\/2015\/10\/how_switches_learn_mac_addresses.jpg","internal":true,"sizes":{"thumbnail":{"file":"how_switches_learn_mac_addresses-150x150.jpg","width":150,"height":150,"mime-type":"image\/jpeg"},"medium":{"file":"how_switches_learn_mac_addresses-460x146.jpg","width":460,"height":146,"mime-type":"image\/jpeg"},"wysija-newsletters-max":{"file":"how_switches_learn_mac_addresses-600x191.jpg","width":600,"height":191,"mime-type":"image\/jpeg"},"shop_thumbnail":{"file":"how_switches_learn_mac_addresses-180x180.jpg","width":180,"height":180,"mime-type":"image\/jpeg"},"shop_catalog":{"file":"how_switches_learn_mac_addresses-300x233.jpg","width":300,"height":233,"mime-type":"image\/jpeg"},"shop_single":{"file":"how_switches_learn_mac_addresses-460x146.jpg","width":460,"height":146,"mime-type":"image\/jpeg"},"mini":{"file":"how_switches_learn_mac_addresses-120x38.jpg","width":120,"height":38,"mime-type":"image\/jpeg"},"small":{"file":"how_switches_learn_mac_addresses-310x99.jpg","width":310,"height":99,"mime-type":"image\/jpeg"},"original":{"file":"2015\/10\/how_switches_learn_mac_addresses.jpg","width":732,"height":233}},"image_meta":{"aperture":0,"credit":"","camera":"","caption":"","created_timestamp":0,"copyright":"","focal_length":0,"iso":0,"shutter_speed":0,"title":"","orientation":0},"description":"","title":"how_switches_learn_mac_addresses","caption":""},"2076363074":{"id":4778,"type":"image","source":"https:\/\/geek-university.com\/wp-content\/uploads\/2015\/10\/show_mac_address_table.jpg","internal":true,"sizes":{"thumbnail":{"file":"show_mac_address_table-150x124.jpg","width":150,"height":124,"mime-type":"image\/jpeg"},"medium":{"file":"show_mac_address_table-460x124.jpg","width":460,"height":124,"mime-type":"image\/jpeg"},"shop_thumbnail":{"file":"show_mac_address_table-180x124.jpg","width":180,"height":124,"mime-type":"image\/jpeg"},"shop_catalog":{"file":"show_mac_address_table-300x124.jpg","width":300,"height":124,"mime-type":"image\/jpeg"},"shop_single":{"file":"show_mac_address_table-460x124.jpg","width":460,"height":124,"mime-type":"image\/jpeg"},"mini":{"file":"show_mac_address_table-120x32.jpg","width":120,"height":32,"mime-type":"image\/jpeg"},"small":{"file":"show_mac_address_table-310x83.jpg","width":310,"height":83,"mime-type":"image\/jpeg"},"original":{"file":"2015\/10\/show_mac_address_table.jpg","width":461,"height":124}},"image_meta":{"aperture":0,"credit":"","camera":"","caption":"","created_timestamp":0,"copyright":"","focal_length":0,"iso":0,"shutter_speed":0,"title":"","orientation":0},"description":"","title":"show_mac_address_table","caption":""},"1121665688":{"id":4779,"type":"image","source":"https:\/\/geek-university.com\/wp-content\/uploads\/2015\/10\/show_mac_address_table_command.jpg","internal":true,"sizes":{"thumbnail":{"file":"show_mac_address_table_command-150x150.jpg","width":150,"height":150,"mime-type":"image\/jpeg"},"shop_thumbnail":{"file":"show_mac_address_table_command-180x163.jpg","width":180,"height":163,"mime-type":"image\/jpeg"},"shop_catalog":{"file":"show_mac_address_table_command-300x163.jpg","width":300,"height":163,"mime-type":"image\/jpeg"},"mini":{"file":"show_mac_address_table_command-120x44.jpg","width":120,"height":44,"mime-type":"image\/jpeg"},"small":{"file":"show_mac_address_table_command-310x113.jpg","width":310,"height":113,"mime-type":"image\/jpeg"},"original":{"file":"2015\/10\/show_mac_address_table_command.jpg","width":447,"height":163}},"image_meta":{"aperture":0,"credit":"","camera":"","caption":"","created_timestamp":0,"copyright":"","focal_length":0,"iso":0,"shutter_speed":0,"title":"","orientation":0},"description":"","title":"show_mac_address_table_command","caption":""}});} }
+/* THM */
+if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_baseline',{"name":"Baseline","parent":"","styles":[{"handle":"base","uri":"https:\/\/geek-university.com\/wp-content\/plugins\/simple-lightbox\/themes\/baseline\/css\/style.css","deps":[]}],"layout_raw":"<div class=\"slb_container\"><div class=\"slb_content\">{{item.content}}<div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><div class=\"slb_controls\"><span class=\"slb_close\">{{ui.close}}<\/span><span class=\"slb_slideshow\">{{ui.slideshow_control}}<\/span><\/div><div class=\"slb_loading\">{{ui.loading}}<\/div><\/div><div class=\"slb_details\"><div class=\"inner\"><div class=\"slb_data\"><div class=\"slb_data_content\"><span class=\"slb_data_title\">{{item.title}}<\/span><span class=\"slb_group_status\">{{ui.group_status}}<\/span><div class=\"slb_data_desc\">{{item.description}}<\/div><\/div><\/div><div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><\/div><\/div><\/div>"}); }if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_default',{"name":"Default (Light)","parent":"slb_baseline","styles":[{"handle":"base","uri":"https:\/\/geek-university.com\/wp-content\/plugins\/simple-lightbox\/themes\/default\/css\/style.css","deps":[]}]}); }if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_black',{"name":"Default (Dark)","parent":"slb_default","styles":[{"handle":"base","uri":"https:\/\/geek-university.com\/wp-content\/plugins\/simple-lightbox\/themes\/black\/css\/style.css","deps":[]}]}); }})})(jQuery);}/* ]]> */</script>
+<script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66676630-1', 'auto');
+  ga('send', 'pageview');
+
+</script></body>
+</html>
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+
+Served from: geek-university.com @ 2019-06-12 07:43:43 by W3 Total Cache
+-->

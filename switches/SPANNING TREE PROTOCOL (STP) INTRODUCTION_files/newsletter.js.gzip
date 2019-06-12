@@ -1,0 +1,166 @@
+var DummiesNewsletter = {
+	debug: false,
+	debugVerbose: false,
+	dateFormat: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+}
+
+DummiesNewsletter.init = function() {
+	let self = DummiesNewsletter,
+	timer = 20,
+	cook = null;
+	
+	self.bindings();
+	self.setDebug( DummiesNewsletter.debug, DummiesNewsletter.debugVerbose );
+	
+	cook = self.getCookie( 'dumNewsletter' );
+	
+	setTimeout( function() {
+		if( cook.length > 0 ) {
+			self.log( 'found it' );
+			$('.dummies-newsletter-wrap').slideUp();
+		} else {
+			// show form
+			self.log( 'show' );
+			$('.dummies-newsletter-wrap').show('slide', {
+				direction: 'down'
+			}, 1500 );
+		}
+	}, timer * 1000 );
+
+};
+
+DummiesNewsletter.setDebug = function ( flag, verbose ) {
+	DummiesNewsletter.debug = flag;
+	DummiesNewsletter.debugVerbose = verbose;
+	DummiesNewsletter.log = flag ? console.log.bind(console) : function(){};
+}
+
+DummiesNewsletter.bindings = function() {
+	var self = DummiesNewsletter;
+	
+	$('.dummies-newsletter-wrap .heading.xclose').on('click', function() {
+		self.closeForm(false);
+	});
+	
+	$('.dummies-newsletter .btn.sign-up').on('click', function() {
+		let emails = $('.dummies-newsletter .email-input'),
+			destination = 'http://news.wiley.com/dummiesnewsletters?e=',
+			win = false,
+			result = false;
+			
+		
+		result = self.validateEmail( emails.val() );
+		if( ! result ) {
+			emails.parent().addClass('invalid');
+			
+			if( $('.dummies-newsletter .btn.sign-up.valid').length > 0 ) {
+				$('.dummies-newsletter .btn.sign-up').removeClass('valid');
+			}
+		} else {
+			if( $('.dummies-newsletter .inp-wrap.invalid').length > 0 ) {
+				$('.dummies-newsletter .inp-wrap.invalid').removeClass('invalid');
+			}
+			
+			destination = destination + emails.val();
+			self.closeForm('signup');
+			
+			if( self.debug ) {
+				self.log( 'Redirect to', destination );
+			} else {
+				win = window.open( destination, '_blank' );
+				win.focus();
+			}
+			
+		}
+	});
+	
+	$('.dummies-newsletter .email-input').on('keypress keydown keyup', function() {
+		let btn = $('.dummies-newsletter .btn.sign-up');
+		result = false;
+		
+		if( self.debugVerbose )
+			self.log( 'keypress' );
+		
+		result = self.validateEmail( $(this).val() );
+		
+		if( result ) {
+			self.log( 'valid trigger' );
+			btn.addClass('valid');
+		}
+		
+		if( ! result ) {
+			if( self.debugVerbose )
+				self.log( 'invalid trigger' );
+		
+			$('.dummies-newsletter .btn.sign-up.valid').removeClass('valid');
+		}
+	});
+}
+
+DummiesNewsletter.setCookie = function( cname, cvalue, date ) {
+	//var d = new Date();
+	//d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	var expires = "expires="+date.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+};
+
+DummiesNewsletter.getCookie = function(cname) {
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	
+	for(var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+};
+
+DummiesNewsletter.closeForm = function( trigger ) {
+	let self = DummiesNewsletter,
+		todayDate = new Date(),
+		newDate = null,
+		cookieData = {};
+		
+	if( trigger == "signup" ) {
+		newDate = new Date( todayDate.getFullYear() + 1, todayDate.getMonth(), todayDate.getDate() );
+		cookieData.exp = todayDate;
+		cookieData.signUp = true;
+		
+		if( self.debug ) {
+			self.log( 'Cookie set to: ', newDate.toLocaleString('en-US',DummiesNewsletter.dateFormat) );
+		} else {
+			self.setCookie( 'dumNewsletter', JSON.stringify( cookieData ), newDate );
+		}
+	} else {
+		newDate = new Date( todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate() + 1 );
+		cookieData.exp = todayDate;
+		cookieData.signUp = false;
+		
+		if( self.debug ) {
+			self.log( 'Cookie set to: ', newDate.toLocaleString('en-US',DummiesNewsletter.dateFormat) );
+		} else {
+			self.setCookie( 'dumNewsletter', JSON.stringify( cookieData ), newDate );
+		}
+	}
+	
+	$('.dummies-newsletter-wrap').hide();
+};
+
+DummiesNewsletter.validateEmail = function( email ) {
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+
+$(function() {
+	if( $('.dummies-newsletter').length > 0 ) {
+		if(window.location.pathname != "/podcast/") {
+			DummiesNewsletter.init();
+		}
+	}
+})
+

@@ -1,0 +1,568 @@
+var debug = true;
+var LOG = debug ? console.log.bind(console) : function () {};
+
+var PREBID_TIMEOUT = 800;
+var FAILSAFE_TIMEOUT = 3000;
+
+var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName( 'body' )[ 0 ],
+  x = w.innerWidth || e.clientWidth || g.clientWidth, y = w.innerHeight || e.clientHeight || g.clientHeight;
+var browserWidth = x;
+var browserHeight = y;
+
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+
+pbjs.que.push( function () {
+
+  pbjs.bidderSettings = {
+    standard: {
+      adserverTargeting: [
+        {
+          key: "hb_bidder",
+          val: function ( bidResponse ) {
+            return bidResponse.bidderCode;
+          }
+        }, {
+          key: "hb_adid",
+          val: function ( bidResponse ) {
+            return bidResponse.adId;
+          }
+        }, {
+          key: "hb_pb",
+          val: function (bidResponse) {
+            var cpm = bidResponse.cpm;
+            if (cpm < 20.00) {
+              return (Math.floor(cpm * 100) / 100).toFixed(2);
+            } else {
+              return '20.00';
+            }
+          }
+        }, {
+          key: 'hb_size',
+          val: function ( bidResponse ) {
+            return bidResponse.size;
+          }
+        } ]
+    },
+    /* emxdigital: {
+      bidCpmAdjustment: function ( bidCpm ) {
+        return bidCpm * 0.8;
+      }
+    }, */
+    rubicon: {
+      bidCpmAdjustment: function ( bidCpm ) {
+        return bidCpm * 0.8;
+      }
+    }
+
+  };
+
+  pbjs.setConfig(
+    {
+      // priceGranularity: "high",
+      enableSendAllBids: false,
+      timeoutBuffer: 400,
+    }
+  );
+} );
+
+var adUnits = [];
+var adSlots = [];
+var appearTmr = null;
+var newContentTmr;
+var firstLoad = true;
+var googleTagDefineSlotDefaultSize = [];
+var globalSizeConfig = [];
+var _sizeConfig = [];
+
+// Load GPT asynchronously
+(function () {
+  var gads = document.createElement( 'script' );
+  gads.async = true;
+  gads.type = 'text/javascript';
+  var useSSL = 'https:' == document.location.protocol;
+  gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+  var node = document.getElementsByTagName( 'script' )[ 0 ];
+  node.parentNode.insertBefore( gads, node );
+})();
+
+(function ( g, o ) {
+  g[ o ] = g[ o ] || function () {
+    (g[ o ][ 'q' ] = g[ o ][ 'q' ] || []).push(
+      arguments )
+  }, g[ o ][ 't' ] = 1 * new Date
+})( window, '_googCsa' );
+
+(function ( $ ) {
+
+  $( function () {
+
+    newContentTmr = setInterval( function () {
+      loadAdUnits();
+      /* loadScriptUnits(); */
+    }, 750 );
+    loadSearchAdUnits();
+  } )
+})( jQuery );
+
+function loadAdUnits() {
+
+  var unitIds = [];
+
+  jQuery( '.du-ad-unit' ).each( function () {
+
+    if ( jQuery( this ).data( 'refreshed' ) == false ) {
+
+      unitIds.push( {
+        'slot-id': jQuery( this ).data( 'slot-id' ),
+        'div-id': jQuery( this ).attr( 'id' ),
+        'target': jQuery( this ).data( 'target' )
+      } );
+
+      jQuery( this ).data( 'refreshed', true );
+    }
+  } );
+
+  if ( !jQuery.isEmptyObject( unitIds ) ) {
+    var data =
+      {
+        // security: ajax_security,
+        action: 'get_ad_units',
+        browserWidth: browserWidth,
+        browserHeight: browserHeight,
+        unitIds: unitIds,
+        firstLoad: firstLoad
+      }
+
+    jQuery.post( ajaxurl, data, function ( response ) {
+
+      try {
+
+        clearInterval( appearTmr );
+        appearTmr = null;
+
+        if( firstLoad ) {
+          if( response.hasOwnProperty('prebidConfig') ) {
+            setPrebidConfig( response.prebidConfig );
+          }
+        }
+
+        initAdSlotQueue( response.adUnits );
+        googleTagInit();
+
+      } catch ( e ) {
+
+        console.log( e );
+      }
+
+    }, 'json' );
+  }
+}
+
+function setPrebidConfig( $config ) {
+  if( $config.hasOwnProperty('sizeConfig') ) {
+    globalSizeConfig = $config.sizeConfig;
+    setPrebidSizeConfig( globalSizeConfig );
+  }
+
+  // Check for GDPR consent on first load
+  setNonPersonalizedAds();
+}
+
+function setPrebidSizeConfig( $sizeConfig ) {
+  googleTagDefineSlotDefaultSize = [];
+  for ( var $i = 0; $i < $sizeConfig.length; $i++ ) {
+    if( window.matchMedia($sizeConfig[$i].mediaQuery).matches ) {
+      _sizeConfig.push({
+        'mediaQuery': $sizeConfig[$i].mediaQuery,
+        'sizesSupported': $sizeConfig[$i].labelSizes,
+        'labels': $sizeConfig[$i].viewportLabel
+      });
+
+    /**
+     * Default size is set by ACF, but this will override it based on resolution:
+     * Check resolution then set labels and sizes supported
+     */
+
+      googleTagDefineSlotDefaultSize.push({
+        'sizesSupported': $sizeConfig[$i].labelSizes,
+        'labels': $sizeConfig[$i].viewportLabel
+      });
+    }
+
+  }
+  pbjs.que.push(function(){
+    pbjs.setConfig({
+      sizeConfig: _sizeConfig
+    });
+  });
+}
+
+(function($){
+  $(function(){
+      $(window).on('resize', function(){
+        setPrebidSizeConfig( globalSizeConfig );
+      })
+  })
+})(jQuery);
+
+function loadSearchAdUnits() {
+
+  var unitIds = [];
+
+  jQuery( '.du-ad-unit-search' ).each( function () {
+
+
+    if ( jQuery( this ).data( 'refreshed' ) == false ) {
+
+      unitIds.push( {
+        'slot-id': jQuery( this ).data( 'slot-id' ),
+        'div-id': jQuery( this ).attr( 'id' ),
+        'search-query': jQuery( this ).data( 'search-query' )
+      } )
+
+      jQuery( this ).data( 'refreshed', true );
+    }
+
+
+  } );
+
+  if ( !jQuery.isEmptyObject( unitIds ) ) {
+
+    var data =
+      {
+        // security: ajax_security,
+        action: 'get_ad_units',
+        unitIds: unitIds
+
+      }
+
+    jQuery.post( ajaxurl, data, function ( response ) {
+
+
+      try {
+
+        response.forEach( function ( unit ) {
+
+          _googCsa( 'ads', unit.options, unit.blockOption );
+
+        } );
+
+      } catch ( e ) {
+
+        console.log( e )
+      }
+
+
+    }, 'json' );
+
+  }
+
+}
+
+function loadScriptUnits() {
+
+  var unitIds = [];
+
+  jQuery( '.du-ad-unit-script' ).each( function () {
+
+
+    if ( jQuery( this ).data( 'refreshed' ) == false ) {
+
+      unitIds.push( {
+        'slot-id': jQuery( this ).data( 'slot-id' ),
+        'div-id': jQuery( this ).attr( 'id' ),
+        'target': jQuery( this ).data( 'target' )
+      } )
+
+      jQuery( this ).data( 'refreshed', true );
+    }
+
+
+  } );
+
+  if ( !jQuery.isEmptyObject( unitIds ) ) {
+
+    var data =
+      {
+        // security: ajax_security,
+        action: 'get_scripts_units',
+        unitIds: unitIds
+
+      }
+
+    jQuery.post( ajaxurl, data, function ( response ) {
+
+
+      try {
+
+        var script = jQuery( response );
+        document.getElementsByTagName( "head" )[ 0 ].appendChild( script[ 0 ] );
+
+
+      } catch ( e ) {
+
+        console.log( e );
+      }
+
+
+    } );
+
+  }
+
+}
+
+function initAdSlotQueue( response ) {
+
+  adUnits = [];
+
+  response.forEach( function ( unit ) {
+
+    var adObj = new Dummies_Ad_Unit( unit.slot, unit.defaulSize, unit.code, unit.bids );
+    adObj.id = unit.id;
+
+    unit.target.forEach(function (target) {
+
+      adObj.setTarget(target.key, target.values);
+
+    });
+
+    /**
+     * defaultSize is set, this will override if the viewport label (ACF Prebid Config)
+     * matches the Ad Slot Size (ACF Ad Slot Details)
+     */
+    googleTagDefineSlotDefaultSize.forEach( function( sizeOptions ) {
+      unit.labelAny.forEach(function (labels) {
+        if (sizeOptions.labels[0] === labels) {
+          adObj.labelAny.push(labels);
+          adObj.defaultSize = sizeOptions.sizesSupported;
+          adObj.setMediaTypes( adObj.defaultSize );
+        }
+      });
+    });
+
+    if ( adObj.labelAny != '' || ( adObj.id.indexOf('one_by_one') !== -1 || adObj.id.indexOf('1x1') !== -1 ) )
+      adUnits.push( adObj );
+
+  } );
+}
+
+function googleTagInit() {
+
+  googletag.cmd.push( function () {
+
+    adUnits.forEach( function ( unit, index ) {
+
+      var slot = googletag.defineSlot( unit.getSlot(), unit.getDefaultSize(), unit.getCode() ).addService( googletag.pubads() );
+
+      unit.getTarget().forEach( function ( target ) {
+
+        slot.setTargeting( target.key, target.values );
+
+      } );
+      adSlots.push( {
+        'key': unit.getCode(),
+        'slot_key': unit.getSlot(),
+        'refresh': false,
+        'slot': slot
+      } );
+
+    } );
+
+    if ( firstLoad ) {
+
+      googletag.pubads().enableSingleRequest();
+      googletag.pubads().disableInitialLoad();
+      googletag.enableServices();
+      firstLoad = false;
+    }
+
+  } );
+
+  pbjs.adserverRequestSent = false;
+
+  pbjs.que.push( function () {
+
+    pbjs.adUnits = [];
+
+    pbjs.addAdUnits( adUnits );
+
+    pbjs.requestBids( {
+      bidsBackHandler: initAdserver,
+      timeout: PREBID_TIMEOUT
+    } );
+  } );
+
+  setTimeout( function () {
+    initAdserver();
+  }, FAILSAFE_TIMEOUT );
+
+}
+
+function initAdserver() {
+
+  if ( pbjs.adserverRequestSent ) return;
+
+  pbjs.adserverRequestSent = true;
+
+  // Check if personalized ads are consented to after first load
+  setNonPersonalizedAds();
+
+  googletag.cmd.push( function () {
+    pbjs.que.push( function () {
+      pbjs.setTargetingForGPTAsync();
+      if ( !appearTmr ) {
+
+        appearTmr = setInterval( function () {
+          refreshSlots( true )
+        }, 150 );
+      }
+
+    } );
+  } );
+
+}
+
+function refreshSlots( exclude ) {
+
+  var slotRefreshed = 0;
+  var refreshAds = [];
+
+  adSlots.forEach( function ( item, index ) {
+
+    if ( item.refresh ) {
+      slotRefreshed++;
+    }
+
+    if ( !item.refresh && jQuery( '#' + item.key ).is( ':visible' ) && exclude_ads( item.slot_key, exclude ) ) {
+
+      googletag.display( item.key );
+      adSlots[ index ].refresh = true;
+      refreshAds.push( item.slot );
+    }
+
+  } );
+
+  if ( refreshAds.length > 0 ) {
+
+    googletag.pubads().refresh( refreshAds );
+  }
+
+  if ( slotRefreshed == adSlots.length ) {
+
+    clearInterval( appearTmr );
+
+  }
+}
+
+function isInViewport( div_id ) {
+
+  var elementTop = jQuery( div_id ).offset().top;
+  var elementBottom = elementTop + jQuery( this ).outerHeight();
+
+  var viewportTop = jQuery( window ).scrollTop();
+  var viewportBottom = viewportTop + jQuery( window ).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+}
+
+function exclude_ads( slot_key, exclude ) {
+
+  var slot_keys = [ 'article_page_one_by_one', 'article_page_content' ];
+  var show = true;
+
+  for ( var i = 0; i < slot_keys.length; i++ ) {
+    if ( exclude ) {
+      if ( slot_key.search( slot_keys[ i ] ) != -1 ) {
+        show = false;
+      }
+    }
+  }
+
+  return show;
+}
+
+function getConsentCookie( name ) {
+
+  cookies = document.cookie.split( ';' );
+
+  if ( name.indexOf( '=' ) === -1 ) {
+    name = name + "=";
+  }
+
+  for ( var i = 0; i < cookies.length; i++ ) {
+    var cookie = cookies[ i ];
+
+    while ( cookie.charAt( 0 ) === ' ' ) {
+      cookie = cookie.substring( 1 );
+    }
+    if ( cookie.indexOf( name ) === 0 ) {
+
+      return cookie.substring( name.length, cookie.length );
+    }
+  }
+
+  return false;
+}
+
+// GPT Ads - personalized upon consent
+function setNonPersonalizedAds() {
+
+  var euConsent = getConsentCookie( 'euconsent_site' );
+
+  // If the cookie is set
+  if ( euConsent ) {
+
+    // Set pbjs.consentManagement
+    setPBJSConsent();
+
+    // If cookie exists && is Y
+    if ( euConsent === "Y" ) {
+
+      // Adjust Google Ads
+      googletag.pubads().setRequestNonPersonalizedAds( 0 );
+      LOG("Personalized Ads On");
+    } else if ( euConsent === "N" ) {
+
+      // Adjust Google Ads
+      googletag.pubads().setRequestNonPersonalizedAds( 1 );
+
+      // Adjust Conversant Ads
+      // Delete the Common ID cookie and create the optout cookie to prevent recreation of _pubcid
+      setCookie( '_pubcid_optout', '1', 1825 );
+      deleteCookie( '_pubcid' );
+      LOG( "Personalized Ads Off" );
+    }
+  }
+
+  return true;
+}
+
+function setCookie( name, value, days ) {
+
+  var d = new Date;
+  d.setTime( d.getTime() + 24*60*60*1000*days );
+  document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
+}
+
+function deleteCookie ( name ){
+
+  setCookie( name, '', -1 );
+}
+
+// If EU, prevent auction before consent
+function setPBJSConsent() {
+
+  // Prevent the Auction until consent
+  pbjs.setConfig({
+    consentManagement: {
+      cmpApi: 'iab',
+      timeout: 10000,
+      allowAuctionWithoutConsent: false
+    }
+  });
+}

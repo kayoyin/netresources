@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://electronicspost.com/forwarding-and-routing-in-network-layer/ -->
+<html class="js gr__electronicspost_com" lang="en-US" prefix="og: http://ogp.me/ns#"><head itemscope="" itemtype="http://schema.org/WebSite"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/analytics.js"></script><script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/f.txt"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-9379665029861449",
+          enable_page_level_ads: true
+     });
+</script>
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<!--[if IE ]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<![endif]-->
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	
+		
+		
+		
+					<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="apple-mobile-web-app-capable" content="yes">
+			<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		
+		<meta itemprop="name" content="Electronics Post">
+		<meta itemprop="url" content="https://electronicspost.com">
+
+												<meta itemprop="creator accountablePerson" content="Jhasketan Garud">
+						<link rel="pingback" href="https://electronicspost.com/xmlrpc.php">
+	<title>Forwarding and Routing in Network Layer - Electronics Post</title>
+<script type="text/javascript">document.documentElement.className = document.documentElement.className.replace( /\bno-js\b/,'js' );</script>
+<!-- This site is optimized with the Yoast SEO plugin v9.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="https://electronicspost.com/forwarding-and-routing-in-network-layer/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Forwarding and Routing in Network Layer - Electronics Post">
+<meta property="og:description" content="Forwarding and Routing in Network Layer The role of the network layer is thus deceptively simple – to move packets from a sending host to a receiving host. To do so, two important network-layer functions can be identified: Forwarding When a packet arrives at a router’s input link, the router must move the packet to the appropriate output link. For example, a packet arriving from Host H1 to Router R1 must be forwarded to the next router on a path to H2. Routing The network layer must determine the route or path taken by packets as they flow from a">
+<meta property="og:url" content="https://electronicspost.com/forwarding-and-routing-in-network-layer/">
+<meta property="og:site_name" content="Electronics Post">
+<meta property="article:section" content="Computer Networking">
+<meta property="article:published_time" content="2016-05-12T03:23:26+00:00">
+<meta property="og:image" content="https://electronicspost.com/wp-content/uploads/2016/05/4.2.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Forwarding and Routing in Network Layer The role of the network layer is thus deceptively simple – to move packets from a sending host to a receiving host. To do so, two important network-layer functions can be identified: Forwarding When a packet arrives at a router’s input link, the router must move the packet to the appropriate output link. For example, a packet arriving from Host H1 to Router R1 must be forwarded to the next router on a path to H2. Routing The network layer must determine the route or path taken by packets as they flow from a">
+<meta name="twitter:title" content="Forwarding and Routing in Network Layer - Electronics Post">
+<meta name="twitter:image" content="https://electronicspost.com/wp-content/uploads/2016/05/4.2.png">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Electronics Post » Feed" href="https://electronicspost.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Electronics Post » Comments Feed" href="https://electronicspost.com/comments/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/electronicspost.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Forwarding and Routing in Network Layer - Electronics Post_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./Forwarding and Routing in Network Layer - Electronics Post_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Forwarding and Routing in Network Layer - Electronics Post_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="newspaper-stylesheet-css" href="./Forwarding and Routing in Network Layer - Electronics Post_files/style.css" type="text/css" media="all">
+<style id="newspaper-stylesheet-inline-css" type="text/css">
+
+		body {background-color:#ffffff;background-image:url(https://electronicspost.com/wp-content/themes/mts_newspaper/images/nobg.png);}
+		
+		.pace .pace-progress, #mobile-menu-wrapper ul li a:hover, .post-info .thecategory { background: #3d8fe8; }
+		.single_post a, .sidebar .textwidget a, footer .textwidget a, .pnavigation2 a, .sidebar.c-4-12 a:hover, .copyrights a:hover, footer .widget li a:hover, .sidebar.c-4-12 a:hover, .related-posts a:hover, .title a:hover, .post-info a:hover, .comm, #tabber .inside li a:hover, .readMore a:hover, .fn a, a, a:hover, .latestPost .title a:hover, .theme-color, a#pull, #navigation ul ul li:hover > a, .single_post .breadcrumb a:hover { color:#3d8fe8; }  
+		#commentform .form-submit input#submit, .contactform #submit, #move-to-top, .pagination a, #tabber ul.tabs li a.selected, .tagcloud a, .tagcloud a:hover .tab_count, #navigation ul .sfHover a, .reply a, .widget .wpt_widget_content .tab_title a, .widget .wp_review_tab_widget_content .tab_title a, .widget #wp-subscribe, .related-ads #wp-subscribe, .contact-form input[type='submit'], #load-posts a, #load-posts a.disabled, .latestPost-review-wrapper, .latestPost .review-type-circle.review-total-only, .post-image .review-type-circle.wp-review-show-total, .wpmm-thumbnail .review-total-only, .widget .review-total-only.small-thumb, .widget .wpt_widget_content #tags-tab-content ul li a, .recommended-post .recommended, .woocommerce a.button, .woocommerce-page a.button, .woocommerce button.button, .woocommerce-page button.button, .woocommerce input.button, .woocommerce-page input.button, .woocommerce #respond input#submit, .woocommerce-page #respond input#submit, .woocommerce #content input.button, .woocommerce-page #content input.button, .woocommerce nav.woocommerce-pagination ul li a, .woocommerce-page nav.woocommerce-pagination ul li a, .woocommerce #content nav.woocommerce-pagination ul li a, .woocommerce-page #content nav.woocommerce-pagination ul li a, .woocommerce .bypostauthor:after, #searchsubmit, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce-page nav.woocommerce-pagination ul li a:hover, .woocommerce #content nav.woocommerce-pagination ul li a:hover, .woocommerce-page #content nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce-page nav.woocommerce-pagination ul li a:focus, .woocommerce #content nav.woocommerce-pagination ul li a:focus, .woocommerce-page #content nav.woocommerce-pagination ul li a:focus, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-product-search input[type='submit'] { background-color:#3d8fe8; color: #fff!important; }
+		.main-header, #header .head-search #s, .head-search .fa-search {background-color: #333333}
+		.header-post-wrap {background-color: #eff2eb}
+		footer {background-color: #333333}
+		
+		
+		
+		
+		
+		
+		
+		
+</style>
+<link rel="stylesheet" id="fontawesome-css" href="./Forwarding and Routing in Network Layer - Electronics Post_files/font-awesome.min.css" type="text/css" media="all">
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script>(function(){var a=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(){this.requestMethod=arguments[0],a.apply(this,arguments)};var h=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.send=function(){var i=this.onreadystatechange;return this.onreadystatechange=function(){if(4===this.readyState){var j='detector',k={posdMessageId:'PANELOS_MESSAGE',type:'VIDEO_XHR_CANDIDATE',from:j,to:j.substring(0,j.length-2),content:{requestMethod:this.requestMethod,url:this.responseURL,type:this.getResponseHeader('content-type'),content:this.response}};window.postMessage(k,'*')}return i?i.apply(this,arguments):void 0},h.apply(this,arguments)}})();</script><script type="text/javascript" src="./Forwarding and Routing in Network Layer - Electronics Post_files/jquery.js"></script>
+<script type="text/javascript" src="./Forwarding and Routing in Network Layer - Electronics Post_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mts_customscript = {"responsive":"1","nav_menu":"secondary","ajax_url":"https:\/\/electronicspost.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" async="async" src="./Forwarding and Routing in Network Layer - Electronics Post_files/customscript.js"></script>
+<link rel="https://api.w.org/" href="https://electronicspost.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://electronicspost.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://electronicspost.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.0.4">
+<link rel="shortlink" href="https://electronicspost.com/?p=3550">
+<link rel="alternate" type="application/json+oembed" href="https://electronicspost.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Felectronicspost.com%2Fforwarding-and-routing-in-network-layer%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://electronicspost.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Felectronicspost.com%2Fforwarding-and-routing-in-network-layer%2F&amp;format=xml">
+<link href="./Forwarding and Routing in Network Layer - Electronics Post_files/css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#header, .menu li, .menu li a, a#pull { font-family: 'Roboto'; font-weight: 500; font-size: 15px; color: #dddddd; }
+.latestPost .title a, .reply a, .widget .post-title, .pagination, .woocommerce-pagination, #load-posts, .popular-category a, .ajax-search-results li a { font-family: 'Roboto'; font-weight: 500; font-size: 24px; color: #333333; }
+#tab-group a { font-family: 'Roboto'; font-weight: 700; font-size: 14px; color: #555555;text-transform: uppercase; }
+.single-title { font-family: 'Roboto'; font-weight: 700; font-size: 42px; color: #333333; }
+body { font-family: 'PT Serif'; font-weight: normal; font-size: 19px; color: #575757; }
+#sidebars .widget { font-family: 'Roboto'; font-weight: 500; font-size: 15px; color: #333333; }
+footer { font-family: 'Roboto'; font-weight: 500; font-size: 15px; color: #aaaaaa; }
+.post-info, .category-head, .left-comment, .ago, #searchform #s, .tagcloud, .recommended-post, .breadcrumb, .latestPost-review-wrapper { font-family: 'Roboto'; font-weight: 500; font-size: 12px; color: #333333; }
+h1, .write-for-us a, .fn, #commentform input#submit, .contact-form input[type="submit"] { font-family: 'Roboto'; font-weight: 700; font-size: 42px; color: #333333; }
+h2 { font-family: 'Roboto'; font-weight: 700; font-size: 36px; color: #333333; }
+h3 { font-family: 'Roboto'; font-weight: 700; font-size: 32px; color: #333333; }
+h4 { font-family: 'Roboto'; font-weight: 700; font-size: 28px; color: #333333; }
+h5 { font-family: 'Roboto'; font-weight: 700; font-size: 24px; color: #333333; }
+h6 { font-family: 'Roboto'; font-weight: 700; font-size: 20px; color: #333333; }
+</style>
+
+<!-- BEGIN ExactMetrics v5.3.7 Universal Analytics - https://exactmetrics.com/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-58555002-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END ExactMetrics Universal Analytics -->
+
+<script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/f.txt"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-9379665029861449",
+          enable_page_level_ads: true
+     });
+</script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body data-rsssl="1" id="blog" class="post-template-default single single-post postid-3550 single-format-standard main" itemscope="" itemtype="http://schema.org/WebPage" data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;" bis_skin_checked="1"></div><a id="move-to-top" class="animate filling" href="https://electronicspost.com/forwarding-and-routing-in-network-layer/#blog" bis_skin_checked="1"><i class="fa fa-chevron-up"></i></a>
+			<header id="site-header" class="main-header" role="banner" itemscope="" itemtype="http://schema.org/WPHeader">
+			<div class="container" bis_skin_checked="1">
+				<div id="header" bis_skin_checked="1">
+					<div class="logo-wrap" bis_skin_checked="1">
+						
+															<h2 id="logo" class="text-logo" itemprop="headline">
+									<a href="https://electronicspost.com/" bis_skin_checked="1">Electronics Post</a>
+								</h2><!-- END #logo -->
+							
+											</div>
+					
+							
+						<div class="secondary-navigation" role="navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement" bis_skin_checked="1">
+							<a href="https://electronicspost.com/forwarding-and-routing-in-network-layer/#" id="pull" class="toggle-mobile-menu" bis_skin_checked="1">Menu</a>
+															<nav id="navigation" class="navigation clearfix mobile-menu-wrapper">
+																			<ul id="menu-newspaper" class="menu clearfix toggle-menu"><li id="menu-item-4234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4234"><a href="https://electronicspost.com/" bis_skin_checked="1"><i class="fa fa-home"></i> Home</a></li>
+<li id="menu-item-5476" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5476"><a href="https://electronicspost.com/basic-electronics-tutorials/" bis_skin_checked="1">Basic Electronics Tutorials</a></li>
+<li id="menu-item-4238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4238 toggle-menu-item-parent"><a href="https://electronicspost.com/tutorials/" bis_skin_checked="1"><i class="fa fa-cogs"></i> Tutorials</a>
+<ul class="sub-menu toggle-submenu" style="display: none;">
+	<li id="menu-item-4241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4241"><a href="https://electronicspost.com/basic-electronics-tutorials/" bis_skin_checked="1">Basic Electronics</a></li>
+	<li id="menu-item-4242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4242"><a href="https://electronicspost.com/computer-networking-tutorials/" bis_skin_checked="1">Computer Networking</a></li>
+	<li id="menu-item-4841" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4841"><a href="https://electronicspost.com/communication-tutorials/" bis_skin_checked="1">Communication</a></li>
+</ul>
+<span class="toggle-caret"><i class="fa fa-plus"></i></span></li>
+<li id="menu-item-4243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4243"><a href="https://electronicspost.com/basic-electronics-questions-and-answers/" bis_skin_checked="1">Basic Electronics Questions</a></li>
+<li id="menu-item-4237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4237"><a href="https://electronicspost.com/about/" bis_skin_checked="1"><i class="fa fa-cube"></i> About</a></li>
+<li id="menu-item-4240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4240"><a href="https://electronicspost.com/contact-us/" bis_skin_checked="1">Contact Us</a></li>
+</ul>																	</nav>
+													<div id="mobile-menu-overlay" bis_skin_checked="1"></div></div>  
+					  
+
+											<div class="head-search" bis_skin_checked="1">
+							<i class="fa fa-search search-trigger"></i>
+							
+<form method="get" id="searchform" class="search-form" action="https://electronicspost.com/" _lpchecked="1">
+	<fieldset>
+		<input type="text" name="s" id="s" value="" placeholder="Search the site">
+		<button id="search-image" class="sbutton" type="submit" value="">
+				<i class="fa fa-search"></i>
+			</button>
+	</fieldset>
+</form>						</div>
+										
+					
+				</div><!--#header-->
+			</div><!--.container-->
+		</header>					   
+		
+	
+	<div class="main-container" bis_skin_checked="1">
+	<div id="page" class="single clearfix" bis_skin_checked="1">
+		<article class="article">
+							<meta content="https://electronicspost.com/wp-content/uploads/2016/05/4.2.png">
+						<div id="content_box" bis_skin_checked="1">
+									<div id="post-3550" class="g post post-3550 type-post status-publish format-standard hentry category-computer-networking" bis_skin_checked="1">
+						
+									<div class="single_post" bis_skin_checked="1">
+																				<div class="post-single-content-wrap" bis_skin_checked="1">
+																						<div class="post-single-content box mark-links entry-content" bis_skin_checked="1">
+																								<header>
+													<h1 class="title single-title entry-title">Forwarding and Routing in Network Layer</h1>
+																<div class="post-info" bis_skin_checked="1">
+								<span class="thecategory" style="background: ;"><a href="https://electronicspost.com/category/computer-networking/" title="View all posts in Computer Networking" bis_skin_checked="1">Computer Networking</a></span>
+							<span class="theauthor"><span>By <a href="https://electronicspost.com/author/garud/" title="Posts by Jhasketan Garud" rel="author" bis_skin_checked="1">Jhasketan Garud</a></span></span>
+							<span class="thetime date updated"><span>May 12, 2016</span></span>
+						</div>
+														</header><!--.headline_area-->
+																								<div class="thecontent" bis_skin_checked="1">
+													
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;" bis_skin_checked="1">
+<script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/f.txt"></script>
+<!-- EP Beginning -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9379665029861449" data-ad-slot="7699319403" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h2>Forwarding and Routing in Network Layer</h2>
+<p>The role of the network layer is thus deceptively simple – to move packets from a sending host to a receiving host. To do so, two important network-layer functions can be identified:</p>
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;" bis_skin_checked="1">
+<script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/f.txt"></script>
+<!-- EP After First Para -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9379665029861449" data-ad-slot="7124604330" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<p><strong>Forwarding</strong></p>
+<p>When a packet arrives at a router’s input link, the router must move the packet to the appropriate output link. For example, a packet arriving from Host H1 to Router R1 must be forwarded to the next router on a path to H2.</p>
+<p><strong>Routing</strong></p>
+<p>The network layer must determine the route or path taken by packets as they flow from a sender to a receiver. The algorithms that calculate these paths are referred to as routing algorithms. A routing algorithm would determine, for example, the path along which packets flow from H1 to H2.</p>
+<p>The terms forwarding and routing are often used interchangeably by writers discussing network layers. We’ll use these terms more precisely in this book.</p>
+<p><strong>Forwarding</strong> refers to the router-local action of transferring packet from an input link interface to the appropriate output link interface.</p>
+<p><strong>Routing </strong>refers to the network-wide process that determines the end-to-end paths that packets take from source to destination.</p>
+<p>Using a driving analogy, consider the trip from Pennsylvania to Florida undertaken by our traveller discussed earlier. During this trip, our driver passes through many interchanges en route to Florida. We can think of forwarding as the process of getting through a single interchange: A car enters the interchange from one road and determines which road it should take to leave the interchange. We think of routing as the process of planning the trip from Pennsylvania to Florida: Before embarking on the trip, the driver has consulted a map and chosen one of many paths possible, with each path consisting of a series of road segments connected at interchanges.</p>
+<p>Every router has a <strong>forwarding table</strong>. A router forward a packet by examining the value of a field in the arriving packet’s header, and then using this header value to index into the router’s forwarding table. The value stored in the forwarding table entry for that header indicates the router’s outgoing link interface to which the packet is to be forwarded.</p>
+<p>Depending on the network layer protocol, the header value could be the destination address of the packet or an indication of the connection to which the packet belongs.</p>
+<p>Figure below provides an example.</p>
+<p><img class="size-full wp-image-3551 aligncenter" src="./Forwarding and Routing in Network Layer - Electronics Post_files/4.2.png" alt="Forwarding and Routing in Network Layer" width="552" height="498" srcset="https://electronicspost.com/wp-content/uploads/2016/05/4.2.png 552w, https://electronicspost.com/wp-content/uploads/2016/05/4.2-300x271.png 300w" sizes="(max-width: 552px) 100vw, 552px"></p>
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;" bis_skin_checked="1">
+<script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/f.txt"></script>
+<!-- EP Post Middle Responsive -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9379665029861449" data-ad-slot="8668199412" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<p>In the above figure, a packet with a header field value of 0111 arrives to a router. The router indexes into its forwarding table and determines that the output link interface for this packet is interface 2. The router then internally forwards the packet to interface 2.</p>
+<p>You might be wondering how the forwarding tables in the routers are configured. This is a critical issue, one that exposes the important interplay between routing and forwarding.</p>
+<p>As shown in the figure above, the routing algorithm determines the values that are inserted into the routers’ forwarding tables. The routing algorithm may be centralized (e.g. with an algorithm executing on a central site and downloading routing information to each of the routers) or decentralized (i.e. with a piece of the distributed routing algorithm running in each router). In either case, a router receives routing protocol messages, which are used to configure its forwarding table. The distinct and different purposes of the forwarding and routing functions can be further illustrated by considering the hypothetical (and unrealistic, but technically feasible) case of a network in which all forwarding tables are configures directly by human operators physically present at the routers. In this case, no routing protocols would be required! Of course, the human operators would need to interact with each other to ensure that the forwarding tables were configured in such a way that packets reached their intended destinations. It’s also likely that human configuration would be more error-prone and much slower to respond to changes in the network topology than a routing protocol. We’re thus fortunate that all networks have both a forwarding and a routing function!</p>
+<h4>Connection Setup in Network Layer</h4>
+<p>We just said that the network layer has two important functions, forwarding and routing. But we’ll soon see that in some computer networks there is actually a third important network-layer function, namely, <strong>connection setup</strong>.</p>
+<p>We know that in case of TCP, a three-way handshake is required before data can flow from sender to receiver. This allows the sender and receiver to set up the needed state information (for example, sequence number and initial flow-control window size). In an analogous manner, some network-layer architectures – for example, ATM, frame relay, and MPLS require the routers along the chosen path from source to destination to handshake with each other in order to set up state before network-layer data packets within a given source-to-destination connection can begin to flow. In the network layer, this process is referred to as <strong>connection setup</strong>.</p>
+
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div style="float: none; margin:10px 0 10px 0; text-align:center;" bis_skin_checked="1">
+<script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/f.txt"></script>
+<!-- EP Post End Responsive -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9379665029861449" data-ad-slot="7518769273" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;" bis_skin_checked="1"></div>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$.post('https://electronicspost.com/wp-admin/admin-ajax.php', {action: 'mts_view_count', id: '3550'});
+});
+</script>												</div>
+																																				<!--Recommended for you -->
+																								
+												<!--Author Box -->
+																									<div class="postauthor" bis_skin_checked="1">
+														<img alt="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/cbc4e1fbe63738e1d532a1d30807d0c6.jpeg" srcset="https://secure.gravatar.com/avatar/cbc4e1fbe63738e1d532a1d30807d0c6?s=200&amp;r=g 2x" class="avatar avatar-100 photo hoverZoomLink" height="100" width="100">														<h5 class="vcard author"><a href="https://electronicspost.com/author/garud/" class="fn" bis_skin_checked="1">Jhasketan Garud</a></h5>
+
+																												
+														<p>I am a serial entrepreneur. I have started a web hosting company, a media company and an educational company. I love internet marketing and when I am not doing marketing you can find me reading books on marketing. In short, I can't live without marketing.</p>
+																												
+													</div> 
+																							</div><!--.post-single-content-->
+										</div><!--.post-single-content-wrap-->
+									</div><!--.single_post-->
+														</div><!--.g post-->
+					<!-- You can start editing here. -->
+
+							</div>
+		</article>
+		<aside class="sidebar c-4-12 clearfix" role="complementary" itemscope="" itemtype="http://schema.org/WPSideBar">
+	<div id="sidebars" class="g" bis_skin_checked="1">
+		<div class="sidebar" bis_skin_checked="1">
+			<div id="text-12" class="widget widget_text" bis_skin_checked="1">			<div class="textwidget" bis_skin_checked="1"><script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/f.txt"></script>
+<!-- Side Bar - Reloaded -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-9379665029861449" data-ad-slot="9300407326"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</div><div id="text-13" class="widget widget_text" bis_skin_checked="1">			<div class="textwidget" bis_skin_checked="1"><script async="" src="./Forwarding and Routing in Network Layer - Electronics Post_files/f.txt"></script>
+<!-- Side Bar2 300x600 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9379665029861449" data-ad-slot="5997316129" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</div><div id="categories-2" class="widget widget_categories" bis_skin_checked="1"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-36"><a href="https://electronicspost.com/category/amplifier/" bis_skin_checked="1">Amplifier</a> (10)
+</li>
+	<li class="cat-item cat-item-49"><a href="https://electronicspost.com/category/amplitude-modulation/" bis_skin_checked="1">Amplitude Modulation</a> (18)
+</li>
+	<li class="cat-item cat-item-52"><a href="https://electronicspost.com/category/angle-modulation/" bis_skin_checked="1">Angle Modulation</a> (3)
+</li>
+	<li class="cat-item cat-item-63"><a href="https://electronicspost.com/category/basic-electrical-engineering/" bis_skin_checked="1">Basic Electrical Engineering</a> (1)
+</li>
+	<li class="cat-item cat-item-62"><a href="https://electronicspost.com/category/big-data/" bis_skin_checked="1">Big Data</a> (2)
+</li>
+	<li class="cat-item cat-item-54"><a href="https://electronicspost.com/category/blogging/" bis_skin_checked="1">Blogging</a> (1)
+</li>
+	<li class="cat-item cat-item-16"><a href="https://electronicspost.com/category/boolean-logic/" bis_skin_checked="1">Boolean Logic</a> (2)
+</li>
+	<li class="cat-item cat-item-43"><a href="https://electronicspost.com/category/capacitors/" bis_skin_checked="1">Capacitors</a> (2)
+</li>
+	<li class="cat-item cat-item-53"><a href="https://electronicspost.com/category/career-advice/" bis_skin_checked="1">Career Advice</a> (4)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://electronicspost.com/category/combinational-circuit/" bis_skin_checked="1">Combinational Circuit</a> (7)
+</li>
+	<li class="cat-item cat-item-50"><a href="https://electronicspost.com/category/communication/" bis_skin_checked="1">Communication</a> (22)
+</li>
+	<li class="cat-item cat-item-59"><a href="https://electronicspost.com/category/computer-networking/" bis_skin_checked="1">Computer Networking</a> (73)
+</li>
+	<li class="cat-item cat-item-55"><a href="https://electronicspost.com/category/conversion-rate-optimization/" bis_skin_checked="1">Conversion Rate Optimization</a> (2)
+</li>
+	<li class="cat-item cat-item-20"><a href="https://electronicspost.com/category/converters/" bis_skin_checked="1">Converters</a> (1)
+</li>
+	<li class="cat-item cat-item-38"><a href="https://electronicspost.com/category/cro/" bis_skin_checked="1">CRO</a> (5)
+</li>
+	<li class="cat-item cat-item-58"><a href="https://electronicspost.com/category/dc-dc-converters/" bis_skin_checked="1">DC-DC Converters</a> (2)
+</li>
+	<li class="cat-item cat-item-31"><a href="https://electronicspost.com/category/diac/" bis_skin_checked="1">Diac</a> (1)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://electronicspost.com/category/differential-amplifier/" bis_skin_checked="1">Differential Amplifier</a> (1)
+</li>
+	<li class="cat-item cat-item-57"><a href="https://electronicspost.com/category/digital-multiplexing/" bis_skin_checked="1">Digital multiplexing</a> (1)
+</li>
+	<li class="cat-item cat-item-64"><a href="https://electronicspost.com/category/basic-electrical-engineering/electric-current-and-ohms-law/" bis_skin_checked="1">Electric Current and Ohm's Law</a> (1)
+</li>
+	<li class="cat-item cat-item-60"><a href="https://electronicspost.com/category/electronics-and-communication-engineering-questions-and-answers/" bis_skin_checked="1">Electronics and Communication Engineering Questions and Answers</a> (3)
+</li>
+	<li class="cat-item cat-item-51"><a href="https://electronicspost.com/category/electronics-instruments/" bis_skin_checked="1">Electronics Instruments</a> (1)
+</li>
+	<li class="cat-item cat-item-41"><a href="https://electronicspost.com/category/electronics-questions-and-answers/" bis_skin_checked="1">Electronics Questions and Answers</a> (20)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://electronicspost.com/category/filter-circuits/" bis_skin_checked="1">Filter Circuits</a> (9)
+</li>
+	<li class="cat-item cat-item-66"><a href="https://electronicspost.com/category/founder-speaks/" bis_skin_checked="1">Founder Speaks</a> (3)
+</li>
+	<li class="cat-item cat-item-71"><a href="https://electronicspost.com/category/gate-questions-and-answers/" bis_skin_checked="1">GATE Questions and Answers</a> (1)
+</li>
+	<li class="cat-item cat-item-27"><a href="https://electronicspost.com/category/integrated-circuits/" bis_skin_checked="1">Integrated Circuits</a> (7)
+</li>
+	<li class="cat-item cat-item-72"><a href="https://electronicspost.com/category/interview/" bis_skin_checked="1">Interview</a> (8)
+</li>
+	<li class="cat-item cat-item-70"><a href="https://electronicspost.com/category/jk-flip-flop/" bis_skin_checked="1">JK Flip Flop</a> (3)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://electronicspost.com/category/logic-circuits/" bis_skin_checked="1">Logic circuits</a> (1)
+</li>
+	<li class="cat-item cat-item-46"><a href="https://electronicspost.com/category/logic-gates-and-boolean-algebra/" bis_skin_checked="1">Logic Gates and Boolean Algebra</a> (10)
+</li>
+	<li class="cat-item cat-item-45"><a href="https://electronicspost.com/category/electronics-questions-and-answers/long-questions-and-answers/" bis_skin_checked="1">Long Questions and Answers</a> (3)
+</li>
+	<li class="cat-item cat-item-73"><a href="https://electronicspost.com/category/mcq/" bis_skin_checked="1">MCQ</a> (3)
+</li>
+	<li class="cat-item cat-item-44"><a href="https://electronicspost.com/category/electronics-questions-and-answers/multiple-choice-questions-and-answers/" bis_skin_checked="1">Multiple Choice Questions and Answers</a> (56)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://electronicspost.com/category/number-system/" bis_skin_checked="1">Number System</a> (1)
+</li>
+	<li class="cat-item cat-item-13"><a href="https://electronicspost.com/category/operational-amplifier/" bis_skin_checked="1">Operational Amplifier</a> (3)
+</li>
+	<li class="cat-item cat-item-61"><a href="https://electronicspost.com/category/oscilloscopes/" bis_skin_checked="1">Oscilloscopes</a> (2)
+</li>
+	<li class="cat-item cat-item-74"><a href="https://electronicspost.com/category/pcb/" bis_skin_checked="1">PCB</a> (28)
+</li>
+	<li class="cat-item cat-item-69"><a href="https://electronicspost.com/category/popular/" bis_skin_checked="1">Popular</a> (3)
+</li>
+	<li class="cat-item cat-item-48"><a href="https://electronicspost.com/category/product-reviews/" bis_skin_checked="1">Product Reviews</a> (1)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://electronicspost.com/category/relay/" bis_skin_checked="1">Relay</a> (2)
+</li>
+	<li class="cat-item cat-item-39"><a href="https://electronicspost.com/category/resistors/" bis_skin_checked="1">Resistors</a> (4)
+</li>
+	<li class="cat-item cat-item-26"><a href="https://electronicspost.com/category/scr/" bis_skin_checked="1">SCR</a> (3)
+</li>
+	<li class="cat-item cat-item-32"><a href="https://electronicspost.com/category/semiconductor/" bis_skin_checked="1">Semiconductor</a> (6)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://electronicspost.com/category/semiconductor-diode/" bis_skin_checked="1">Semiconductor Diode</a> (7)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://electronicspost.com/category/sequential-circuit/" bis_skin_checked="1">Sequential Circuit</a> (3)
+</li>
+	<li class="cat-item cat-item-42"><a href="https://electronicspost.com/category/electronics-questions-and-answers/short-questions-and-answers/" bis_skin_checked="1">Short Questions and Answers</a> (15)
+</li>
+	<li class="cat-item cat-item-47"><a href="https://electronicspost.com/category/signal-processing/" bis_skin_checked="1">Signal Processing</a> (3)
+</li>
+	<li class="cat-item cat-item-12"><a href="https://electronicspost.com/category/sinusoidal-oscillator/" bis_skin_checked="1">Sinusoidal Oscillator</a> (3)
+</li>
+	<li class="cat-item cat-item-33"><a href="https://electronicspost.com/category/special-purpose-diodes/" bis_skin_checked="1">Special Purpose Diodes</a> (1)
+</li>
+	<li class="cat-item cat-item-14"><a href="https://electronicspost.com/category/switching-circuits/" bis_skin_checked="1">Switching Circuits</a> (2)
+</li>
+	<li class="cat-item cat-item-24"><a href="https://electronicspost.com/category/tech/" bis_skin_checked="1">Tech</a> (16)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://electronicspost.com/category/tech-news/" bis_skin_checked="1">Tech News</a> (2)
+</li>
+	<li class="cat-item cat-item-8"><a href="https://electronicspost.com/category/transistor/" bis_skin_checked="1">Transistor</a> (10)
+</li>
+	<li class="cat-item cat-item-30"><a href="https://electronicspost.com/category/triac/" bis_skin_checked="1">Triac</a> (1)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://electronicspost.com/category/uncategorized/" bis_skin_checked="1">Uncategorized</a> (8)
+</li>
+	<li class="cat-item cat-item-65"><a href="https://electronicspost.com/category/vlsi-design/" bis_skin_checked="1">VLSI Design</a> (5)
+</li>
+	<li class="cat-item cat-item-35"><a href="https://electronicspost.com/category/voltage-regulator/" bis_skin_checked="1">Voltage Regulator</a> (11)
+</li>
+	<li class="cat-item cat-item-75"><a href="https://electronicspost.com/category/voltage-stabilizer/" bis_skin_checked="1">Voltage Stabilizer</a> (1)
+</li>
+	<li class="cat-item cat-item-76"><a href="https://electronicspost.com/category/voltage-stabilizer/voltage-stabilizer-voltage-stabilizer/" bis_skin_checked="1">Voltage Stabilizer</a> (1)
+</li>
+	<li class="cat-item cat-item-56"><a href="https://electronicspost.com/category/waveform-waveform-coding-techniques/" bis_skin_checked="1">Waveform coding techniques</a> (2)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://electronicspost.com/category/zener-diode/" bis_skin_checked="1">Zener Diode</a> (1)
+</li>
+		</ul>
+</div>		</div>
+	</div><!--sidebars-->
+</aside>
+	
+	</div><!--#page-->
+</div><!--.main-container-->
+<footer id="site-footer" class="footer" role="contentinfo" itemscope="" itemtype="http://schema.org/WPFooter">
+	<div class="container" bis_skin_checked="1">
+		
+					<div class="footer-widgets first-footer-widgets widgets-num-3" bis_skin_checked="1">
+									<div class="f-widget f-widget-1" bis_skin_checked="1">
+						<div id="nav_menu-2" class="widget widget_nav_menu toggle-menu" bis_skin_checked="1"><div class="menu-footer-1-container" bis_skin_checked="1"><ul id="menu-footer-1" class="menu"><li id="menu-item-4148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4148"><a href="https://electronicspost.com/sitemap/" bis_skin_checked="1">Sitemap</a></li>
+<li id="menu-item-2957" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2957"><a href="https://electronicspost.com/privacy-policy/" bis_skin_checked="1">Privacy Policy</a></li>
+<li id="menu-item-2961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2961"><a href="https://electronicspost.com/terms-of-use/" bis_skin_checked="1">Terms of Use</a></li>
+</ul></div></div>					</div>
+									<div class="f-widget f-widget-2" bis_skin_checked="1">
+						<div id="nav_menu-3" class="widget widget_nav_menu toggle-menu" bis_skin_checked="1"><div class="menu-footer-2-container" bis_skin_checked="1"><ul id="menu-footer-2" class="menu"><li id="menu-item-4236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4236"><a href="https://electronicspost.com/about/" bis_skin_checked="1">About</a></li>
+<li id="menu-item-4235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4235"><a href="https://electronicspost.com/contact-us/" bis_skin_checked="1">Contact Us</a></li>
+</ul></div></div>					</div>
+									<div class="f-widget last f-widget-3" bis_skin_checked="1">
+											</div>
+							</div><!--.first-footer-widgets-->
+			  
+	   
+		
+		<div class="copyrights " bis_skin_checked="1">
+						<!--start copyrights-->
+<div class="row" id="copyright-note" bis_skin_checked="1">
+		<span><a href="https://electronicspost.com/" title=" The Best Electronics Blog" bis_skin_checked="1">Electronics Post</a> Copyright © 2019.</span>
+	<div class="to-top" bis_skin_checked="1">ElectronicsPost.com is a participant in the Amazon Services LLC Associates Program, and we get a commission on purchases made through our links.</div>
+</div>
+<!--end copyrights-->
+		</div> 
+	</div><!--.container-->
+</footer><!--footer-->
+	<link rel="stylesheet" id="responsive-css" href="./Forwarding and Routing in Network Layer - Electronics Post_files/responsive.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/electronicspost.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Forwarding and Routing in Network Layer - Electronics Post_files/scripts.js"></script>
+<script type="text/javascript" src="./Forwarding and Routing in Network Layer - Electronics Post_files/wp-embed.min.js"></script>
+
+<script type="text/javascript" src="./Forwarding and Routing in Network Layer - Electronics Post_files/MathJax.js"></script><script id="texAllTheThingsPageScript" type="text/javascript" src="chrome-extension://cbimabofgmfdkicghcadidpemeenbffn/js/pageScript.js" inlinemath="[[&quot;$&quot;,&quot;$&quot;],[&quot;[;&quot;,&quot;;]&quot;]]" displaymath="[[&quot;$$&quot;,&quot;$$&quot;],[&quot;\\[&quot;,&quot;\\]&quot;]]" skiptags="[&quot;script&quot;,&quot;noscript&quot;,&quot;style&quot;,&quot;textarea&quot;,&quot;pre&quot;,&quot;code&quot;]"></script></body></html>

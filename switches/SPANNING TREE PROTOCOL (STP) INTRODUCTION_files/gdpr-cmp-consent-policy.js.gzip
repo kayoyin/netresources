@@ -1,0 +1,86 @@
+// Create the queue for the callbacks
+var dummiesCMP = dummiesCMP || {};
+
+dummiesCMP.onShow = {
+  que: []
+};
+
+dummiesCMP.onDismiss = {
+  que: []
+};
+
+dummiesCMP.onComplete = {
+  que: []
+};
+
+// Push to the queues for each callback function
+dummiesCMP.onComplete.que.push( function(){
+
+  LOG("onComplete.que.push");
+
+  if (typeof setNonPersonalizedAds === "function") {
+    // Fire if available and set based on consent
+    setNonPersonalizedAds();
+  } else {
+
+    LOG("%c setNonPersonalizedAds() not available", 'color: #FF0000; font-weight: 900;');
+  }
+});
+
+dummiesCMP.onShow.que.push( function(){
+
+  LOG("onShow.que.push");
+
+  if (typeof setPBJSConsent === "function") {
+    // EEA user, set pbjs.consentManagement
+    setPBJSConsent();
+  } else {
+
+    LOG("%c setNonPersonalizedAds() not available", 'color: #FF0000; font-weight: 900;');
+  }
+});
+
+dummiesCMP.onDismiss.que.push( function(){
+
+  LOG("onDismiss.que.push");
+});
+
+// Conversant callbacks not in use
+DummiesOnConsentAll = function(){
+  LOG("DummiesOnConsentAll");
+};
+
+DummiesOnNoConsentAll = function(){
+  LOG("DummiesOnNoConsentAll");
+};
+
+DummiesOnConsentSome = function(){
+  LOG("DummiesOnConsentSome");
+};
+
+// Callbacks (set by Conversant) to run the array of functions
+DummiesOnGDPRComplete = function(){
+
+  LOG("DummiesOnGDPRComplete");
+
+  for( var funcs in dummiesCMP.onComplete.que ) {
+    dummiesCMP.onComplete.que[funcs]();
+  }
+};
+
+DummiesOnCMPShow = function(){
+
+  LOG("DummiesOnCMPShow");
+
+  for( var funcs in dummiesCMP.onShow.que ) {
+    dummiesCMP.onShow.que[funcs]();
+  }
+};
+
+DummiesOnCMPDismiss = function(){
+  LOG("DummiesOnCMPDismiss");
+
+  for( var funcs in dummiesCMP.onDismiss.que ) {
+    dummiesCMP.onDismiss.que[funcs]();
+  }
+};

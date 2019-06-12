@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol -->
+<html class="no-js gt-ie8 gr__searchnetworking_techtarget_com" dir="ltr" lang="en" prefix="og: http://ogp.me/ns#" itemscope="" itemtype="http://schema.org/Article"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/linkid.js"></script><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/7034.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/analytics.js"></script><script async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/gtm.js"></script><script async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/index.php"></script><script type="text/javascript" async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/geo2.js"></script>
+	
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+			<title>What is BGP (Border Gateway Protocol)? - Definition from WhatIs.com</title>
+			<meta name="viewport" content="width=device-width,initial-scale=1">
+			<meta name="description" content="BGP (Border Gateway Protocol) is the standard used to exchange internet routing information between edge routers to ensure packets reach their destinations.">
+			<meta name="robots" content="noodp">
+			<link rel="canonical" href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol">
+			<meta property="og:title" content="What is BGP (Border Gateway Protocol)? - Definition from WhatIs.com">
+			<meta property="og:site_name" content="SearchNetworking">
+			<meta property="og:url" content="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol">
+			<meta property="og:description" content="BGP (Border Gateway Protocol) is the standard used to exchange internet routing information between edge routers to ensure packets reach their destinations.">
+			<meta property="fb:app_id" content="870327132989388">
+			<meta property="og:type" content="article">
+			<meta property="og:locale" content="en_US">
+			<meta property="article:publisher" content="https://www.facebook.com/pages/Search-Networking/165021663645056">
+			<meta itemprop="name" content="What is BGP (Border Gateway Protocol)? - Definition from WhatIs.com">
+			<meta itemprop="description" content="BGP (Border Gateway Protocol) is the standard used to exchange internet routing information between edge routers to ensure packets reach their destinations.">
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:site" content="@networkingtt">
+			<meta name="twitter:title" content="What is BGP (Border Gateway Protocol)? - Definition from WhatIs.com">
+			<meta name="twitter:description" content="BGP (Border Gateway Protocol) is the standard used to exchange internet routing information between edge routers to ensure packets reach their destinations.">
+			<meta property="og:image" content="https://cdn.ttgtmedia.com/ITKE/images/logos/TTlogo-379x201.png">
+			<meta itemprop="image" content="https://cdn.ttgtmedia.com/ITKE/images/logos/TTlogo-379x201.png">
+			<meta name="twitter:image" content="https://cdn.ttgtmedia.com/ITKE/images/logos/TTlogo-379x201.png">
+			<meta name="twitter:creator" content="@whatisdotcom">
+			<script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/jquery.min.js"></script><script>(function(){var a=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(){this.requestMethod=arguments[0],a.apply(this,arguments)};var h=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.send=function(){var i=this.onreadystatechange;return this.onreadystatechange=function(){if(4===this.readyState){var j='detector',k={posdMessageId:'PANELOS_MESSAGE',type:'VIDEO_XHR_CANDIDATE',from:j,to:j.substring(0,j.length-2),content:{requestMethod:this.requestMethod,url:this.responseURL,type:this.getResponseHeader('content-type'),content:this.response}};window.postMessage(k,'*')}return i?i.apply(this,arguments):void 0},h.apply(this,arguments)}})();</script><link rel="stylesheet" href="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/main.css"><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/responsive.min.js"></script><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/148927072.js"></script><script>
+TT("page", {"topical":true,"parentTopicName":"Topics","siteName":"searchNetworking","appCode":"0","uaid":"UA-19046353-3","uid":"213813","adAbbr":"snet","parentTopicId":"298384","zone":"DEFINITION","ga":true,"id":"967733e921bb2210VgnVCM1000000d01c80aRCRD","lang":"en","regTopicName":"Telecommunication Networking","timestamp":"2019-06-12 02:02:17","siteType":"editorial","gaPageTrackUrl":"/page/etpk_Topics-298384/ptpk_Telecommunication networking-252452390/true/DEFINITION/content/cid_213813/date_20160915/mem_0/rtpk_Telecommunication Networking-1358788/idx_0","homeAdId":"2240012912","uidType":"content","regTopicId":"1358788","pubDate":"20160915","adScheme":"1","ttgtRegHost":"https://users.techtarget.com","atHost":"https://go.techtarget.com","regHost":"https://users.techtarget.com","topicId":"252452390","adId":"213813","pageIndex":0,"siteId":7,"topicName":"Telecommunication networking","topicIds":["252452390","2240024072","307561","307573","2240113857","2240113896"],"gaSiteAcct":"UA-19046353-3"});
+</script>
+
+<!-- Begin Chartbeat -->
+		<script>var _sf_startpt=(new Date()).getTime();</script><!-- End Chartbeat -->
+	<link rel="shortcut icon" type="image/x-icon" href="https://searchnetworking.techtarget.com/favicon.ico">
+	<link rel="apple-touch-icon" sizes="144×144" href="https://searchnetworking.techtarget.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="114×114" href="https://searchnetworking.techtarget.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72×72" href="https://searchnetworking.techtarget.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" href="https://searchnetworking.techtarget.com/apple-touch-icon-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144×144" href="https://searchnetworking.techtarget.com/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114×114" href="https://searchnetworking.techtarget.com/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72×72" href="https://searchnetworking.techtarget.com/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="https://searchnetworking.techtarget.com/apple-touch-icon-precomposed.png">
+
+	<script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/advertisement.js"></script><script async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/hotjar-11806.js"></script><script type="text/javascript" async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/dpm_b4c96d80854dd27e76d8cc9e21960eebda52e962.min.js"></script><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/auto_opt_in-v2.0.1083.js"></script><script async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/modules.a9894e447a8519cd0d08.js"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/sp-bootstrap.js"></script><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/f.txt"></script><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/f(1).txt"></script><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/sp-msg.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><iframe name="__cmpLocator" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/saved_resource.html"></iframe><script>(function () { var cookie='consentUUID=1c36a2ca-3d94-4c04-b024-20a24c10c164; Path=/; Max-Age=31536000; expires=Thu, 11 Jun 2020 06:02:19 GMT;';
+if (false) {
+  var h = window.location && window.location.hostname;
+  if (h) {
+    var rc = /\.co\.uk$/.test(h) ? 3 : 2;
+    var ha = h.split('.');
+    var rda = ha.slice(ha.length - rc);
+    if (rda.length > 1) {
+      var rd = rda.join('.');
+      cookie += ' Domain=' + rd + ';';
+    }
+  }
+}
+document.cookie = cookie;
+ })();</script><script>(function () { var cookie='euconsent=BOh_FRLOh_FRLAcABBFRCO-AAAAml7_______9______9uz_Ov_v_f__33e8__9v_l_7_-___u_-3zd4-_1vf99yfm1-7etr3tp_87ues2_Xur__59__3z3_9phPrsk89r60; Path=/; Max-Age=31536000; expires=Thu, 11 Jun 2020 06:02:19 GMT;';
+if (false) {
+  var h = window.location && window.location.hostname;
+  if (h) {
+    var rc = /\.co\.uk$/.test(h) ? 3 : 2;
+    var ha = h.split('.');
+    var rda = ha.slice(ha.length - rc);
+    if (rda.length > 1) {
+      var rd = rda.join('.');
+      cookie += ' Domain=' + rd + ';';
+    }
+  }
+}
+document.cookie = cookie;
+ })();</script><script>(function () { window.__cmp && typeof window.__cmp.hasConsentData === "function" && window.__cmp.hasConsentData(); })();</script><script>(function () { var d = new Date(); d.setTime(d.getTime()+90*24*60*60*1000); document.cookie='_sp_enable_dfp_personalized_ads=true; Path=/; Max-Age=7776000; expires='+d.toGMTString()+';'; })();</script><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/aanciV-R3RyI2widiNybHciTCVKPjNucHB8JHsjbHZxSkBEPTNub31KIyEkcjMhcnNyISFyIUp1IyN9IjJATjI_UzI_UyYmJjt0fHx0eXI7cHx6Mj9TMyJyIiJ2fHtsIXJzciEhciFKdSMjfSIyQE4yP1MyP1MmJiY7dHx8dHlyO3B8ejI_UzMiciIidnx7bHpyIiJudHJscHwkeyNKPTN3JUo_Oz07Pj4-QjNwcXBKJnZ7cXwmO2wifWw7eiJ0"></script><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style>/* Default settings */
+.sp_veil1560319339344 {
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 99999999;
+  display: block;
+  overflow: hidden;
+}
+
+.sp_message1560319339344 {
+    z-index: 99999999;
+}
+
+button.sp_choice1560319339344 {
+  outline: none;
+  cursor: pointer;
+}
+
+.sp_message_dismiss1560319339344 {
+  outline: none;
+  cursor: pointer;
+}
+
+#sp_message_id1560319339344 .sp_choice-21560319339344{
+    display:none;
+}
+
+.sp_veil1560319339344 iframe {
+    overflow: hidden;
+    z-index: 9999998;
+}
+
+.sp_iframe_container1560319339344 {
+    position: fixed;
+    z-index: 9999999;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sp_iframe_container1560319339344 iframe {
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+    overflow: hidden;
+}
+
+/* START CUSTOMIZATION HERE */
+/* Background overlay */
+#bg-overlay {
+    position: fixed;
+    overflow: hidden;
+    background: #000000;
+    opacity: 0.5;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/* Message modal */
+.sp_message_panel1560319339344 {
+    width: auto;
+    background-color: #F5F5F5;
+    padding: 15px;
+    z-index: 99999999;
+}
+
+.sp_message_column1560319339344.sp_message_content1560319339344 {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  z-index: 99999999;
+}
+
+/* Close button */
+.sp_message_dismiss1560319339344 {
+    display: none;
+}
+
+.sp_message_body1560319339344 {
+  margin-right: 30px;
+}
+
+/* Title text */
+.sp_message_title1560319339344 {
+  font-family: Arial;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* Body text */
+.sp_message_text1560319339344 {
+    font-family: Arial;
+    font-size:12px;
+    margin:10px 0;
+    line-height: 130%;
+}
+
+a {
+  color: #00A69F;
+}
+
+a:hover{
+    color: #006860;
+}
+
+span.sp_pm_link1560319339344{
+     color: #00A69F;
+     cursor: pointer;
+}
+span:hover.sp_pm_link1560319339344{
+     color: #006860;
+}
+
+/* Choice options */
+.sp_choices1560319339344 {
+  display: flex;
+  flex-direction: row;
+}
+
+button.sp_choice1560319339344 {
+    border:0px;
+    background-color: #f0f0f0;
+    padding:10px 15px;
+    border-radius: 5px;
+}
+
+button.sp_choice-01560319339344 {
+    background-color: #00A69F;
+    color: #fff;
+    padding:10px 25px;
+    border-radius: 5px;
+    font-size:16px;
+    font-weight: 600;
+}
+
+button.sp_choice-11560319339344 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+    padding:10px;
+    font-size:16px;
+}
+
+/* Button Hover */
+button.sp_choice1560319339344:hover {
+  opacity: .8;
+}
+
+/* Button Pressed */
+button.sp_choice1560319339344:active {
+  opacity: .6;
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+
+.sp_message_panel1560319339344 {
+  width: 90%;
+}
+
+.sp_message_column1560319339344.sp_message_content1560319339344 {
+  flex-direction: column;
+  align-items: baseline;
+  z-index: 99999999;
+}
+.sp_message_body1560319339344 {
+  margin-right: 0px;
+}</style><script>(function () { var cookie='consentUUID=1c36a2ca-3d94-4c04-b024-20a24c10c164; Max-Age=31536000; expires=Thu, 11 Jun 2020 06:02:19 GMT;';
+if (false) {
+  var h = window.location && window.location.hostname;
+  if (h) {
+    var rc = /\.co\.uk$/.test(h) ? 3 : 2;
+    var ha = h.split('.');
+    var rda = ha.slice(ha.length - rc);
+    if (rda.length > 1) {
+      var rd = rda.join('.');
+      cookie += ' Domain=' + rd + ';';
+    }
+  }
+}
+document.cookie = cookie;
+ })();</script><script>(function () { var cookie='consentUUID=1c36a2ca-3d94-4c04-b024-20a24c10c164; Path=/; Max-Age=31536000; expires=Thu, 11 Jun 2020 06:02:19 GMT;';
+if (false) {
+  var h = window.location && window.location.hostname;
+  if (h) {
+    var rc = /\.co\.uk$/.test(h) ? 3 : 2;
+    var ha = h.split('.');
+    var rda = ha.slice(ha.length - rc);
+    if (rda.length > 1) {
+      var rd = rda.join('.');
+      cookie += ' Domain=' + rd + ';';
+    }
+  }
+}
+document.cookie = cookie;
+ })();</script><script>(function () { var cookie='euconsent=BOh_FRLOiBdYyAGABBENCW-AAAAn57_______9______9uz_Ov_v_f__33e8__9v_l_7_-___u_-3zd4-_1vf99yfm1-7etr3tp_87ues2_Xur__59__3z3_9phPrsk89r60AAAA; Max-Age=31536000; expires=Thu, 11 Jun 2020 06:02:19 GMT;';
+if (false) {
+  var h = window.location && window.location.hostname;
+  if (h) {
+    var rc = /\.co\.uk$/.test(h) ? 3 : 2;
+    var ha = h.split('.');
+    var rda = ha.slice(ha.length - rc);
+    if (rda.length > 1) {
+      var rd = rda.join('.');
+      cookie += ' Domain=' + rd + ';';
+    }
+  }
+}
+document.cookie = cookie;
+ })();</script><script>(function () { var cookie='euconsent=BOh_FRLOiBdYyAGABBENCW-AAAAn57_______9______9uz_Ov_v_f__33e8__9v_l_7_-___u_-3zd4-_1vf99yfm1-7etr3tp_87ues2_Xur__59__3z3_9phPrsk89r60AAAA; Path=/; Max-Age=31536000; expires=Thu, 11 Jun 2020 06:02:19 GMT;';
+if (false) {
+  var h = window.location && window.location.hostname;
+  if (h) {
+    var rc = /\.co\.uk$/.test(h) ? 3 : 2;
+    var ha = h.split('.');
+    var rda = ha.slice(ha.length - rc);
+    if (rda.length > 1) {
+      var rd = rda.join('.');
+      cookie += ' Domain=' + rd + ';';
+    }
+  }
+}
+document.cookie = cookie;
+ })();</script><script>(function () { window.__cmp && typeof window.__cmp.hasConsentData === "function" && window.__cmp.hasConsentData(); })();</script><script>(function () { var d = new Date(); d.setTime(d.getTime()+90*24*60*60*1000); document.cookie='_sp_enable_dfp_personalized_ads=true; Path=/; Max-Age=7776000; expires='+d.toGMTString()+';'; })();</script></head>
+<body id="sdef" data-gr-c-s-loaded="true" style="" class="header-desktop-fixed"><div id="MathJax_Message" bis_skin_checked="1" style="display: none;"></div>
+	<!-- Begin Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PWWZSH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PWWZSH');</script><!-- End Google Tag Manager -->
+	<div id="site-container" class="site-container" bis_skin_checked="1" style=""><div id="cmp-banner" bis_skin_checked="1"><div id="sp_message_id1560319339344" class="sp_message_container1560319339344" style="display: block;" bis_skin_checked="1"><div class="sp_message1560319339344" style="display: block;" bis_skin_checked="1"><div id="sp_message_panel_id1560319339344" class="sp_message_panel1560319339344" bis_skin_checked="1"><div class="sp_message_frame1560319339344" bis_skin_checked="1"><div class="sp_message_row1560319339344" bis_skin_checked="1"><button class="sp_message_dismiss1560319339344">x</button><div class="sp_side_image1560319339344 sp_left_image1560319339344 sp_message_column1560319339344" bis_skin_checked="1"></div><div class="sp_message_column1560319339344 sp_message_content1560319339344" bis_skin_checked="1"><div class="sp_message_body1560319339344" id="sp_message_body_id1560319339344" bis_skin_checked="1"><div class="sp_message_title1560319339344" bis_skin_checked="1">Privacy Notice</div><div class="sp_message_text1560319339344" bis_skin_checked="1">TechTarget and its partners employ technology such as cookies to improve user experience, performance, for personalizing content and advertising. For more information, see our <b><a href="https://www.techtarget.com/cookie-policy/?utm_source=cmp&amp;utm_medium=banner&amp;utm_campaign=consent&amp;utm_term=cookie" target="_blank">Cookie Policy</a></b> or to manage your preferences, <b><span onclick="javascript:cipheredClassName = _sp_.msg.getMorphedClassName(&#39;sp_choice_type_12&#39;);var el = document.getElementsByClassName(cipheredClassName)[0];el.click();" class="sp_pm_link1560319339344">click here.</span>
+</b> By closing this message box or continuing to use our site, you agree to our use of cookies  and our <b><a href="https://www.techtarget.com/privacy-policy-may25/?utm_source=cmp&amp;utm_medium=banner&amp;utm_campaign=consent&amp;utm_term=privacy" target="_blank">Privacy Policy.</a></b></div></div> <div class="sp_choices1560319339344" bis_skin_checked="1">  <button class="sp_choice1560319339344 sp_choice-01560319339344 sp_choice_type_111560319339344">OK</button>  <button class="sp_choice1560319339344 sp_choice-11560319339344 sp_choice_type_111560319339344">×</button>  <button class="sp_choice1560319339344 sp_choice-21560319339344 sp_choice_type_121560319339344">Show Purposes</button> </div> </div><div class="sp_side_image1560319339344 sp_right_image1560319339344 sp_message_column1560319339344" bis_skin_checked="1"></div></div></div><div class="clearfix1560319339344" bis_skin_checked="1"></div></div></div></div></div>
+		<!-- PinnedNavBarController, generated at 02:02:17 Wed Jun 12, 2019, by cds2 -->
+<!-- AdsController, generated at 02:02:17 Wed Jun 12, 2019, by cds2 -->
+<div id="interstitial" class="ad ad-ist" bis_skin_checked="1"><script>GPT.display('interstitial')</script></div><div class="ad-wrapper header-leaderboard ad-mobile" bis_skin_checked="1" style="position: inherit; z-index: 99; width: 100%; background-color: rgb(241, 241, 241); top: auto;">
+	<!-- AdsController, generated at 02:02:17 Wed Jun 12, 2019, by cds2 -->
+<div id="mobile-lb" class="ad ad-mb" bis_skin_checked="1"><script>GPT.display('mobile-lb')</script></div></div>
+<header class="header header_v2 en" id="page-header" style="top: 0px;">
+	<button class="nav-toggle" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><i class="icon" data-icon="9"></i></button>
+	<a href="https://searchnetworking.techtarget.com/" class="header-logo mobile-link" style="">
+		<span class="header-logo-mobile">SearchNetworking</span>
+	</a>
+	<a href="https://searchnetworking.techtarget.com/" class="header-logo desktop-link">
+		<img src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/TT20_ss_84x44.gif" alt="TechTarget" class="header-logo-desktop replace_2x">
+		<img src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/TT20_ss_64x34.gif" alt="TechTarget" class="header-logo-small replace_2x">
+	</a> 
+	<button class="header-search-toggle" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none; width: 1199px;"><i class="icon" data-icon="g"></i></button>
+	<form action="https://www.techtarget.com/search/query" method="get" class="header-search" style="width: 940px;">
+		<label for="header-search-input" class="visuallyhidden">Search the TechTarget Network</label>
+		<input class="header-search-input ui-autocomplete-input" id="header-search-input" autocomplete="off" type="text" name="q" placeholder="Search the TechTarget Network">
+		<button class="header-search-submit"><i class="icon" data-icon="g"></i></button>
+	</form>
+			
+	<nav class="nav">
+		<a href="https://users.techtarget.com/registration/searchNetworking/LoginRegister.page?fromURL=https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol" class="nav-join-pro"><span>Sign-up now. Start my free, unlimited access.</span></a>
+					
+		<div class="nav-user" bis_skin_checked="1">
+		<a href="https://users.techtarget.com/registration/searchNetworking/LoginRegister.page?fromURL=https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol"><span class="nav-user-action">Login</span></a>
+			<a href="https://users.techtarget.com/registration/searchNetworking/Register.page" class="register"><span class="nav-user-action">Register</span></a>
+			</div>
+		<script>TT(["context","lib/jquery"],function(c,$){var u=c.getUser();if(u.loggedIn){$('div.nav-user').children("a:first")
+			.before('<i class="icon header_logged_in_icon" title="'+u.displayName+'"></i>')
+			.attr("href", "https://users.techtarget.com/registration/searchNetworking/Logout.page?fromURL=" + window.location.href).children("span.nav-user-action:first").text('Logout');
+			$('.register').removeAttr('href');$('a.register').hide();}else{$('div.nav-user').children("a:first").attr("href", "https://users.techtarget.com/registration/searchNetworking/LoginRegister.page?fromURL="+window.location.href);
+			$('a.nav-join-pro').attr("href", "https://users.techtarget.com/registration/searchNetworking/LoginRegister.page?fromURL="+window.location.href);}});
+
+		</script>
+
+		<div class="nav-links" bis_skin_checked="1">
+				<ul>
+					<li id="nav-links-TechtargetNetwork"><a href="https://www.techtarget.com/network">Techtarget Network</a></li>
+					<li id="nav-links-News"><a href="https://searchnetworking.techtarget.com/info/news">News</a></li>
+					<li id="nav-links-Features"><a href="https://searchnetworking.techtarget.com/features">Features</a></li>
+					<li id="nav-links-Tips"><a href="https://searchnetworking.techtarget.com/tips">Tips</a></li>
+					<li class="more-content">
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#">More Content<i class="icon icon-arrow-down" data-icon="5"></i></a>
+						<div class="more-content-dropdown" bis_skin_checked="1">
+							<ul class="nav-list-sublist">
+							<li id="nav-links-Answers"><a href="https://searchnetworking.techtarget.com/answers">Answers</a></li>
+							<li id="nav-links-Buyer&#39;sGuides"><a href="https://whatis.techtarget.com/resources/Buyers-Guides">Buyer's Guides</a></li>
+							<li id="nav-links-Definitions"><a href="https://searchnetworking.techtarget.com/definitions">Definitions</a></li>
+							<li id="nav-links-EssentialGuides"><a href="https://searchnetworking.techtarget.com/guides">Essential Guides</a></li>
+							<li id="nav-links-Opinions"><a href="https://searchnetworking.techtarget.com/opinions">Opinions</a></li>
+							<li id="nav-links-PhotoStories"><a href="https://searchnetworking.techtarget.com/photostories">Photo Stories</a></li>
+							<li id="nav-links-Podcasts"><a href="https://searchnetworking.techtarget.com/podcasts">Podcasts</a></li>
+							<li id="nav-links-Quizzes"><a href="https://searchnetworking.techtarget.com/quizzes">Quizzes</a></li>
+							<li id="nav-links-Tutorials"><a href="https://searchnetworking.techtarget.com/tutorials">Tutorials</a></li>
+							<li class="nav-links-sponsoredcommunities">
+									<a href="https://searchnetworking.techtarget.com/sponsored_communities">Sponsored Communities</a>
+								</li>
+							</ul>
+						</div>
+						</li>
+					<li><a href="https://searchnetworking.techtarget.com/eproducts">Networking E-zines</a></li>
+					</ul>
+			</div>
+		<ul class="nav-list">
+			<li class="nav-list-item nav-list-item-searchsites">
+				
+				<div class="nav-list-item-header searchnetworking" bis_skin_checked="1">
+					<a href="https://searchnetworking.techtarget.com/">
+						<span class="nav-list-item-header-title">
+							<span class="logo-search">Search</span><span class="logo-1">Networking</span></span>
+					</a>
+				</div>
+			</li>
+			<li class="nav-list-item nav-list-item-topics">
+					<div class="nav-list-item-header" bis_skin_checked="1" style="border: 0px;">
+						<span class="nav-list-item-header-type">Topic</span> <span class="nav-list-item-header-title" style="border: 0px;"> <a href="https://searchnetworking.techtarget.com/resources/Telecommunication-networking">
+								Telecom networks</a>
+						</span> <i class="icon icon-arrow-down" data-icon="5"></i> <i class="icon icon-navigation-detail" data-icon="A"></i>
+					</div>
+					<div class="nav-list-item-dropdown" bis_skin_checked="1">
+						<div class="nav-list-item-jscroll" bis_skin_checked="1">
+							<ul class="nav-list-sublist">
+									<li class="nav-list-sublist-item"><a href="https://searchnetworking.techtarget.com/resources/Campus-area-network"> Campus LAN</a></li>
+									<li class="nav-list-sublist-item"><a href="https://searchnetworking.techtarget.com/resources/Data-Center-Networking"> Data Center</a></li>
+									<li class="nav-list-sublist-item"><a href="https://searchnetworking.techtarget.com/resources/Network-Infrastructure"> Infrastructure</a></li>
+									<li class="nav-list-sublist-item"><a href="https://searchnetworking.techtarget.com/resources/Network-management-and-monitoring"> Network management</a></li>
+									<li class="nav-list-sublist-item"><a href="https://searchnetworking.techtarget.com/resources/Network-Security"> Network Security</a></li>
+									<li class="nav-list-sublist-item"><a href="https://searchnetworking.techtarget.com/resources/Networking-careers-and-certifications"> Networking careers</a></li>
+									<li class="nav-list-sublist-item"><a href="https://searchnetworking.techtarget.com/resources/Software-defined-networking"> SDN</a></li>
+									<li class="nav-list-sublist-item"><a href="https://searchnetworking.techtarget.com/resources/WAN-technologies-and-services"> WAN</a></li>
+									<li class="nav-list-sublist-item view-all"><a href="https://searchnetworking.techtarget.com/resources">All Topics</a></li>
+								</ul>
+							</div>
+					</div>
+			</li></ul>
+		<ul class="nav-social">
+			<li class="nav-social-item title">Follow:</li>
+			<li class="nav-social-item" title="Like searchNetworking on Facebook" id="navBarFacebook"><a href="https://www.facebook.com/pages/Search-Networking/165021663645056" target="_blank"><i class="icon" data-icon="u"></i></a></li><li class="nav-social-item" title="Follow @networkingtt on Twitter" id="navBarTwitter"><a href="https://twitter.com/networkingtt" target="_blank"><i class="icon" data-icon="c"></i></a></li><li class="nav-social-item" title="Follow searchNetworking on LinkedIn" id="navBarLinkedIn"><a href="https://www.linkedin.com/company/3082174?trk=tyah" target="_blank"><i class="icon" data-icon="o"></i></a></li></ul>
+	 </nav>
+</header>
+
+<div class="ad-wrapper header-leaderboard ad-desktop" bis_skin_checked="1" style="position: inherit; z-index: 99; width: 100%; background-color: rgb(241, 241, 241); top: auto;">
+	<!-- AdsController, generated at 02:02:17 Wed Jun 12, 2019, by cds2 -->
+<div id="leaderboard" class="ad ad-lb" bis_skin_checked="1"><script>GPT.display('leaderboard')</script></div></div>
+<!-- BreadcrumbsController, generated at 18:14:49 Tue Jun 11, 2019, by cds2 -->
+<section id="breadcrumb">
+	<div class="breadcrumbs" bis_skin_checked="1">
+		<ul>
+		<li><a href="https://searchnetworking.techtarget.com/">Home</a></li>
+		<li><a href="https://searchnetworking.techtarget.com/resources/Telecommunication-networking">Telecom networks</a></li>
+		<li><a href="https://whatis.techtarget.com/glossary/Internet-Technologies">Internet technologies</a></li>
+		<li>BGP (Border Gateway Protocol) </li>
+		</ul>
+	</div>
+</section>
+<div id="main-content" class="main-content" bis_skin_checked="1">
+			<article id="content-columns" class="content-columns">
+				<!-- ContentItemController, generated at 18:14:49 Tue Jun 11, 2019, by cds2 -->
+<div class="top-gradient-bar" bis_skin_checked="1"></div>
+<header class="definition-header">
+	<span class="eyebrow">Definition</span>
+	<h1 class="definition-title">BGP (Border Gateway Protocol) </h1>
+	<div class="definition-authors" bis_skin_checked="1">
+		<div class="main-article-author" bis_skin_checked="1">
+		<div class="image-resize" bis_skin_checked="1">
+					<img src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/rouse_margaret.jpg">
+				</div>
+			<div class="main-article-author-info" bis_skin_checked="1">
+				<div class="main-article-author-byline" bis_skin_checked="1">
+					<aside id="definition-author">
+									Posted by: <a href="https://www.techtarget.com/contributor/Margaret-Rouse">Margaret Rouse</a></aside>
+								</div>
+				<div class="main-article-author-title" bis_skin_checked="1"><a href="https://whatis.techtarget.com/">WhatIs.com</a></div>
+							</div>
+				<div class="main-article-author-contact" bis_skin_checked="1">
+						<a href="https://twitter.com/whatisdotcom">
+								<i class="icon" data-icon="c"></i>
+							</a>
+						<a href="https://www.linkedin.com/in/margaretrouse">
+								<i class="icon" data-icon="o"></i>
+							</a>
+						<a href="mailto:mrouse@techtarget.com">
+								<i class="icon" data-icon="n"></i>
+							</a>
+						</div>
+				</div>
+	<div class="publish-date" bis_skin_checked="1">Contributor(s): <a href="https://www.techtarget.com/contributor/John-Burke">John Burke</a></div>
+	</div>
+	<div class="ad-wrapper page-header-ad ad-desktop" bis_skin_checked="1" style="top: 197px;">
+		<!-- AdsController, generated at 18:14:49 Tue Jun 11, 2019, by cds2 -->
+<div id="mu-top" class="ad ad-mu" bis_skin_checked="1"><script>GPT.display('mu-top')</script></div></div>
+	<!-- GuideController, generated at 18:14:49 Tue Jun 11, 2019, by cds2 -->
+</header>
+<div style="position: static; width: 0px; height: 192px; display: block; vertical-align: baseline; float: left;" bis_skin_checked="1"><div id="content-left" class="content-left is_stuck" bis_skin_checked="1" style="margin-top: -53px; position: fixed; top: 143px; width: 0px;">
+					<!-- SocialMediaShareBarController, generated at 16:49:19 Tue Jun 11, 2019, by cds2 -->
+<div id="rail-share-bar" bis_skin_checked="1">
+		<ul id="social-icons-desktop" class="share-bar-desktop">
+		<aside id="social-icons-desktop">
+			<li class="share-bar-item-desktop share-bar-title">Share this item with your network:</li>
+			<li class="share-bar-item-desktop socialMedia-facebook" title="Share on Facebook" data-socialsite="facebook">
+					<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" target="_blank"><i class="icon" data-icon="u"></i></a>
+					<span class="count"></span>
+				</li>
+			<li class="share-bar-item-desktop socialMedia-twitter" title="Share on Twitter" data-socialsite="twitter" data-account="networkingtt" data-related="">
+					<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" target="_blank"><i class="icon" data-icon="c"></i></a>
+					<span class="count"></span>
+				</li>
+			<li class="share-bar-item-desktop socialMedia-linkedin" title="Share on LinkedIn" data-socialsite="linkedin">
+					<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" target="_blank"><i class="icon" data-icon="o"></i></a>
+					<span class="count"></span>
+				</li>
+			<li class="share-bar-item-desktop contentTools-print" title="Print This Page">
+					<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol?vgnextfmt=print" target="_blank"><i class="icon" data-icon="i"></i></a>
+				</li>
+			<li class="share-bar-item-desktop contentTools-email" title="Email a Friend">
+				<a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?pubid=uxtechtarget&amp;url=https%3A%2F%2Fsearchnetworking.techtarget.com%2Fdefinition%2FBGP-Border-Gateway-Protocol&amp;title=What+is+BGP+(Border+Gateway+Protocol)%3F+-+Definition+from+WhatIs.com&amp;email_template=TechTargetSearchSites&amp;ct=1" target="_blank"><i class="icon" data-icon="n"></i></a>
+			</li>
+		</aside>
+		</ul>
+	</div>
+</div></div>
+				<div id="content-center" class="content-center" bis_skin_checked="1">
+					<!-- ContentItemController, generated at 10:00:59 Tue Jun 11, 2019, by cds2 -->
+
+
+
+
+
+<ul class="actions-bar">
+	
+	
+	
+	
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<li class="actions-bar-item actions-bar-chapters" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><i class="icon" data-icon="1"></i></li>
+	
+	
+		<li class="actions-bar-item actions-bar-resources" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"><i class="icon" data-icon="2"></i></li>
+	
+	
+		<li class="actions-bar-item actions-bar-share"><i class="icon" data-icon="f" style="-webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); touch-action: none;"></i>
+			<ul class="share-bar-mobile">
+			<aside id="social-icons-desktop">
+				
+					<li class="share-bar-item-mobile socialMedia-facebook" title="Share on Facebook" data-socialsite="facebook">
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#"><i class="icon" data-icon="u"></i></a><span class="count"></span>
+					</li>
+				
+				
+					<li class="share-bar-item-mobile socialMedia-twitter" title="Share on Twitter" data-socialsite="twitter" data-account="networkingtt" data-related="searchuc">
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#"><i class="icon" data-icon="c"></i></a><span class="count"></span>
+					</li>
+				
+				
+				
+				
+					<li class="share-bar-item-mobile socialMedia-linkedin" title="Share on LinkedIn" data-socialsite="linkedin">
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#"><i class="icon" data-icon="o"></i></a><span class="count"></span>
+					</li>	
+				
+				<li class="share-bar-item-mobile contentTools-email" title="Email a Friend">
+					<a href="https://api.addthis.com/oexchange/0.8/forward/email/offer?pubid=uxtechtarget&amp;url=https%3A%2F%2Fsearchnetworking.techtarget.com%2Fdefinition%2FBGP-Border-Gateway-Protocol&amp;title=What+is+BGP+(Border+Gateway+Protocol)%3F+-+Definition+from+WhatIs.com&amp;email_template=TechTargetSearchSites&amp;ct=1"><i class="icon" data-icon="n"></i></a>
+				</li>
+			
+			</aside>
+			</ul>
+		</li>
+	
+</ul><section class="section definition-section" data-menu-title="Definition" id="content-body">
+<p>BGP (Border Gateway Protocol) is <a href="https://searchnetworking.techtarget.com/definition/protocol">protocol</a> that manages how packets are routed across the internet through the exchange of routing and reachability information between <a href="https://searchsdn.techtarget.com/definition/edge-router">edge routers</a>. BGP directs packets between autonomous systems (<a href="https://searchnetworking.techtarget.com/definition/autonomous-system">AS</a>) -- networks managed by a single enterprise or service provider. Traffic that is routed within a single network AS is referred to as internal BGP, or iBGP. More often, BGP is used to connect one AS to other autonomous systems, and it is then referred to as an external BGP, or eBGP.</p>
+<div class="ad-wrapper ad-embedded" bis_skin_checked="1"> 
+ <div id="halfpage" class="ad ad-hp" bis_skin_checked="1">
+  <script>GPT.display('halfpage')</script>
+ </div> 
+ <div id="mu-1" class="ad ad-mu" bis_skin_checked="1">
+  <script>GPT.display('mu-1')</script>
+ </div> 
+</div> 
+<section class="section main-article-chapter" data-menu-title="What is BGP used for?">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i>What is BGP used for?</h3>
+ <p>BGP offers network stability that guarantees <a href="https://searchnetworking.techtarget.com/definition/router">routers</a> can quickly adapt to send packets through another reconnection if one internet path goes down. BGP makes routing decisions based on paths, rules or network policies configured by a network administrator. Each BGP router maintains a standard <a href="https://searchnetworking.techtarget.com/definition/routing-table">routing table</a> used to direct packets in transit. This table is used in conjunction with a separate routing table, known as the routing information base (RIB), which is a data table stored on a server on the BGP router. The RIB contains route information both from directly connected external <a href="https://searchtelecom.techtarget.com/definition/peering">peers</a>, as well as internal peers, and continually updates the routing table as changes occur. BGP is based on <a href="https://searchnetworking.techtarget.com/definition/TCP-IP">TCP/IP</a> and uses <a href="https://searchnetworking.techtarget.com/definition/client-server">client-server</a> topology to communicate routing information, with the client-server initiating a BGP session by sending a request to the server.</p>
+ <figure class="main-article-image full-col" data-img-fullsize="https://cdn.ttgtmedia.com/rms/onlineImages/BGP_backbone.png" style="width: 740px;">
+  <div class="img-trim" bis_skin_checked="1"><img data-src="https://cdn.ttgtmedia.com/rms/onlineImages/BGP_backbone_mobile.png" class="" data-srcset="https://cdn.ttgtmedia.com/rms/onlineImages/BGP_backbone_mobile.png 960w,https://cdn.ttgtmedia.com/rms/onlineImages/BGP_backbone_desktop.png 1280w" alt="BGP enables backbone route sharing" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/BGP_backbone_mobile.png" srcset="https://cdn.ttgtmedia.com/rms/onlineImages/BGP_backbone_mobile.png 960w,https://cdn.ttgtmedia.com/rms/onlineImages/BGP_backbone_desktop.png 1280w"><div class="main-article-image-mask" bis_skin_checked="1"></div></div>
+  <div class="main-article-image-enlarge" bis_skin_checked="1">
+   <i class="icon" data-icon="w"></i>
+  </div>
+ </figure>
+</section>   
+<section class="section main-article-chapter" data-menu-title="BGP routing basics">
+ <h3 class="section-title"><i class="icon" data-icon="1"></i>BGP routing basics</h3>
+ <p>BGP sends updated router table information only when something changes -- and even then, it sends only the affected information. BGP has no automatic discovery mechanism, which means connections between peers have to be set up manually, with peer addresses programmed in at both ends.</p>
+ <p>BGP makes best-path decisions based on current reachability, <a href="https://whatis.techtarget.com/definition/hop">hop</a> counts and other path characteristics. In situations where multiple paths are available -- as within a major hosting facility -- BGP can be used to communicate an organization's own preferences in terms of what path traffic should follow in and out of its networks. BGP even has a mechanism for defining arbitrary tags, called communities, which can be used to control route advertisement behavior by mutual agreement among peers.</p>
+ <p>Ratified in 2006, BGP-4, the current version of BGP, supports both <a href="https://searchenterprisewan.techtarget.com/definition/IPv6">IPv6</a> and classless interdomain routing (<a href="https://searchnetworking.techtarget.com/definition/CIDR">CIDR</a>), which enables the continued viability of IPv4. Use of the CIDR is a way to have more addresses within the network than with the current&nbsp;<a href="https://searchwindevelopment.techtarget.com/definition/IP-address">IP address</a>&nbsp;assignment scheme.</p>
+ <div class="join-discussion-wrapper" bis_skin_checked="1" style="display: block;"><ul id="embeddedDiscussions" class="join-discussion-content slick-initialized slick-slider" data-transition="slide" data-paginate="" style="display: block;">
+			<div aria-live="polite" class="slick-list" style="height: 324px;" bis_skin_checked="1"><div class="slick-track" style="opacity: 1; width: 740px; transform: translate3d(0px, 0px, 0px);" role="listbox" bis_skin_checked="1"><li class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 740px;" tabindex="-1" role="option" aria-describedby="slick-slide00">
+					<aside id="embedded-discussions">
+					<div class="discussion-question" bis_skin_checked="1">
+						<div class="image-resize" bis_skin_checked="1">
+							<a href="https://www.techtarget.com/contributor/Margaret-Rouse" tabindex="0"><img class="asker-img" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/rouse_margaret.jpg"></a>
+								</div>		
+						<p><a href="https://www.techtarget.com/contributor/Margaret-Rouse" tabindex="0"><span class="asker">Margaret Rouse</span></a>&nbsp;asks:</p>
+							<h2 class="question">What's a reason you would not want automatic discovery of BGP peers?</h2>
+						<i class="icon" data-icon="Z"></i>
+					</div>
+					<div class="discussion-cta" bis_skin_checked="1">
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#commenting" class="button blue-button" tabindex="0">Join the Discussion</a>
+					</div>
+					</aside>
+				</li></div></div>
+			</ul></div>
+ <p>See also: Interior Gateway Protocol (<a href="https://searchsecurity.techtarget.com/definition/IGP">IGP</a>), Open Shortest Path First (<a href="https://searchenterprisewan.techtarget.com/definition/OSPF">OSPF</a>) interior gateway protocol and Exterior Gateway Protocol (<a href="https://whatis.techtarget.com/definition/Exterior-Gateway-Protocol-EGP">EGP</a>).</p>
+</section></section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="publish-date">
+	<div class="publish-date" bis_skin_checked="1">
+		
+		
+			
+			
+				
+					This was last updated in <a href="https://searchnetworking.techtarget.com/archive/2016/9">September 2016</a>
+				
+				
+				
+			
+			
+			
+				
+	</div>
+	
+</section>
+
+
+
+
+
+
+
+
+
+	
+	<section class="section continue-reading" data-menu-title="Required Reading" id="required-reading">
+		<h4 class="section-title">
+			<i class="icon" data-icon="m"></i>
+			Continue Reading About BGP (Border Gateway Protocol)
+		</h4>
+		
+			<ul>
+				<li><a href="https://searchtelecom.techtarget.com/feature/BGP-essentials-The-protocol-that-makes-the-Internet-work">How BGP works and BGP troubleshooting</a></li>
+			</ul>
+		
+			<ul>
+				<li><a href="https://searchsdn.techtarget.com/feature/Border-Gateway-Protocol-as-a-hybrid-SDN-protocol">Using BGP as a hybrid SDN protocol</a></li>
+			</ul>
+		
+			<ul>
+				<li><a href="https://searchtelecom.techtarget.com/tip/Border-Gateway-Protocol-BGP-troubleshooting-Simple-approach">A simple approach to BGP troubleshooting</a></li>
+			</ul>
+		
+			<ul>
+				<li><a href="https://searchsecurity.techtarget.com/answer/How-can-BGP-hijacking-be-detected-and-prevented">Learn how to prevent and detect BGP hijacking</a></li>
+			</ul>
+		
+			<ul>
+				<li><a href="https://searchtelecom.techtarget.com/tip/Border-Gateway-Protocol-BGP-troubleshooting-Advanced-approach">Border Gateway Protocol (BGP) troubleshooting: Advanced approach</a></li>
+			</ul>
+		
+			<ul>
+				<li><a href="https://searchtelecom.techtarget.com/tip/Introduction-to-Border-Gateway-Protocol-BGP">Introduction to Border Gateway Protocol (BGP)</a></li>
+			</ul>
+		
+	</section>
+
+<div class="ad-wrapper ad-inline ad-mobile" bis_skin_checked="1">
+	<!-- AdsController, generated at 10:00:59 Tue Jun 11, 2019, by cds2 -->
+<div id="mobile-2" class="ad ad-mb" bis_skin_checked="1"><script>GPT.display('mobile-2')</script></div></div>
+<!-- RelatedTermsController, generated at 18:14:49 Tue Jun 11, 2019, by cds2 -->
+<section class="section related-terms" data-menu-title="Related Terms" id="related-terms">
+		<div class="related-terms-inner" bis_skin_checked="1">
+			<h4>
+				Related Terms</h4>
+			<dl class="related-terms-list">
+				<dt>
+						<a href="https://searchnetworking.techtarget.com/definition/carrier-cloud">carrier cloud</a>
+					</dt>
+					<dd>A&nbsp;carrier cloud&nbsp;is a cloud computing system, or network of servers that store data in a way that it is easily accessible from ...<a href="https://searchnetworking.techtarget.com/definition/carrier-cloud" class="definition-link"> 
+							See&nbsp;complete&nbsp;definition<i class="icon" data-icon="q"></i>
+						</a>
+					</dd>
+				<dt>
+						<a href="https://searchnetworking.techtarget.com/definition/orthogonal-frequency-division-multiple-access-OFDMA">OFDMA (orthogonal frequency-division multiple access)</a>
+					</dt>
+					<dd>Orthogonal frequency-division multiple access (OFDMA) is a feature of Wi-Fi 6 (802.11ax) that allows access points to serve ...<a href="https://searchnetworking.techtarget.com/definition/orthogonal-frequency-division-multiple-access-OFDMA" class="definition-link"> 
+							See&nbsp;complete&nbsp;definition<i class="icon" data-icon="q"></i>
+						</a>
+					</dd>
+				<dt>
+						<a href="https://searchnetworking.techtarget.com/definition/PSTN">PSTN (public switched telephone network)</a>
+					</dt>
+					<dd>PSTN (public switched telephone network) is the world’s collection of interconnected voice-oriented public telephone networks.<a href="https://searchnetworking.techtarget.com/definition/PSTN" class="definition-link"> 
+							See&nbsp;complete&nbsp;definition<i class="icon" data-icon="q"></i>
+						</a>
+					</dd>
+				</dl>
+		</div>
+	</section>
+<!-- DigDeeperController, generated at 06:45:28 Tue Jun 11, 2019, by cds2 -->
+<section class="section dig-deeper" id="dig-deeper" data-digdeeper-reference-id="967733e921bb2210VgnVCM1000000d01c80aRCRD" data-menu-title="Dig Deeper">
+	<h4 class="section-title"><i class="icon" data-icon="m"></i>Dig Deeper on Telecommunication networking</h4>
+	<div class="dig-deeper-nav-wrapper" bis_skin_checked="1">
+		<ul class="dig-deeper-nav" id="dig-deeper-tabs" style="width: 547px;">
+			<li class="dig-deeper-nav-item selected" data-filtertype="all" data-page="1">
+								<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#dd-tab1">
+									All<i class="icon" data-icon="3"></i>
+								</a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="news_infotype" data-page="1">
+								<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#dd-tab2">
+									News<i class="icon" data-icon="3"></i>
+								</a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="get_started_infotype" data-page="1">
+								<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#dd-tab3">
+									Get Started<i class="icon" data-icon="3"></i>
+								</a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="evaluate_infotype" data-page="1">
+								<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#dd-tab4">
+									Evaluate<i class="icon" data-icon="3"></i>
+								</a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="manage_infotype" data-page="1">
+								<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#dd-tab5">
+									Manage<i class="icon" data-icon="3"></i>
+								</a>
+							</li>
+						<li class="dig-deeper-nav-item" data-filtertype="problem_solve_infotype" data-page="1">
+								<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#dd-tab6">
+									Problem Solve<i class="icon" data-icon="3"></i>
+								</a>
+							</li>
+						</ul>
+	</div>
+	<div id="dig-deeper-tabs-content" bis_skin_checked="1">
+		<div id="dd-tab1" bis_skin_checked="1" style="display: block;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_all">
+						<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/news/252464724/Pluribus-Networks-unveils-edge-router-for-service-providers">Pluribus Networks unveils edge router for service providers</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/feature/The-5G-future-will-spark-an-evolution-of-telecom-networks-ISPs">The 5G future will spark an evolution of telecom networks, ISPs</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/news/252463988/Huawei-ban-will-hasten-its-retreat-from-US-suppliers">Huawei ban will hasten its retreat from U.S. suppliers</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/definition/PSTN">PSTN (public switched telephone network)</a></h5>
+									<i class="icon" data-icon="q"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_all" style="">
+							Load More</button>
+					<noscript>
+						<a href="https://searchnetworking.techtarget.com/resources/Telecommunication-networking">
+									<button class="button black-button dig-deeper-load-more" id="digDeeperViewAll">
+										View All</button>
+								</a>
+							</noscript>
+	
+				</div>
+			<div id="dd-tab2" bis_skin_checked="1" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_news_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/news/252464724/Pluribus-Networks-unveils-edge-router-for-service-providers">Pluribus Networks unveils edge router for service providers</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/news/252463988/Huawei-ban-will-hasten-its-retreat-from-US-suppliers">Huawei ban will hasten its retreat from U.S. suppliers</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/news/252458472/ICT-spending-slowdown-projected-through-2020">Macroeconomics, service providers behind ICT spending slowdown</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/news/252458146/HPE-Juniper-intro-5G-hardware-for-the-edge">HPE, Juniper intro 5G hardware for the edge</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_news_infotype" style="">
+							Load More</button>
+					<noscript>
+						<a href="https://searchnetworking.techtarget.com/info/news/Telecommunication-networking">
+									<button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_news_infotype">
+										View All News</button>
+								</a>
+							</noscript>
+	
+				</div>
+			<div id="dd-tab3" bis_skin_checked="1" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_get_started_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/definition/PSTN">PSTN (public switched telephone network)</a></h5>
+									<i class="icon" data-icon="q"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/definition/dense-wavelength-division-multiplexing-DWDM">dense wavelength division multiplexing (DWDM)</a></h5>
+									<i class="icon" data-icon="q"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/definition/Net-neutrality">Net Neutrality</a></h5>
+									<i class="icon" data-icon="q"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/feature/BGP-tutorial-The-routing-protocol-that-makes-the-Internet-work">BGP tutorial: The routing protocol that makes the Internet work</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_get_started_infotype" style="">
+							Load More</button>
+					<noscript>
+						<a href="https://searchnetworking.techtarget.com/info/getstarted/Telecommunication-networking">
+									<button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_get_started_infotype">
+										View All Get started</button>
+								</a>
+							</noscript>
+	
+				</div>
+			<div id="dd-tab4" bis_skin_checked="1" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_evaluate_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/feature/The-5G-future-will-spark-an-evolution-of-telecom-networks-ISPs">The 5G future will spark an evolution of telecom networks, ISPs</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/tip/Examine-the-requirements-for-5G-core-networks">Examine the requirements for 5G core networks</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/tip/How-5G-can-start-a-brand-new-era-for-the-virtual-RAN">How 5G can start a brand new era for the virtual RAN</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/feature/Fiber-expansion-paves-way-for-V2X-technology-in-Colorado">Fiber expansion paves way for V2X technology in Colorado</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_evaluate_infotype" style="">
+							Load More</button>
+					<noscript>
+						<a href="https://searchnetworking.techtarget.com/info/evaluate/Telecommunication-networking">
+									<button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_evaluate_infotype">
+										View All Evaluate</button>
+								</a>
+							</noscript>
+	
+				</div>
+			<div id="dd-tab5" bis_skin_checked="1" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_manage_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/tip/Telecom-trends-2019-Time-for-operator-5G-and-IoT-decisions">Telecom trends 2019: Time for operator 5G and IoT decisions</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/tip/Three-step-network-strategy-sells-big-changes-as-more-doable">Three-step network strategy sells big changes as more doable</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/ehandbook/Next-gen-networks-transition-to-software-networking">Next-gen networks transition to software networking</a></h5>
+									<i class="icon" data-icon="7"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/tip/Using-NFV-and-SDN-for-detailed-network-microsegmentation">Using NFV and SDN for detailed network microsegmentation</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_manage_infotype" style="">
+							Load More</button>
+					<noscript>
+						<a href="https://searchnetworking.techtarget.com/info/manage/Telecommunication-networking">
+									<button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_manage_infotype">
+										View All Manage</button>
+								</a>
+							</noscript>
+	
+				</div>
+			<div id="dd-tab6" bis_skin_checked="1" style="display: none;">			
+					<ul class="dig-deeper-content" id="digDeeperContent_problem_solve_infotype">
+						<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/tip/Telecom-trends-2019-Time-for-operator-5G-and-IoT-decisions">Telecom trends 2019: Time for operator 5G and IoT decisions</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/tip/VWAN-threatens-traditional-three-tiered-WAN-design">VWAN threatens traditional three-tiered WAN design</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/answer/How-important-is-IPv6-readiness-to-the-cloud">How important is IPv6 readiness to the cloud?</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							<li class="dig-deeper-content-item">
+									<h5><a href="https://searchnetworking.techtarget.com/tip/Whos-calling-Engineering-identity-authorization-for-VoIP-calls">Who's calling? Engineering identity, authorization for VoIP calls</a></h5>
+									<i class="icon" data-icon="2"></i>
+									</li>
+							</ul>
+					<button class="button black-button dig-deeper-load-more" id="digDeeperLoadMore_problem_solve_infotype" style="">
+							Load More</button>
+					<noscript>
+						<a href="https://searchnetworking.techtarget.com/info/problemsolve/Telecommunication-networking">
+									<button class="button black-button dig-deeper-load-more" id="digDeeperViewAll_problem_solve_infotype">
+										View All Problem solve</button>
+								</a>
+							</noscript>
+	
+				</div>
+			</div>
+</section>
+<!-- DiscussionsController, generated at 18:14:49 Tue Jun 11, 2019, by cds2 -->
+
+	</div>
+				<div id="content-right" class="content-right is_stuck" bis_skin_checked="1" style="padding-top: 126px; display: block; position: fixed; top: -43px; width: 300px;">
+					<aside class="resources-bar desktop-resources-bar" id="resources-bar" style="position: fixed; top: 80px;">
+	<!-- VendorResourcesController, generated at 18:14:49 Tue Jun 11, 2019, by cds2 -->
+<div class="resources-bar-header" bis_skin_checked="1"><i class="icon" data-icon="l"></i>Sponsored News</div>
+			<ul class="resources-bar-list sponsored-news">
+				<li class="resources-bar-item">
+						<a href="https://searchcontentmanagement.techtarget.com/ElectronicSignatures/More-Digital-Less-Paper-Its-About-Time">More Digital, Less Paper: It’s About Time</a>
+						<span>–Adobe</span>
+					</li>
+				<li class="resources-bar-item">
+						<a href="https://searchenterprisedesktop.techtarget.com/futureofwork/Whats-Next-in-Digital-Workspaces-3-Improvements-to-Look-for-in-2019">What’s Next in Digital Workspaces: 3 Improvements to Look for in 2019</a>
+						<span>–Citrix</span>
+					</li>
+				<li class="resources-bar-item see-more"><a href="https://searchnetworking.techtarget.com/sponsored_communities">See More</a></li>
+				</ul>
+		<div class="resources-bar-header" bis_skin_checked="1"><i class="icon" data-icon="l"></i>Vendor Resources</div>
+		<ul class="resources-bar-list" id="vendorResourcesSplash">
+			<li class="resources-bar-item">
+					<a href="https://www.bitpipe.com/detail/RES/1397141103_464.html">Secure internet routing</a>
+					<span>–ComputerWeekly.com</span>
+					<i class="icon" data-icon="r"></i>
+				</li>
+			<li class="resources-bar-item">
+					<a href="https://www.bitpipe.com/detail/RES/1513691025_875.html">Architecting an Application-Driven WAN Edge</a>
+					<span>–Silver Peak</span>
+					<i class="icon" data-icon="8"></i>
+				</li>
+			</ul>
+</aside>
+
+</div><div style="position: static; width: 1120px; height: 601px; display: block; vertical-align: baseline; float: none;" bis_skin_checked="1"></div>
+			</article>
+		</div>
+		<!-- CommentingController, generated at 02:02:17 Wed Jun 12, 2019, by cds2 -->
+<section id="commenting" class="main-content comments-wrapper" data-comment-reference-id="967733e921bb2210VgnVCM1000000d01c80aRCRD" data-itkerepo-id="268_post_33120">
+	<div class="content-columns" bis_skin_checked="1">
+		<div class="content-left comments-left" bis_skin_checked="1" style="margin-top: -53px;">
+			</div>
+				 
+		<div class="content-center comments-center" bis_skin_checked="1">
+			<h4 class="section-title comments-header">
+				<i class="icon" data-icon="m"></i>
+				Join the conversation</h4>
+			
+			<h3 class="comments-count">
+				<i class="icon" data-icon="z"></i>
+				<span class="comments-count-num">3</span>&nbsp;comments</h3>						
+			<form id="loggedoutCommentsForm" class="comments-form logged-out">
+				<div class="cleditorMain" bis_skin_checked="1" style="width: 100%; height: 200px;"><div class="cleditorToolbar" bis_skin_checked="1" style="height: 27px;"><div class="cleditorGroup" bis_skin_checked="1" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Bold" bis_skin_checked="1" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Italic" bis_skin_checked="1" style="background-position: -24px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Strikethrough" bis_skin_checked="1" style="background-position: -72px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Font" bis_skin_checked="1" style="background-position: -144px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Font Size" bis_skin_checked="1" style="background-position: -168px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Style" bis_skin_checked="1" style="background-position: -192px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Font Color" bis_skin_checked="1" style="background-position: -216px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Remove Formatting" bis_skin_checked="1" style="background-position: -264px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Bullets" bis_skin_checked="1" style="background-position: -288px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Numbering" bis_skin_checked="1" style="background-position: -312px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 25px;"><div class="cleditorButton cleditorDisabled" title="Insert Hyperlink" bis_skin_checked="1" style="background-position: -576px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 25px;"><div class="cleditorButton ttCleditorButton cleditorDisabled" title="Code" bis_skin_checked="1" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div></div><textarea id="loggedoutCommentBody" class="comments-form-textarea" placeholder="Share your comment" style="border: none; margin: 0px; padding: 0px; display: none; width: 736px; height: 173px;"></textarea><iframe frameborder="0" src="javascript:true;" style="width: 736px; height: 173px;" bis_size="{&quot;x&quot;:282,&quot;y&quot;:5031,&quot;w&quot;:736,&quot;h&quot;:150,&quot;abs_x&quot;:282,&quot;abs_y&quot;:5031}" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/saved_resource(1).html"></iframe></div>
+				<fieldset class="notifications"> 
+					<input data-field="" id="notifications" name="notifications" checked="checked" type="checkbox">
+						Send me notifications when other members comment.</fieldset>
+				<button type="submit" class="comments-form-btn submit" href="#comments-reg-login">Add My Comment</button>
+				
+				<div style="display:none;" bis_skin_checked="1">
+					<div id="comments-reg-login" bis_skin_checked="1">
+					<section id="commenting-registration">
+						<div class="modal-register" bis_skin_checked="1">
+							<h4>Register</h4>
+							<input class="comments-username" type="text" placeholder="Username">
+							<input class="comments-email" type="text" placeholder="email@techtarget.com">
+							<input class="comments-password" type="password" placeholder="Password">
+							<ul class="optInCheckboxesWrapper">
+							<li class="optInCheckboxes">
+						        <fieldset class="checkboxList">
+						         <ul class="default-list">
+						          <li><input type="checkbox" id="comments-optin-privacy" name="comments-optin-privacy" value="true" data-required="true">
+						          	<label for="comments-optin-privacy">
+						          	I agree to TechTarget’s <a href="https://www.techtarget.com/terms-of-use/" target="_blank">Terms of Use</a>, <a href="https://www.techtarget.com/privacy-policy-may25/" target="_blank">Privacy Policy</a>, and the transfer of my information to the United States for processing to provide me with relevant information as described in our Privacy Policy.</label>
+								 </li>
+						         </ul>
+						        </fieldset>
+						        <div class="signupErrors" bis_skin_checked="1">
+						         <p id="comments-optin-privacy-error" class="sign-up-error-msg hidden">Please check the box if you want to proceed.</p>
+						        </div></li>
+						       <li class="optInCheckboxes">
+						        <fieldset class="checkboxList">
+						         <ul class="default-list">
+						          <li><input type="checkbox" id="comments-optin-partners" name="comments-optin-partners" value="true" data-required="true">
+						          	<label for="comments-optin-partners">
+						          	I agree to my information being processed by TechTarget and its <a href="https://www.techtarget.com/privacy-partners/" target="_blank">Partners</a> to contact me via phone, email, or other means regarding information relevant to my professional interests. I may unsubscribe at any time.</label>
+						         </li>
+						         </ul>
+						        </fieldset>
+						        <div class="signupErrors" bis_skin_checked="1">
+						         <p id="comments-optin-partners-error" class="sign-up-error-msg hidden">Please check the box if you want to proceed.</p>
+						        </div>
+						    </li>
+					    </ul>
+					    <input id="submit-register" class="comments-form-btn" type="submit" value="Add My Comment">							
+						</div>
+						<div class="modal-divider" bis_skin_checked="1"></div>
+						<div class="modal-login" bis_skin_checked="1">
+							<h4>Login</h4>
+							<input class="comments-email" type="text" placeholder="email@techtarget.com">
+							<input class="comments-password" type="password" placeholder="Password">
+							<a class="forgot-password" href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#forgotPasswordModal">Forgot your password?</a>
+							<input id="submit-login" class="comments-form-btn" type="submit" value="Add My Comment">
+							<div style="display:none;" bis_skin_checked="1">													
+								<div id="forgotPasswordModal" bis_skin_checked="1">
+									<section id="commenting-forgot-password">
+										<div id="forgotPasswordModalHeader" bis_skin_checked="1">
+											<h4>Forgot your password?</h4>
+											<div id="forgotPasswordModalMessaging" bis_skin_checked="1">
+												<span class="forgotPasswordModalIntro">No problem! Submit your e-mail address below. We'll send you an email containing your password.</span>
+											</div>
+										</div>		
+										
+											<input id="forgotPasswordModalFormMessage" name="email" tabindex="1" class="required" placeholder="email@techtarget.com">
+											<button type="submit" id="forgotPasswordModalFormSubmit" class="button primaryButton">Submit</button>
+										
+									</section>
+								</div>
+							</div>
+							<div style="display:none;" bis_skin_checked="1">
+								<div id="forgotPasswordModalConfirm" bis_skin_checked="1">
+									<div id="forgotPasswordModalHeader" bis_skin_checked="1">
+										<h4>Your password has been sent to:<span class="email"></span></h4>
+									</div>
+								</div>
+							</div>
+						</div>											
+						</section>
+					</div>
+				</div></form>
+				<div style="display:none;" bis_skin_checked="1">					
+					<div id="comments-reg-create" bis_skin_checked="1">
+					<section id="commenting-registration">
+						<div class="comments-reg-create-body" bis_skin_checked="1">
+							<h4>Please create a username to comment.</h4>
+							<input class="comments-create-username" type="text" placeholder="Create Username">
+							<input class="comments-form-btn" type="submit" value="Create Username and Add My Comment">
+						</div>
+					</section>
+					</div>
+				</div>
+					
+			
+			<div id="sort" bis_skin_checked="1">
+				<a id="sortByOldest" class="comments-order" href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#">Oldest&nbsp;<i class="icon" data-icon="5"></i></a>
+				<a id="sortByNewest" class="comments-order" href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" style="display: none;">Newest&nbsp;<i class="icon" data-icon="5"></i></a>		
+			</div>
+			
+			<div id="repoComments" bis_skin_checked="1">
+			<div class="comment-parent" data-sort="1473935421000" bis_skin_checked="1">
+    <div id="268_comment_97127" class="comment-wrapper" bis_skin_checked="1">
+	<div class="comment-content" bis_skin_checked="1">
+		<div class="comment-user-info" bis_skin_checked="1">
+			<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="comment-expand-toggle">[-]</a>
+			<div class="comment-thumbnail-wrap" bis_skin_checked="1">
+				<img class="comment-thumbnail" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/21703.gif">
+			</div>
+			<span class="comment-username">Margaret Rouse</span>
+			<span class="comment-date"> - 15 Sep 2016 6:30 AM</span>
+		</div>
+		<div class="comment-body" bis_skin_checked="1">What's a reason you would not want automatic discovery of BGP peers?</div>
+		<input class="comments-form-btn" type="submit" value="Reply">
+		<form class="comments-reply-form">
+			<div class="cleditorMain" style="width: 100%; height: 200px;" bis_skin_checked="1"><div class="cleditorToolbar" bis_skin_checked="1" style="height: 27px;"><div class="cleditorGroup" bis_skin_checked="1" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Bold" bis_skin_checked="1" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Italic" bis_skin_checked="1" style="background-position: -24px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Strikethrough" bis_skin_checked="1" style="background-position: -72px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Font" bis_skin_checked="1" style="background-position: -144px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Font Size" bis_skin_checked="1" style="background-position: -168px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Style" bis_skin_checked="1" style="background-position: -192px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Font Color" bis_skin_checked="1" style="background-position: -216px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Remove Formatting" bis_skin_checked="1" style="background-position: -264px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Bullets" bis_skin_checked="1" style="background-position: -288px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Numbering" bis_skin_checked="1" style="background-position: -312px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 25px;"><div class="cleditorButton cleditorDisabled" title="Insert Hyperlink" bis_skin_checked="1" style="background-position: -576px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 25px;"><div class="cleditorButton ttCleditorButton cleditorDisabled" title="Code" bis_skin_checked="1" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div></div><textarea class="comments-form-textarea" placeholder="Share your comment" style="border: none; margin: 0px; padding: 0px; display: none; width: 100px; height: 173px;"></textarea><iframe frameborder="0" src="javascript:true;" style="width: 100px; height: 173px;" bis_size="{&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:0,&quot;h&quot;:0,&quot;abs_x&quot;:0,&quot;abs_y&quot;:0}" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/saved_resource(2).html"></iframe></div>
+			<button type="submit" class="comments-form-btn submit" href="#comments-reg-login" data-comment-parent="268_comment_97127">Add My Comment</button>			
+			<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="cancel-reply">Cancel</a>
+		</form>
+	</div>
+	<div class="comment-share" bis_skin_checked="1">
+		<ul>
+			<li class="comment-flag">
+				<a href="mailto:socialmedia@techtarget.com?subject=PLEASE%20REVIEW%20COMMENT%2097127:%20BGP%20(Border%20Gateway%20Protocol)&amp;body=Please%20review%20a%20recent%20comment%20for%20inappropriate%20content.%0A%0AURL:%20https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol%0A%0AAuthor:%20Margaret%20Rouse%0A%0AComment%20ID:%2097127"><i class="icon" data-icon="t"></i> &nbsp;</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="comment-child" data-sort="1552300709000" bis_skin_checked="1">
+    <div id="268_comment_152470" class="comment-wrapper" bis_skin_checked="1">
+	<div class="comment-content" bis_skin_checked="1">
+		<div class="comment-user-info" bis_skin_checked="1">
+			<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="comment-expand-toggle">[-]</a>
+			<div class="comment-thumbnail-wrap" bis_skin_checked="1">
+				<img class="comment-thumbnail" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/default_avatar.gif">
+			</div>
+			<span class="comment-username">JonnyJ</span>
+			<span class="comment-date"> - 11 Mar 2019 6:38 AM</span>
+		</div>
+		<div class="comment-body" bis_skin_checked="1">Probably because it runs in the core of the internet and any accidental connections to misconfigured routers which advertise paths to networks they are not really connected to could take down large parts of the internet.&nbsp; Also malicious use is possible then.&nbsp; Suppose I set my router up to advertise that it has a really fast path to Google's networks, and make it a peer of my ISP's router - then the ISP would see my router as the best path to google and send everyone's google traffic to me - but since I don't actually have a path to google's network all the traffic would not be delivered... this is why peering is not automatic</div>
+		<input class="comments-form-btn" type="submit" value="Reply">
+		<form class="comments-reply-form">
+			<div class="cleditorMain" style="width: 100%; height: 200px;" bis_skin_checked="1"><div class="cleditorToolbar" bis_skin_checked="1" style="height: 27px;"><div class="cleditorGroup" bis_skin_checked="1" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Bold" bis_skin_checked="1" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Italic" bis_skin_checked="1" style="background-position: -24px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Strikethrough" bis_skin_checked="1" style="background-position: -72px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Font" bis_skin_checked="1" style="background-position: -144px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Font Size" bis_skin_checked="1" style="background-position: -168px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Style" bis_skin_checked="1" style="background-position: -192px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Font Color" bis_skin_checked="1" style="background-position: -216px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Remove Formatting" bis_skin_checked="1" style="background-position: -264px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Bullets" bis_skin_checked="1" style="background-position: -288px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Numbering" bis_skin_checked="1" style="background-position: -312px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 25px;"><div class="cleditorButton cleditorDisabled" title="Insert Hyperlink" bis_skin_checked="1" style="background-position: -576px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 25px;"><div class="cleditorButton ttCleditorButton cleditorDisabled" title="Code" bis_skin_checked="1" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div></div><textarea class="comments-form-textarea" placeholder="Share your comment" style="border: none; margin: 0px; padding: 0px; display: none; width: 100px; height: 173px;"></textarea><iframe frameborder="0" src="javascript:true;" style="width: 100px; height: 173px;" bis_size="{&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:0,&quot;h&quot;:0,&quot;abs_x&quot;:0,&quot;abs_y&quot;:0}" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/saved_resource(3).html"></iframe></div>
+			<button type="submit" class="comments-form-btn submit" href="#comments-reg-login" data-comment-parent="268_comment_152470">Add My Comment</button>			
+			<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="cancel-reply">Cancel</a>
+		</form>
+	</div>
+	<div class="comment-share" bis_skin_checked="1">
+		<ul>
+			<li class="comment-flag">
+				<a href="mailto:socialmedia@techtarget.com?subject=PLEASE%20REVIEW%20COMMENT%20152470:%20BGP%20(Border%20Gateway%20Protocol)&amp;body=Please%20review%20a%20recent%20comment%20for%20inappropriate%20content.%0A%0AURL:%20https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol%0A%0AAuthor:%20JonnyJ%0A%0AComment%20ID:%20152470"><i class="icon" data-icon="t"></i> &nbsp;</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+</div>
+<div class="comment-parent" data-sort="1498128876000" bis_skin_checked="1">
+    <div id="268_comment_118581" class="comment-wrapper" bis_skin_checked="1">
+	<div class="comment-content" bis_skin_checked="1">
+		<div class="comment-user-info" bis_skin_checked="1">
+			<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="comment-expand-toggle">[-]</a>
+			<div class="comment-thumbnail-wrap" bis_skin_checked="1">
+				<img class="comment-thumbnail" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/default_avatar.gif">
+			</div>
+			<span class="comment-username">praveenkumar89</span>
+			<span class="comment-date"> - 22 Jun 2017 6:54 AM</span>
+		</div>
+		<div class="comment-body" bis_skin_checked="1">How does BGP work even in the time of any regular traffic path will down?</div>
+		<input class="comments-form-btn" type="submit" value="Reply">
+		<form class="comments-reply-form">
+			<div class="cleditorMain" style="width: 100%; height: 200px;" bis_skin_checked="1"><div class="cleditorToolbar" bis_skin_checked="1" style="height: 27px;"><div class="cleditorGroup" bis_skin_checked="1" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Bold" bis_skin_checked="1" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Italic" bis_skin_checked="1" style="background-position: -24px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Strikethrough" bis_skin_checked="1" style="background-position: -72px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Font" bis_skin_checked="1" style="background-position: -144px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Font Size" bis_skin_checked="1" style="background-position: -168px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Style" bis_skin_checked="1" style="background-position: -192px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Font Color" bis_skin_checked="1" style="background-position: -216px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Remove Formatting" bis_skin_checked="1" style="background-position: -264px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Bullets" bis_skin_checked="1" style="background-position: -288px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Numbering" bis_skin_checked="1" style="background-position: -312px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 25px;"><div class="cleditorButton cleditorDisabled" title="Insert Hyperlink" bis_skin_checked="1" style="background-position: -576px center;" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div><div class="cleditorGroup" bis_skin_checked="1" style="width: 25px;"><div class="cleditorButton ttCleditorButton cleditorDisabled" title="Code" bis_skin_checked="1" disabled="disabled"></div><div class="cleditorDivider" bis_skin_checked="1"></div></div></div><textarea class="comments-form-textarea" placeholder="Share your comment" style="border: none; margin: 0px; padding: 0px; display: none; width: 100px; height: 173px;"></textarea><iframe frameborder="0" src="javascript:true;" style="width: 100px; height: 173px;" bis_size="{&quot;x&quot;:0,&quot;y&quot;:0,&quot;w&quot;:0,&quot;h&quot;:0,&quot;abs_x&quot;:0,&quot;abs_y&quot;:0}" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/saved_resource(4).html"></iframe></div>
+			<button type="submit" class="comments-form-btn submit" href="#comments-reg-login" data-comment-parent="268_comment_118581">Add My Comment</button>			
+			<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="cancel-reply">Cancel</a>
+		</form>
+	</div>
+	<div class="comment-share" bis_skin_checked="1">
+		<ul>
+			<li class="comment-flag">
+				<a href="mailto:socialmedia@techtarget.com?subject=PLEASE%20REVIEW%20COMMENT%20118581:%20BGP%20(Border%20Gateway%20Protocol)&amp;body=Please%20review%20a%20recent%20comment%20for%20inappropriate%20content.%0A%0AURL:%20https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol%0A%0AAuthor:%20praveenkumar89%0A%0AComment%20ID:%20118581"><i class="icon" data-icon="t"></i> &nbsp;</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+</div>
+			
+		</div>
+		<div class="content-right" bis_skin_checked="1" style="padding-top: 126px; display: block;"></div>
+	</div>
+</section><!-- GoogleAdSenseController, generated at 18:46:28 Tue Jun 11, 2019, by cds2 -->
+<section class="main-content ads-by-google" id="ads-by-google">
+		<h2><a href="https://www.google.com/adsense/support/bin/request.py?contact=abg_afc">-ADS BY GOOGLE</a></h2>
+		<script async="" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/f(2).txt"></script>
+		<!-- Search Sites Responsive AFC -->
+		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6050985421795229" data-ad-slot="8728364240" data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</section>
+<!-- FileExtensionsController, generated at 09:51:35 Tue Jun 11, 2019, by cds2 -->
+<section class="main-content file-extensions" id="file-extensions">
+			<h2>File Extensions and File Formats</h2>
+			<ul class="list-1">
+				<li><a href="https://whatis.techtarget.com/file-extension-list/A">A</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/B">B</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/C">C</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/D">D</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/E">E</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/F">F</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/G">G</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/H">H</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/I">I</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/J">J</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/K">K</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/L">L</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/M">M</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/N">N</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/O">O</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/P">P</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/Q">Q</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/R">R</a></li>
+				<li><a href="https://whatis.techtarget.com/file-extension-list/S">S</a></li>
+				</ul>
+			<ul class="list-2">
+				<li><a href="https://whatis.techtarget.com/file-extension-list/T">T</a></li>
+					<li><a href="https://whatis.techtarget.com/file-extension-list/U">U</a></li>
+					<li><a href="https://whatis.techtarget.com/file-extension-list/V">V</a></li>
+					<li><a href="https://whatis.techtarget.com/file-extension-list/W">W</a></li>
+					<li><a href="https://whatis.techtarget.com/file-extension-list/X">X</a></li>
+					<li><a href="https://whatis.techtarget.com/file-extension-list/Y">Y</a></li>
+					<li><a href="https://whatis.techtarget.com/file-extension-list/Z">Z</a></li>
+					<li><a href="https://whatis.techtarget.com/file-extension-list/0">#</a></li>
+					</ul>
+			</section>
+<!-- NetworkCoverageController, generated at 16:49:07 Tue Jun 11, 2019, by cds2 -->
+<section class="latest-wrapper" id="network-coverage">
+		<nav class="latest-nav-wrapper">
+			<h2>Latest TechTarget <span class="latest-title">resources</span></h2>
+			<ul class="latest-nav">
+				<li>
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="latest-nav-item selected" data-item="1">
+							Unified Communications<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="latest-nav-item" data-item="2">
+							Mobile Computing<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="latest-nav-item" data-item="3">
+							Data Center<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				<li>
+						<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#" class="latest-nav-item" data-item="4">
+							IT Channel<i class="icon mobile-icon" data-icon="5"></i> 
+							<i class="icon desktop-icon" data-icon="A"></i> 
+						</a>
+					</li>
+				</ul>
+		</nav>
+		<span class="latest-nav-mask before-mask"></span>
+		<span class="latest-nav-mask after-mask"></span>
+		<div class="latest-body" bis_skin_checked="1">
+			<div class="latest-content" data-item="1" bis_skin_checked="1">
+					<h2 class="searchunifiedcommunications">
+						<a href="https://searchunifiedcommunications.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Unified</span><span class="logo-2">Communications</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3 style="height: 140px;"><a href="https://searchunifiedcommunications.techtarget.com/news/252464920/Cisco-Jabber-client-gets-tighter-integration-with-Webex-Teams">Cisco Jabber client gets tighter integration with Webex Teams</a></h3>
+										<p>Cisco has redesigned the Cisco Jabber client to "look and feel like" Webex Teams, the latest step in the company's push to bring ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3 style="height: 140px;"><a href="https://searchunifiedcommunications.techtarget.com/feature/UCaaS-products-for-what-every-organization-needs">UCaaS products for what every organization needs</a></h3>
+										<p>Check out these UCaaS products to help you make a final decision based on company overview, hardware options and technical ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3 style="height: 140px;"><a href="https://searchunifiedcommunications.techtarget.com/tip/How-to-manage-hybrid-cloud-QoS-in-unified-communications">How to manage hybrid cloud QoS in unified communications</a></h3>
+										<p>The two most common approaches to a hybrid UC configuration require different management techniques to maintain hybrid cloud QoS ...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="2" bis_skin_checked="1">
+					<h2 class="searchmobilecomputing">
+						<a href="https://searchmobilecomputing.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Mobile</span><span class="logo-2">Computing</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchmobilecomputing.techtarget.com/news/252464870/New-Vive-virtual-reality-for-enterprise-is-now-available">New Vive virtual reality for enterprise is now available</a></h3>
+										<p>The Vive Pro Eye, a virtual reality product specifically designed for enterprise is now available for purchase in North America, ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchmobilecomputing.techtarget.com/tip/How-mobile-threat-defense-tools-can-help-mobile-admins">How mobile threat defense tools can help mobile admins</a></h3>
+										<p>Mobile threat defense tools can significantly improve an organization's mobile security. Learn how these tools are different, ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchmobilecomputing.techtarget.com/news/252464710/IPadOS-Mac-Pro-aim-to-improve-Apples-enterprise-stance">IPadOS, Mac Pro aim to improve Apple's enterprise stance</a></h3>
+										<p>The new iPadOS is a distinct operating system for the Apple tablet. New features such as mouse and external hard drive ...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="3" bis_skin_checked="1">
+					<h2 class="searchdatacenter">
+						<a href="https://searchdatacenter.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">Data</span><span class="logo-2">Center</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchdatacenter.techtarget.com/tip/4-essential-KPIs-for-edge-computing-management">4 essential KPIs for edge computing management</a></h3>
+										<p>If you want to track edge deployment activity, look at storage, network and processing resources to guide workload configuration ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchdatacenter.techtarget.com/news/252464796/Data-center-managers-avoid-cloud-migration-risks">Data center managers avoid cloud migration risks</a></h3>
+										<p>Many corporate IT users are flocking to the cloud, but a majority surprisingly remain reluctant to migrate their on-premises ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchdatacenter.techtarget.com/quiz/Containers-vs-colocation-vs-cloud-Find-your-data-centers-match">Colocation vs. cloud: Quiz yourself on these workload expansion options</a></h3>
+										<p>Colocation or cloud? Data centers have plenty of expansion options beyond building a new facility. Learn about each option -- and...</p>
+									</li>
+								</ul>
+				</div>
+			<div class="latest-content" data-item="4" bis_skin_checked="1">
+					<h2 class="searchitchannel">
+						<a href="https://searchitchannel.techtarget.com/">
+							<span class="logo-search">Search</span><span class="logo-1">IT</span><span class="logo-2">Channel</span></a>
+					</h2>
+					<ul>
+						<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchitchannel.techtarget.com/news/252464810/Channel-partners-react-to-Google-cloud-outage">Channel partners react to Google cloud outage</a></h3>
+										<p>Google's four-hour disruption is the latest outage to hit cloud providers, sparking questions about cloud redundancy; other ...</p>
+									</li>
+								<li>
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchitchannel.techtarget.com/opinion/Post-digital-world-calls-for-collaborative-security">Post-digital world calls for collaborative security</a></h3>
+										<p>As the post-digital era dawns, organizations will need to rethink cybersecurity as they confront threats that span entire ...</p>
+									</li>
+								<li class="hide-for-small">
+										<i class="icon" data-icon="2"></i>
+										<h3><a href="https://searchitchannel.techtarget.com/tutorial/How-to-install-and-configure-vCenter-Update-Manager">How to install and configure vCenter Update Manager</a></h3>
+										<p>Follow these steps to install and configure VMware vCenter Update Manager, which can help solution providers with patching hosts ...</p>
+									</li>
+								</ul>
+				</div>
+			</div>
+	</section>
+<!-- FooterLinksController, generated at 18:46:28 Tue Jun 11, 2019, by cds2 -->
+<footer id="page-footer">
+	<div class="content-left" bis_skin_checked="1">
+		<!-- Plug in TechTarget Logo inside the anchor tag here. -->
+		<div class="column column-logo" bis_skin_checked="1">
+			<a href="https://searchnetworking.techtarget.com/definition/BGP-Border-Gateway-Protocol#"></a>
+		</div>
+	</div>
+	<div class="content-center" bis_skin_checked="1">
+		<ul class="column">
+			<li class="footer-item footer-item-col-1 footer-item-row-1"><a href="https://searchnetworking.techtarget.com/about">About Us</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-2"><a href="https://searchnetworking.techtarget.com/about/editors">Meet The Editors</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-3"><a href="https://searchnetworking.techtarget.com/about/contact">Contact Us</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-4"><a href="https://www.techtarget.com/privacy-policy-may25/">Privacy Policy</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-5"><a href="https://searchnetworking.techtarget.com/about/advertising">Advertisers</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-6"><a href="https://searchnetworking.techtarget.com/about/partners">Business Partners</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-7"><a href="https://www.techtarget.com/solutions/">Media Kit</a></li>
+			<li class="footer-item footer-item-col-1 footer-item-row-8"><a href="https://www.techtarget.com/">Corporate Site</a></li>
+			</ul>
+		<ul class="column">
+			<li class="footer-item footer-item-col-2 footer-item-row-1"><a href="https://searchnetworking.techtarget.com/contributors">Contributors</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-2"><a href="http://reprints.ygsgroup.com/m/techtarget">Reprints</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-3"><a href="https://searchnetworking.techtarget.com/archive">Archive</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-4"><a href="https://searchnetworking.techtarget.com/sitemap">Site Map</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-5"><a href="https://searchnetworking.techtarget.com/answers">Answers</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-6"><a href="https://searchnetworking.techtarget.com/definitions">Definitions</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-7"><a href="https://searchnetworking.techtarget.com/eproducts">E-Products</a></li>
+			<li class="footer-item footer-item-col-2 footer-item-row-8"><a href="https://searchnetworking.techtarget.com/events">Events</a></li>
+			</ul>
+		<ul class="column column-mobile-hidden">
+			<li class="footer-item footer-item-col-3 footer-item-row-1"><a href="https://searchnetworking.techtarget.com/features">Features</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-2"><a href="https://searchnetworking.techtarget.com/guides">Guides</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-3"><a href="https://searchnetworking.techtarget.com/opinions">Opinions</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-4"><a href="https://searchnetworking.techtarget.com/photostories">Photo Stories</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-5"><a href="https://searchnetworking.techtarget.com/quizzes">Quizzes</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-6"><a href="https://searchnetworking.techtarget.com/tips">Tips</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-7"><a href="https://searchnetworking.techtarget.com/tutorials">Tutorials</a></li>
+			<li class="footer-item footer-item-col-3 footer-item-row-8"><a href="https://searchnetworking.techtarget.com/videos">Videos</a></li>
+			</ul>
+	</div>
+	<div class="content-right" bis_skin_checked="1">
+		<div class="column column-legal" bis_skin_checked="1">
+			<p class="footer-legal">All Rights Reserved, <span>
+			<a href="https://searchnetworking.techtarget.com/about/copyright">Copyright 2000 - 2019</a>, TechTarget</span>
+			
+			</p>
+			
+		</div>
+	</div>
+</footer><script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/responsive-ui.min.js"></script><!-- Begin Chartbeat -->
+		<script>
+    var _sf_async_config={};
+    _sf_async_config.uid = 41935;
+    _sf_async_config.domain = 'techtargetnetwork.com';
+    _sf_async_config.sections = 'snet, snet - Telecommunication networking';
+    _sf_async_config.authors = 'Margaret Rouse, DEFINITION, snet - DEFINITION';
+    _sf_async_config.useCanonical = true;
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src',
+           (('https:' == document.location.protocol) ? 'https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/' : 'https://static.chartbeat.com/') + 'js/chartbeat.js');
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+</script><!-- End Chartbeat -->
+	</div><script type="text/javascript" id="">function inlineEventHandler(){var a=Array.prototype.slice.call(arguments);dataLayer.push({eventCategory:a[0],eventAction:a[1],eventLabel:a[2],eventValue:a[3],eventNoninteraction:a[4]});dataLayer.push({event:"gaInlineRegistrationJsEvent"})}var inlineFullRegSubmittedCookie="tt.gtm.inlinereg.fullReg.submitted";
+~document.cookie.indexOf(inlineFullRegSubmittedCookie+"\x3d")&&(inlineEventHandler("Inline Registration","Successful Full Registration","Full Registration Form",null,!0),document.cookie=inlineFullRegSubmittedCookie+"\x3d; expires\x3dThu, 01 Jan 1970 05:00:00 GMT; path\x3d/");
+0<$("#inlineRegistration").length&&($("#inlineRegistration").on("click",".inlineReg_p1 .callToAction a",function(){inlineEventHandler("Inline Registration","Log In Link Click","Partial Registration Form",null,!1)}),$("#inlineRegistration").on("click",".inlineReg_p2 .callToAction a",function(){inlineEventHandler("Inline Registration","Log In Link Click","Full Registration Form",null,!1)}),$("#inlineRegistration").on("click",".inlineReg_p1 .inlineRegLoginErrMsg",function(){inlineEventHandler("Inline Registration",
+"Log In Link Click","Partial Registration Form",null,!1)}),$("#inlineRegistration").on("click",".inlineReg_p2 .inlineRegLoginErrMsg",function(){inlineEventHandler("Inline Registration","Log In Link Click","Full Registration Form",null,!1)}),$("#inlineRegistration").on("tt.inlinereg.emailOnly.error",function(){inlineEventHandler("Inline Registration","Partial Registration Error","Partial Registration Form",null,!0)}),$("#inlineRegistration").on("tt.inlinereg.emailOnly.submit",function(){inlineEventHandler("Inline Registration",
+"Submit Partial Registration","Partial Registration Form",null,!1)}),$("#inlineRegistration").on("tt.inlinereg.fullReg.load",function(){inlineEventHandler("Inline Registration","Full Registration Form Load","Full Registration Form",null,!0)}),$("#inlineRegistration").on("tt.inlinereg.fullReg.error",function(){inlineEventHandler("Inline Registration","Full Registration Error","Full Registration Form",null,!0)}),$("#inlineRegistration").on("tt.inlinereg.fullReg.submit",function(){inlineEventHandler("Inline Registration",
+"Submit Full Registration","Full Registration Form",null,!0);document.cookie=inlineFullRegSubmittedCookie+"\x3d1; path\x3d/"}));</script><script type="text/javascript" id="">(function(){var a=document.createElement("script");a.src="//cdn.ttgtmedia.com/rms/ux/javascript/advertisement.js";document.head.appendChild(a)})();</script>
+<script type="text/javascript" id="">(function(a,c,e,f,d,b){a.hj=a.hj||function(){(a.hj.q=a.hj.q||[]).push(arguments)};a._hjSettings={hjid:google_tag_manager["GTM-PWWZSH"].macro(32),hjsv:5};d=c.getElementsByTagName("head")[0];b=c.createElement("script");b.async=1;b.src=e+a._hjSettings.hjid+f+a._hjSettings.hjsv;d.appendChild(b)})(window,document,"//static.hotjar.com/c/hotjar-",".js?sv\x3d");</script><script type="text/javascript" id="">var DATALAYER_OBJECT_NAME="dataLayer",referrerOverride=function(d){var c=window[DATALAYER_OBJECT_NAME]||[];c.push({event:"optimizely-referrer-override","optimizely-referrer":d})},sendCampaignData=function(d,c,h,g,f,k,b,a,e){if(g=optimizely.get("data")&&optimizely.get("data").campaigns[c]&&optimizely.get("data").campaigns[c].integrationSettings&&optimizely.get("data").campaigns[c].integrationSettings.google_universal_analytics&&optimizely.get("data").campaigns[c].integrationSettings.google_universal_analytics.universal_analytics_slot)d=
+d?d+"("+c+")":c,h=h.join(","),f=f?f+"("+k+")":h+"("+k+")",b=b?b+"("+a+")":a,e=e?"holdback":"treatment",e=[d,f,b,e].join(":"),b=window[DATALAYER_OBJECT_NAME]||[],b.push({event:"campaign-decided","optimizely-dimension-value":e,"optimizely-dimension-number":g})},initNewOptimizelyIntegration=function(d,c){var h=!1,g=function(b){var a=window.optimizely.get&&window.optimizely.get("state"),e=a.getRedirectInfo()&&a.getRedirectInfo().referrer;!h&&e&&(d(e),h=!0);a=a.getCampaignStates({isActive:!0});a=a[b];
+e=a.campaignName;if(0<a.audiences.length){var f=a.audiences.map(function(a){return a.name});var g=a.audiences.map(function(a){return a.id})}else f=["everyone_else"],g=[0];var k=a.experiment.name,l=a.experiment.id,m=a.variation.name,n=a.variation.id;c(e,b,f,g,k,l,m,n,a.isInCampaignHoldback)},f=function(){window.optimizely=window.optimizely||[];window.optimizely.push({type:"addListener",filter:{type:"lifecycle",name:"campaignDecided"},handler:function(b){b=b.data.campaign.id;g(b)}})},k=function(){var b=
+window.optimizely.get&&window.optimizely.get("state");if(b){b=b.getCampaignStates({isActive:!0});for(var a in b)g(a)}};k();f()},initOptimizelyIntegration=function(d,c){initNewOptimizelyIntegration(d,c)};initOptimizelyIntegration(referrerOverride,sendCampaignData);</script>
+<script type="text/javascript" id="">(function(){var a=document,b=a.getElementsByTagName("head")[0];a=a.createElement("script");var c="https:"==document.location.protocol?"https://":"http://";a.type="text/javascript";a.async=!0;a.src=c+"s.dpmsrv.com/dpm_b4c96d80854dd27e76d8cc9e21960eebda52e962.min.js";b.appendChild(a)})();</script>
+<script type="text/javascript" id="">setTimeout(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0012/7034.js?"+Math.floor((new Date).getTime()/36E5);a.async=!0;a.type="text/javascript";b.parentNode.insertBefore(a,b)},1);</script><div class="cleditorPopup cleditorList" bis_skin_checked="1" style="display: none;"><div style="font-family: Arial;" bis_skin_checked="1">Arial</div><div style="font-family: &quot;Arial Black&quot;;" bis_skin_checked="1">Arial Black</div><div style="font-family: &quot;Comic Sans MS&quot;;" bis_skin_checked="1">Comic Sans MS</div><div style="font-family: &quot;Courier New&quot;;" bis_skin_checked="1">Courier New</div><div style="font-family: Narrow;" bis_skin_checked="1">Narrow</div><div style="font-family: Garamond;" bis_skin_checked="1">Garamond</div><div style="font-family: Georgia;" bis_skin_checked="1">Georgia</div><div style="font-family: Impact;" bis_skin_checked="1">Impact</div><div style="font-family: &quot;Sans Serif&quot;;" bis_skin_checked="1">Sans Serif</div><div style="font-family: serif;" bis_skin_checked="1">Serif</div><div style="font-family: Tahoma;" bis_skin_checked="1">Tahoma</div><div style="font-family: &quot;Trebuchet MS&quot;;" bis_skin_checked="1">Trebuchet MS</div><div style="font-family: Verdana;" bis_skin_checked="1">Verdana</div></div><div class="cleditorPopup cleditorList" bis_skin_checked="1" style="display: none;"><div bis_skin_checked="1"><font size="1">1</font></div><div bis_skin_checked="1"><font size="2">2</font></div><div bis_skin_checked="1"><font size="3">3</font></div><div bis_skin_checked="1"><font size="4">4</font></div><div bis_skin_checked="1"><font size="5">5</font></div><div bis_skin_checked="1"><font size="6">6</font></div><div bis_skin_checked="1"><font size="7">7</font></div></div><div class="cleditorPopup cleditorList" bis_skin_checked="1" style="display: none;"><div bis_skin_checked="1"><p>Paragraph</p></div><div bis_skin_checked="1"><h1>Header 1</h1></div><div bis_skin_checked="1"><h2>Header 2</h2></div><div bis_skin_checked="1"><h3>Header 3</h3></div><div bis_skin_checked="1"><h4>Header 4</h4></div><div bis_skin_checked="1"><h5>Header 5</h5></div><div bis_skin_checked="1"><h6>Header 6</h6></div></div><div class="cleditorPopup cleditorColor" bis_skin_checked="1" style="display: none;"><div style="background-color: rgb(255, 255, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 204, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 204, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 255, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 255, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 255, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 255, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(204, 255, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(204, 204, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 204, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(204, 204, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 102, 102);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 153, 102);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 255, 102);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 255, 51);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 255, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 255, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 255, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 153, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 153, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(187, 187, 187);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 0, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 153, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 204, 102);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 255, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 255, 51);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 204, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 204, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 102, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(204, 102, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 153, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(204, 0, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 102, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 204, 51);" bis_skin_checked="1"></div><div style="background-color: rgb(255, 204, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 204, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(0, 204, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 102, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 51, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(204, 51, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 102, 102);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 0, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(204, 102, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(204, 153, 51);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 153, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(0, 153, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 153, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 51, 255);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 0, 204);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 51, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 51, 51);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 0, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 51, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(153, 102, 51);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 102, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(0, 102, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 102, 102);" bis_skin_checked="1"></div><div style="background-color: rgb(0, 0, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 51, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 51, 102);" bis_skin_checked="1"></div><div style="background-color: rgb(0, 0, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 0, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 51, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(102, 51, 51);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 51, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(0, 51, 0);" bis_skin_checked="1"></div><div style="background-color: rgb(0, 51, 51);" bis_skin_checked="1"></div><div style="background-color: rgb(0, 0, 102);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 0, 153);" bis_skin_checked="1"></div><div style="background-color: rgb(51, 0, 51);" bis_skin_checked="1"></div></div><div class="cleditorPopup cleditorPrompt" bis_skin_checked="1" style="display: none;"><label>Enter URL:<br><input type="text" value="http://" style="width:200px"></label><br><input type="button" value="Submit"></div><div class="cleditorPopup cleditorPrompt" bis_skin_checked="1" style="display: none;">Paste the code:<br><textarea cols="40" rows="3"></textarea><br><input type="button" value="Ok"></div>
+	<div id="mobile-sidebars" class="mobile-sidebars" bis_skin_checked="1">
+		<aside class="resources-bar mobile-resources-bar" id="resources-bar">
+	<!-- VendorResourcesController, generated at 18:14:49 Tue Jun 11, 2019, by cds2 -->
+<div class="resources-bar-header" bis_skin_checked="1"><i class="icon" data-icon="l"></i>Sponsored News</div>
+			<ul class="resources-bar-list sponsored-news">
+				<li class="resources-bar-item">
+						<a href="https://searchcontentmanagement.techtarget.com/ElectronicSignatures/More-Digital-Less-Paper-Its-About-Time">More Digital, Less Paper: It’s About Time</a>
+						<span>–Adobe</span>
+					</li>
+				<li class="resources-bar-item">
+						<a href="https://searchenterprisedesktop.techtarget.com/futureofwork/Whats-Next-in-Digital-Workspaces-3-Improvements-to-Look-for-in-2019">What’s Next in Digital Workspaces: 3 Improvements to Look for in 2019</a>
+						<span>–Citrix</span>
+					</li>
+				<li class="resources-bar-item see-more"><a href="https://searchnetworking.techtarget.com/sponsored_communities">See More</a></li>
+				</ul>
+		<div class="resources-bar-header" bis_skin_checked="1"><i class="icon" data-icon="l"></i>Vendor Resources</div>
+		<ul class="resources-bar-list" id="vendorResourcesSplash">
+			<li class="resources-bar-item">
+					<a href="https://www.bitpipe.com/detail/RES/1397141103_464.html">Secure internet routing</a>
+					<span>–ComputerWeekly.com</span>
+					<i class="icon" data-icon="r"></i>
+				</li>
+			<li class="resources-bar-item">
+					<a href="https://www.bitpipe.com/detail/RES/1513691025_875.html">Architecting an Application-Driven WAN Edge</a>
+					<span>–Silver Peak</span>
+					<i class="icon" data-icon="8"></i>
+				</li>
+			</ul>
+</aside></div>
+	<div id="image-overlay" class="image-overlay" bis_skin_checked="1">
+		<div class="image-overlay-img" bis_skin_checked="1"></div>
+		<div class="image-overlay-close" bis_skin_checked="1">Close</div>
+	</div>
+	
+<!--
+Component Load Times
+====================
+DefaultPageController=41 ms
+PinnedNavBarController=45 ms
+AdsController=0 ms
+CommentingController=11 ms
+
+Total time=97 ms
+Request Serving Server: cds2
+-->
+
+
+<script id="f5_cspm">(function(){var f5_cspm={f5_p:'KLMKJNMBANAJPEBILGNIEFMOOAJJJLBMAGFCCAJJLCKDCHJMMDBJGDACAOKGEDOPAFFLDBMNMMBBODJFJNJNCGLBPIFACFOBAADCHNMBJHDIIFFIAALDBNFCHFGNJJHI',setCharAt:function(str,index,chr){if(index>str.length-1)return str;return str.substr(0,index)+chr+str.substr(index+1);},get_byte:function(str,i){var s=(i/16)|0;i=(i&15);s=s*32;return((str.charCodeAt(i+16+s)-65)<<4)|(str.charCodeAt(i+s)-65);},set_byte:function(str,i,b){var s=(i/16)|0;i=(i&15);s=s*32;str=f5_cspm.setCharAt(str,(i+16+s),String.fromCharCode((b>>4)+65));str=f5_cspm.setCharAt(str,(i+s),String.fromCharCode((b&15)+65));return str;},set_latency:function(str,latency){latency=latency&0xffff;str=f5_cspm.set_byte(str,48,(latency>>8));str=f5_cspm.set_byte(str,49,(latency&0xff));str=f5_cspm.set_byte(str,43,2);return str;},wait_perf_data:function(){try{var wp=window.performance.timing;if(wp.loadEventEnd>0){var res=wp.loadEventEnd-wp.navigationStart;if(res<60001){var cookie_val=f5_cspm.set_latency(f5_cspm.f5_p,res);window.document.cookie='f5avr2045460670aaaaaaaaaaaaaaaa='+encodeURIComponent(cookie_val)+';path=/';}
+return;}}
+catch(err){return;}
+setTimeout(f5_cspm.wait_perf_data,100);return;},go:function(){var chunk=window.document.cookie.split(/\s*;\s*/);for(var i=0;i<chunk.length;++i){var pair=chunk[i].split(/\s*=\s*/);if(pair[0]=='f5_cspm'&&pair[1]=='1234')
+{var d=new Date();d.setTime(d.getTime()-1000);window.document.cookie='f5_cspm=;expires='+d.toUTCString()+';path=/;';setTimeout(f5_cspm.wait_perf_data,100);}}}}
+f5_cspm.go();}());</script><img src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/activity.gif" class="track"><div id="cboxOverlay" style="display: none;" bis_skin_checked="1"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;" bis_skin_checked="1"><div id="cboxWrapper" bis_skin_checked="1"><div bis_skin_checked="1"><div id="cboxTopLeft" style="float: left;" bis_skin_checked="1"></div><div id="cboxTopCenter" style="float: left;" bis_skin_checked="1"></div><div id="cboxTopRight" style="float: left;" bis_skin_checked="1"></div></div><div style="clear: left;" bis_skin_checked="1"><div id="cboxMiddleLeft" style="float: left;" bis_skin_checked="1"></div><div id="cboxContent" style="float: left;" bis_skin_checked="1"><div id="cboxTitle" style="float: left;" bis_skin_checked="1"></div><div id="cboxCurrent" style="float: left;" bis_skin_checked="1"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;" bis_skin_checked="1"></div><div id="cboxLoadingGraphic" style="float: left;" bis_skin_checked="1"></div></div><div id="cboxMiddleRight" style="float: left;" bis_skin_checked="1"></div></div><div style="clear: left;" bis_skin_checked="1"><div id="cboxBottomLeft" style="float: left;" bis_skin_checked="1"></div><div id="cboxBottomCenter" style="float: left;" bis_skin_checked="1"></div><div id="cboxBottomRight" style="float: left;" bis_skin_checked="1"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;" bis_skin_checked="1"></div></div><div style="display: none; visibility: hidden;" bis_skin_checked="1">
+<script>var google_conversion_id=1070110249,google_conversion_label="RRsgCOW4tgMQqayi_gM",google_custom_params=window.google_tag_params,google_remarketing_only=!0;</script>
+<script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/f(3).txt"></script>
+<noscript></noscript>
+<script>var google_conversion_id=1072226410,google_conversion_label="x3P_CIql1gMQ6sCj_wM",google_custom_params=window.google_tag_params,google_remarketing_only=!0;</script>
+<script src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/f(3).txt"></script>
+<noscript></noscript></div><script type="text/javascript" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/MathJax.js"></script><script id="texAllTheThingsPageScript" type="text/javascript" src="chrome-extension://cbimabofgmfdkicghcadidpemeenbffn/js/pageScript.js" inlinemath="[[&quot;$&quot;,&quot;$&quot;],[&quot;[;&quot;,&quot;;]&quot;]]" displaymath="[[&quot;$$&quot;,&quot;$$&quot;],[&quot;\\[&quot;,&quot;\\]&quot;]]" skiptags="[&quot;script&quot;,&quot;noscript&quot;,&quot;style&quot;,&quot;textarea&quot;,&quot;pre&quot;,&quot;code&quot;]"></script><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/box-90f3a29ef7448451db5af955688970d7.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe><div id="ads" bis_skin_checked="1"></div><script language="javascript" type="text/javascript" src="./What is BGP (Border Gateway Protocol)_ - Definition from WhatIs.com_files/chartbeat.js"></script></body></html>

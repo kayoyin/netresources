@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://geek-university.com/ccna/tcp-ip-suite-of-protocols/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="slb gr__geek-university_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>TCP/IP suite of protocols | CCNA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta name="author" content="Geek University">
+<!-- All in One SEO Pack 2.12 by Michael Torbert of Semper Fi Web Design[99,155] -->
+<meta name="description" content="This article describes a set of communications protocols included in the TCP/IP suite, such as IP, TCP, UDP, ARP, DNS, etc.">
+
+<meta name="keywords" content="tcp/ip model,tcp/ip protocols">
+
+<link rel="canonical" href="https://geek-university.com/ccna/tcp-ip-suite-of-protocols/">
+<meta property="og:title" content="TCP/IP suite of protocols | CCNA">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://geek-university.com/ccna/tcp-ip-suite-of-protocols/">
+<meta property="og:image" content="https://geek-university.com/wp-content/uploads/2015/08/geek-univerity-logo.png">
+<meta property="og:site_name" content="Geek University">
+<meta property="og:description" content="This article describes a set of communications protocols included in the TCP/IP suite, such as IP, TCP, UDP, ARP, DNS, etc.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@geek_uni_com">
+<meta name="twitter:domain" content="geek-university.com">
+<meta name="twitter:title" content="TCP/IP suite of protocols | CCNA">
+<meta name="twitter:description" content="This article describes a set of communications protocols included in the TCP/IP suite, such as IP, TCP, UDP, ARP, DNS, etc.">
+<meta name="twitter:image" content="https://geek-university.com/wp-content/uploads/2015/08/geek-univerity-logo.png">
+<meta itemprop="image" content="https://geek-university.com/wp-content/uploads/2015/08/geek-univerity-logo.png">
+<!-- /all in one seo pack -->
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Geek University » Feed" href="https://geek-university.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Geek University » Comments Feed" href="https://geek-university.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Geek University » TCP/IP suite of protocols Comments Feed" href="https://geek-university.com/ccna/tcp-ip-suite-of-protocols/feed/">
+		<script async="" src="./TCP_IP suite of protocols _ CCNA_files/analytics.js"></script><script src="./TCP_IP suite of protocols _ CCNA_files/sdk.js" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="./TCP_IP suite of protocols _ CCNA_files/recaptcha__en_gb.js"></script><script id="facebook-jssdk" src="./TCP_IP suite of protocols _ CCNA_files/sdk(1).js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/geek-university.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./TCP_IP suite of protocols _ CCNA_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="validate-engine-css-css" href="./TCP_IP suite of protocols _ CCNA_files/validationEngine.jquery.css" type="text/css" media="all">
+<link rel="stylesheet" id="edd-styles-css" href="./TCP_IP suite of protocols _ CCNA_files/edd.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wplms-customizer-css-css" href="./TCP_IP suite of protocols _ CCNA_files/custom.css" type="text/css" media="all">
+<link rel="stylesheet" id="bp-course-css-css" href="./TCP_IP suite of protocols _ CCNA_files/course_template.css" type="text/css" media="all">
+<link rel="stylesheet" id="wplms-style-css" href="./TCP_IP suite of protocols _ CCNA_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wplms_child_theme_style-css" href="./TCP_IP suite of protocols _ CCNA_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="slb_core-css" href="./TCP_IP suite of protocols _ CCNA_files/app.css" type="text/css" media="all">
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/jquery.js"></script><script>(function(){var a=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(){this.requestMethod=arguments[0],a.apply(this,arguments)};var h=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.send=function(){var i=this.onreadystatechange;return this.onreadystatechange=function(){if(4===this.readyState){var j='detector',k={posdMessageId:'PANELOS_MESSAGE',type:'VIDEO_XHR_CANDIDATE',from:j,to:j.substring(0,j.length-2),content:{requestMethod:this.requestMethod,url:this.responseURL,type:this.getResponseHeader('content-type'),content:this.response}};window.postMessage(k,'*')}return i?i.apply(this,arguments):void 0},h.apply(this,arguments)}})();</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var BP_Confirm = {"are_you_sure":"Are you sure?"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/confirm.min.js"></script>
+<script type="text/javascript">
+var mejsL10n = {"language":"en","strings":{"mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen-off":"Turn off Fullscreen","mejs.fullscreen-on":"Go Fullscreen","mejs.download-video":"Download Video","mejs.fullscreen":"Fullscreen","mejs.time-jump-forward":["Jump forward 1 second","Jump forward %1 seconds"],"mejs.loop":"Toggle Loop","mejs.play":"Play","mejs.pause":"Pause","mejs.close":"Close","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.time-skip-back":["Skip back 1 second","Skip back %1 seconds"],"mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.mute-toggle":"Mute Toggle","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.ad-skip":"Skip ad","mejs.ad-skip-info":["Skip in 1 second","Skip in %1 seconds"],"mejs.source-chooser":"Source Chooser","mejs.stop":"Stop","mejs.speed-rate":"Speed Rate","mejs.live-broadcast":"Live Broadcast","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/mediaelement-and-player.min.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/mediaelement-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/custom.js"></script>
+<link rel="https://api.w.org/" href="https://geek-university.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://geek-university.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://geek-university.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Cisco three-layered hierarchical model" href="https://geek-university.com/ccna/cisco-three-layered-hierarchical-model/">
+<link rel="next" title="What is an IP address?" href="https://geek-university.com/ccna/what-is-an-ip-address-2/">
+<meta name="generator" content="WordPress 5.1.1">
+<link rel="shortlink" href="https://geek-university.com/?p=3621">
+<link rel="alternate" type="application/json+oembed" href="https://geek-university.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgeek-university.com%2Fccna%2Ftcp-ip-suite-of-protocols%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://geek-university.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgeek-university.com%2Fccna%2Ftcp-ip-suite-of-protocols%2F&amp;format=xml">
+
+	<script type="text/javascript">var ajaxurl = 'https://geek-university.com/wp-admin/admin-ajax.php';</script>
+
+<meta name="generator" content="Easy Digital Downloads v2.9.12">
+<link rel="canonical" href="https://geek-university.com/ccna/tcp-ip-suite-of-protocols/">
+
+		<script type="text/javascript">
+			var cli_flush_cache=1;
+		</script>
+		<link rel="icon" href="https://geek-university.com/wp-content/uploads/2018/06/cropped-favicon2-120x120.png?x66712" sizes="32x32">
+<link rel="icon" href="https://geek-university.com/wp-content/uploads/2018/06/cropped-favicon2-310x310.png?x66712" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://geek-university.com/wp-content/uploads/2018/06/cropped-favicon2-310x310.png?x66712">
+<meta name="msapplication-TileImage" content="https://geek-university.com/wp-content/uploads/2018/06/cropped-favicon2-310x310.png">
+<style>#logo img,#alt_logo img{height:65px;max-height:65px;}#logo img,#alt_logo img{max-height:65px;}header nav>.menu>li>a,header.sleek nav>.menu>li>a,header.sleek .topmenu>li>a, header #searchicon,.mooc .topmenu>li>a, .mooc nav>.menu>li>a,#alt_logo{padding-top:30px;padding-bottom:30px;}.logged-out #vibe_bp_login .fullscreen_login,#vibe_bp_login ul+ul{background:#313b3d;}#vibe_bp_login,#wplms_custom_registration_form,#wplms_forgot_password_form,.logged-out #vibe_bp_login .fullscreen_login #vbp-login-form,.login_sidebar,#vibe_bp_login #wplms_custom_registration_form, #vibe_bp_login{background:#232b2d;}.field-visibility-settings-notoggle, .field-visibility-settings-toggle, .field-visibility-settings-toggle-1, .field-visibility-settings-toggle-2, .field-visibility-settings-toggle-3, .field-visibility-settings-toggle-4 {display:none;}.course_curriculum .course_lesson span.time {display:none;}.meta .date {display:none;}.blogpost .cats {display:none;}a.print_results, a.print_unit {display:none;}.single-course .instructor_meta a[data-original-title="Send Email"] {display:none;}.single-course .breadcrumbs {display:none;}.comment-reply-link, .comment-reply-login{display:none;}.page-template-start input[name="review_course"] {display:none;}.page-template-start input.review_course.unit_button.full.button {margin-top:15px;}#vibe_bp_login:after{ border-color:transparent transparent #313b3d transparent;}#vibe_bp_login:after{border-color:transparent transparent #232b2d;}header #trigger{top:30px !important;}header.sleek #vibe_bp_login,header.mooc #vibe_bp_login{top:60px;}header.mooc #mooc_searchform{margin-top:30px;}</style><link rel="stylesheet" type="text/css" href="./TCP_IP suite of protocols _ CCNA_files/style(1).css"><link rel="stylesheet" type="text/css" href="./TCP_IP suite of protocols _ CCNA_files/style(2).css"><link rel="stylesheet" type="text/css" href="./TCP_IP suite of protocols _ CCNA_files/style(3).css"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body class="bp-legacy post-template-default single single-post postid-3621 single-format-standard d5 logged-out" data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;" bis_skin_checked="1"></div>
+<div id="global" class="global" bis_skin_checked="1">
+    <div class="pagesidebar" bis_skin_checked="1">
+    <div class="sidebarcontent" bis_skin_checked="1">    
+        <a id="close_menu_sidebar" title="Close"><span></span></a>
+        <div class="mobile_icons" bis_skin_checked="1"><a id="mobile_searchicon"><i class="fa fa-search"></i></a></div><ul id="menu-mobilemenu" class="sidemenu"><li id="menu-item-7561" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7561"><a href="https://geek-university.com/course/ccent-icnd1-100-101-course/">CCNA online course</a></li>
+<li id="menu-item-8201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8201"><a href="https://geek-university.com/course/vcp5-dcv-course/">VMware ESXi online course</a></li>
+<li id="menu-item-7562" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7562"><a href="https://geek-university.com/course/free-linux-course/">Linux online course</a></li>
+<li id="menu-item-8390" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8390"><a href="https://geek-university.com/course/nmap-online-course/">Nmap online course</a></li>
+<li id="menu-item-9234" class="menu-item menu-item-type-post_type menu-item-object-course menu-item-9234"><a href="https://geek-university.com/course/apache-online-course/">Apache HTTP Server course</a></li>
+<li id="menu-item-9044" class="menu-item menu-item-type-post_type menu-item-object-course menu-item-9044"><a href="https://geek-university.com/course/splunk-online-course/">Splunk online course</a></li>
+<li id="menu-item-7563" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7563"><a href="https://geek-university.com/course/raspberry-pi-free-course/">Raspberry Pi online course</a></li>
+<li id="menu-item-8592" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8592"><a href="https://geek-university.com/course/mysql-course/">MySQL online course</a></li>
+<li id="menu-item-2945" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2945"><a href="https://geek-university.com/vmware-player/vmware-player-online-course/">VMware Player online course</a></li>
+<li id="menu-item-4077" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4077"><a href="https://geek-university.com/oracle-virtualbox/oracle-virtualbox-online-course/">Oracle VirtualBox online course</a></li>
+<li id="menu-item-4245" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-4245"><a href="https://geek-university.com/python/python-online-course/">Python online course</a></li>
+<li id="menu-item-2943" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2943"><a href="https://geek-university.com/sql/sql-online-course/">SQL online course</a></li>
+<li id="menu-item-10644" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10644"><a href="https://geek-university.com/asi/">A short introduction to…</a></li>
+</ul>    </div>
+</div>      <div class="pusher" bis_skin_checked="1">
+                <div id="headertop" class="fix fixed" bis_skin_checked="1">
+            <div class="container" bis_skin_checked="1">
+                <div class="row" bis_skin_checked="1">
+                    <div class="col-md-4 col-sm-3 col-xs-4" bis_skin_checked="1">
+                                                    <a href="https://geek-university.com/" class="homeicon"><img src="./TCP_IP suite of protocols _ CCNA_files/header_footer_logo.png" id="header_logo" alt="Geek University"><img id="header_mobile_logo" alt="Geek University" src="./TCP_IP suite of protocols _ CCNA_files/mobile_logo_geek_uni-1.png" class="hide" width="100" height="48"></a> 
+                                                </div>
+                    <div class="col-md-8 col-sm-9 col-xs-8" bis_skin_checked="1">
+                                            <ul class="topmenu">
+                            <li><a href="https://geek-university.com/ccna/tcp-ip-suite-of-protocols/#login" class="vbplogin">Login</a></li>
+                            <li><a href="https://geek-university.com/register/" class="vbpregister" title="Create an account">Sign Up</a>                             </li>
+                        </ul>
+                    <ul id="menu-top-menu" class="topmenu"><li id="menu-item-2127" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2127"><a href="https://geek-university.com/courses/">Courses</a></li>
+<li id="menu-item-10446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10446"><a href="https://geek-university.com/books/">Books</a></li>
+<li id="menu-item-10064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10064"><a href="https://geek-university.com/faq/">FAQ</a></li>
+<li id="menu-item-2119" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2119"><a href="https://geek-university.com/about-us/">About</a></li>
+<li id="menu-item-10201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10201"><a href="https://geek-university.com/verification/">Verification</a></li>
+<li id="menu-item-2135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2135"><a href="https://geek-university.com/contact/">Contact</a></li>
+</ul>                    </div>
+                                        <div id="vibe_bp_login" class="default_login" bis_skin_checked="1">
+                    
+    
+    <form name="login-form" id="vbp-login-form" class="standard-form" action="https://geek-university.com/wp-login.php?redirect_to=https%3A%2F%2Fgeek-university.com%2Fccna%2Ftcp-ip-suite-of-protocols%2F" method="post">
+      <div class="inside_login_form" bis_skin_checked="1">
+        <label>Username<br>
+        <input type="text" name="log" id="side-user-login" class="input" tabindex="1" value=""></label>
+  
+        <label>Password <a href="https://geek-university.com/wp-login.php?action=lostpassword" tabindex="5" class="tip vbpforgot" title="" data-original-title="Forgot Password"><i class="icon-question"></i></a><br>
+        <input type="password" tabindex="2" name="pwd" id="sidebar-user-pass" class="input" value=""></label>
+  
+        <div class="checkbox small" bis_skin_checked="1">
+            <input type="checkbox" name="sidebar-rememberme" id="sidebar-rememberme" value="forever"><label for="sidebar-rememberme">Remember Me</label>
+        </div>
+  
+                
+        <input type="submit" name="user-submit" id="sidebar-wp-submit" data-security="17c34958de" value="Log In" tabindex="100">
+        <input type="hidden" name="user-cookie" value="1">
+        <a href="https://geek-university.com/register/" class="vbpregister" title="Create an account" tabindex="5">Sign Up</a> 		<div id="wplms_forgot_password_form" bis_skin_checked="1">
+			<a class="back_to_login small">‹ back to login</a>
+			
+				<input type="email" placeholder="Enter registered email id" class="form_field" value="">
+				<button id="vbp_forgot_password" class="button" data-security="2532c61a40">Get reset password link</button>
+			
+		</div>
+		      </div></form>    
+    
+    
+                       </div>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div class="container" bis_skin_checked="1">
+                <div class="row" bis_skin_checked="1">
+                    <div class="col-md-3 col-sm-3 col-xs-4" bis_skin_checked="1">
+                        <h2 id="logo">                            <a href="https://geek-university.com/"><img src="./TCP_IP suite of protocols _ CCNA_files/geek-univerity-logo.png" data-alt-logo="https://geek-university.com/wp-content/uploads/2018/06/header_footer_logo.png" id="header_logo" alt="Geek University" width="230" height="65"><img id="header_mobile_logo" alt="Geek University" src="./TCP_IP suite of protocols _ CCNA_files/mobile_logo_geek_uni-1.png" class="hide" width="0" height="0" style=""></a>
+                        </h2>                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-8" bis_skin_checked="1">
+                        <nav class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="main-menu-item-2144" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children" data-width="100%"><a href="https://geek-university.com/courses/"><strong>All courses</strong></a>
+<ul class="sub-menu">
+	<li id="main-menu-item-7558" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/ccent-icnd1-100-101-course/">CCNA course</a></li>
+	<li id="main-menu-item-7559" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/free-linux-course/">Linux course</a></li>
+	<li id="main-menu-item-8202" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/vcp5-dcv-course/">VMware ESXi course</a></li>
+	<li id="main-menu-item-8389" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/nmap-online-course/">Nmap course</a></li>
+	<li id="main-menu-item-9233" class="menu-item menu-item-type-post_type menu-item-object-course" data-width="100%"><a href="https://geek-university.com/course/apache-online-course/">Apache HTTP Server course</a></li>
+	<li id="main-menu-item-9045" class="menu-item menu-item-type-post_type menu-item-object-course" data-width="100%"><a href="https://geek-university.com/course/splunk-online-course/">Splunk course</a></li>
+	<li id="main-menu-item-7560" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/raspberry-pi-free-course/">Raspberry Pi course</a></li>
+	<li id="main-menu-item-8591" class="menu-item menu-item-type-custom menu-item-object-custom" data-width="100%"><a href="https://geek-university.com/course/mysql-course/">MySQL course</a></li>
+	<li id="main-menu-item-2941" class="menu-item menu-item-type-post_type menu-item-object-post" data-width="100%"><a href="https://geek-university.com/vmware-player/vmware-player-online-course/">VMware Player course</a></li>
+	<li id="main-menu-item-4078" class="menu-item menu-item-type-post_type menu-item-object-post" data-width="100%"><a href="https://geek-university.com/oracle-virtualbox/oracle-virtualbox-online-course/">Oracle VirtualBox course</a></li>
+	<li id="main-menu-item-4244" class="menu-item menu-item-type-post_type menu-item-object-post" data-width="100%"><a href="https://geek-university.com/python/python-online-course/">Python course</a></li>
+	<li id="main-menu-item-2939" class="menu-item menu-item-type-post_type menu-item-object-post" data-width="100%"><a href="https://geek-university.com/sql/sql-online-course/">SQL course</a></li>
+</ul>
+</li>
+<li id="main-menu-item-10643" class="menu-item menu-item-type-post_type menu-item-object-page" data-width="100%"><a href="https://geek-university.com/asi/"><strong>A short introduction to…</strong></a></li>
+<li><a id="new_searchicon"><i class="fa fa-search"></i></a></li></ul></nav>                        <a id="trigger">
+                            <span class="lines"></span>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<section id="content">
+    <div class="container" bis_skin_checked="1">
+        
+        <div class="row" bis_skin_checked="1">
+            <div class="col-md-9 col-sm-8 right" bis_skin_checked="1">			
+			<section id="title">
+    <div class="container" bis_skin_checked="1">
+        <div class="row" bis_skin_checked="1">
+            <div class="content" bis_skin_checked="1">
+                <div class="pagetitle" bis_skin_checked="1">
+                    <h1>TCP/IP suite of protocols</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <div id="post-3621" class="post-3621 post type-post status-publish format-standard hentry category-ccna tag-tcpip-model tag-tcpip-protocols" bis_skin_checked="1">
+                <div class="content" bis_skin_checked="1">
+                    <p><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;">The<strong> TCP/IP suite</strong> is a set of communications protocols used on computer networks today, most notably on the Internet. It provides an end-to-end connectivity by specifying how data should be packetized, addressed, transmitted, routed and received on a TCP/IP network. This functionality is organized into </span><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt;">four abstraction layers</span><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"> and each protocol in the suite resides in a particular layer.</span></p>
+<p><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;">The TCP/IP suite is named after its most important protocols, the <strong>Transmission Control Protocol (TCP)</strong> and the <strong>Internet Protocol (IP)</strong>. Some of the protocols included in the TCP/IP suite&nbsp;are:</span></p>
+<ul>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>ARP (Address Resolution Protocol)</strong> – used to convert an IP address to a MAC address.</span></li>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>IP (Internet Protocol)</strong> – used to deliver packets from the source host to the destination host based on the IP addresses.</span></li>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>ICMP (Internet Control Message Protocol)</strong> – used to detects and reports network error conditions. Used in ping.</span></li>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>TCP (Transmission Control Protocol)</strong> – a connection-oriented protocol that enables reliable data transfer between two computers.</span></li>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>UDP (User Datagram Protocol)</strong> – a connectionless protocol for data transfer. Since a session is not created before the data transfer, there is no guarantee of data delivery.</span></li>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>FTP (File Transfer Protocol)</strong> – used for file transfers from one host to another.</span></li>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>Telnet (Telecommunications Network)</strong> – used to connect and issue commands on a remote computer.</span></li>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>DNS (Domain Name System)</strong> – used for host names to the IP address resolution.</span></li>
+<li><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;"><strong>HTTP (Hypertext Transfer Protocol)</strong> – used to transfer files (text, graphic images, sound, video, and other multimedia files) on the World Wide Web.</span></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif; font-size: 12pt; color: #313b3d;">The following table shows which protocols reside on which layer of the TCP/IP model:</span></p>
+<p><a href="./TCP_IP suite of protocols _ CCNA_files/tcp_ip_protocol_layers.jpg" data-slb-active="1" data-slb-asset="1232046866" data-slb-internal="0"><img class="alignnone size-full wp-image-1400" src="./TCP_IP suite of protocols _ CCNA_files/tcp_ip_protocol_layers.jpg" alt="tcp ip protocol layers" width="411" height="97"></a></p>
+                     <div class="tags" bis_skin_checked="1">
+                    
+                                            <div class="social_sharing" bis_skin_checked="1">
+                            <ul class="socialicons square color"><li><a href="http://www.facebook.com/share.php?u=https://geek-university.com/ccna/tcp-ip-suite-of-protocols/" data-placement="top" title="" target="_blank" class="facebook tip" data-original-title="Share on Facebook"><i class="fa fa-facebook"></i></a></li><li><a href="http://twitter.com/share?url=https://geek-university.com/ccna/tcp-ip-suite-of-protocols/" data-placement="top" title="" target="_blank" class="twitter tip" data-original-title="Share on Twitter"><i class="fa fa-twitter"></i></a></li><li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://geek-university.com/ccna/tcp-ip-suite-of-protocols/&amp;title=TCP/IP%20suite%20of%20protocols&amp;source=https://geek-university.com" data-placement="top" title="" target="_blank" class="linkedin tip" data-original-title="Share on LinkedIn"><i class="fa fa-linkedin"></i></a></li></ul>   
+                        </div>
+                    </div>
+                </div>
+                                    <div class="prev_next_links" bis_skin_checked="1">
+                        <ul class="prev_next">
+                            <li><a href="https://geek-university.com/ccna/cisco-three-layered-hierarchical-model/" class="prev"><strong><span>Cisco three-layered hierarchical model</span></strong></a></li><li><a href="https://geek-university.com/ccna/what-is-an-ip-address-2/" class="next"><strong><span>What is an IP address?</span></strong></a></li>                        </ul>    
+                    </div>
+                                    </div>
+                
+                            </div>
+                        <div class="col-md-3 col-sm-3" bis_skin_checked="1">
+                <div class="sidebar" bis_skin_checked="1">
+                    <div class="widget" bis_skin_checked="1"><div class="inside" bis_skin_checked="1">			<div class="textwidget" bis_skin_checked="1"><a href="https://geek-university.com/ccna/cisco-ccna-online-course/"><img src="./TCP_IP suite of protocols _ CCNA_files/ccent_course_logo.jpg"></a></div>
+		</div></div><div class="widget" bis_skin_checked="1"><div class="inside" bis_skin_checked="1">			<div class="textwidget" bis_skin_checked="1"><a href="https://geek-university.com/course/ccent-icnd1-100-101-course/" class="course_button button full" style="margin-bottom:0px">TAKE THIS FREE COURSE</a></div>
+		</div></div><div class="widget" bis_skin_checked="1"><div class="inside" bis_skin_checked="1">			<div class="textwidget" bis_skin_checked="1"><p><a href="https://geek-university.com/ccent-icnd1-100-101-cert-guide-ebook/"><img src="./TCP_IP suite of protocols _ CCNA_files/ebook.png"></a></p>
+</div>
+		</div></div><div class="widget" bis_skin_checked="1"><div class="inside" bis_skin_checked="1"><h4 class="widgettitle"><span>CCNA course</span></h4>			<div class="textwidget" bis_skin_checked="1"><ul>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Introduction</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/computer-network-explained">Computer network explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/osi-reference-model">OSI reference model</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/tcpip-reference-model">TCP/IP reference model</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/data-encapsulation">Data encapsulation</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/data-encapsulation-in-the-osi-model">Data encapsulation in the OSI model</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/local-area-network-lan">Local Area Network (LAN)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-ethernet">What is Ethernet?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ethernet-frame">Ethernet frame</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/mac-address">MAC&nbsp;address</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/unicast-multicast-broadcast-addresses">Unicast, multicast, broadcast addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/half-and-full-duplex">Half and full duplex</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Basic networking</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-a-network-hub">What is a network hub?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-a-network-bridge">What is a network bridge?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-a-network-switch">What is a network switch?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/differences-between-a-switch-and-a-bridge">Differences between a switch and a bridge</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-a-router">What is a router?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/collision-domain-explained">Collision domain explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/broadcast-domain-explained">Broadcast domain explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/csma-cd-explained">CSMA/CD explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ieee-ethernet-standards">IEEE Ethernet standards</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/cisco-three-layered-hierarchical-model">Cisco three-layered hierarchical model</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">TCP/IP</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/tcp-ip-suite-of-protocols">TCP/IP suite of protocols</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-an-ip-address-2">What is an IP address?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/private-ip-addresses">Private IP addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ip-address-classes">IP address classes</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ip-address-types">IP address types</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/transmission-control-protocol-tcp-explained">Transmission Control Protocol (TCP) explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/user-datagram-protocol-udp-explained">User Datagram Protocol (UDP)  explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/tcp-and-udp-ports">TCP and UDP ports</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Network protocols</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/telnet-protocol">Telnet protocol</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-secure-shell-ssh">Secure Shell (SSH) protocol</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/file-transfer-protocol-ftp">File Transfer Protocol (FTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/trivial-file-transfer-protocol-tftp">Trivial File Transfer Protocol (TFTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/simple-network-management-protocol-snmp">Simple Network Management Protocol (SNMP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/hypertext-transfer-protocol-http">Hypertext Transfer Protocol (HTTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/hypertext-transfer-protocol-secure-https">Hypertext Transfer Protocol Secure (HTTPS)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/network-time-protocol">Network Time Protocol (NTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/domain-name-service-dns">Domain Name Service (DNS)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/dynamic-host-configuration-protocol-dhcp">Dynamic Host Configuration Protocol (DHCP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/automatic-private-ip-addressing-apipa">Automatic Private IP Addressing (APIPA)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/internet-control-message-protocol-icmp">Internet Control Message Protocol (ICMP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/address-resolution-protocol-arp">Address Resolution Protocol (ARP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv4-header">IPv4 header</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Subnetting</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-subnetting">What is subnetting?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/subnet-mask-explained">Subnet mask explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/how-to-create-subnets">How to create subnets</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Cisco IOS</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/cisco-internetwork-operating-system-ios">Cisco Internetwork Operating System (IOS)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/access-ios">Access IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/power-on-ios-device">Power on IOS device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/command-modes-in-ios">Command modes in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/get-help-in-ios">Get help in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/display-ios-command-history">Display IOS command history</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">IOS commands</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-the-hostname-in-ios">Configure the hostname in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-banners-in-ios">Configure banners in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-passwords-in-ios">Configure passwords in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/service-password-encryption-command">service password-encryption command</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-descriptions-in-ios">Configure descriptions in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/run-privileged-commands-in-global-config-mode">Run privileged commands in global config mode</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/interfaces-on-an-ios-device">Interfaces on an IOS device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-an-ip-address-for-an-interface">Configure an IP address for an interface</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/pipe-function-in-ios">Pipe function in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/memory-on-a-cisco-device">Memory on a Cisco device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configuration-files-on-an-ios-device">Configuration files on an IOS device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ios-show-command">IOS show command</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/boot-sequence-of-a-cisco-device">Boot sequence of a Cisco device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/back-up-ios-configuration">Back up IOS configuration</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-dhcp-server-on-a-cisco-router">Configure DHCP server on a Cisco router</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-ntp-on-a-cisco-device">Configure NTP on a Cisco device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/use-cisco-discovery-protocol-cdp">Use Cisco Discovery Protocol (CDP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/mapping-hostnames-to-ip-addresses">Mapping hostnames to IP addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-dns-on-a-cisco-device">Configure DNS on a Cisco device</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/use-extended-ping">Use extended ping</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/traceroute-command-in-ios">traceroute command in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/debug-command-in-ios">debug command in IOS</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/use-telnet">Use telnet</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/show-running-processes">Show running processes</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">IP routing</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ip-routing-explained">IP routing explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/routing-table-explained">Routing table explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/directly-connected-routes">Directly connected routes</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/static-routes">Static routes</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/dynamic-routes">Dynamic routes</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/types-of-routing-protocols">Types of routing protocols</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/administrative-distance-ad-explained">Administrative distance (AD) explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/routing-metric-explained">Routing metric explained</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">RIP</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/rip-routing-information-protocol-overview">RIP (Routing Information Protocol) overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/rip-configuration">RIP configuration</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/split-horizon-explained">Split horizon explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/route-poisoning-explained">Route poisoning explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/holddown-timer-explained">Holddown timer explained</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">EIGRP</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-overview">EIGRP overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-neighbors">EIGRP neighbors</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-tables">EIGRP tables</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/reported-and-feasible-distance-explained">Reported and feasible distance explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/successor-and-feasible-successor-explained">Successor and feasible successor explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-configuration">EIGRP configuration</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/wildcard-mask-explained">Wildcard mask explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-and-wildcard-masks">EIGRP and wildcard masks</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/reliable-transport-protocol-rtp">Reliable Transport Protocol (RTP)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/diffusing-update-algorithm-dual">Diffusing Update Algorithm (DUAL)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-auto-summary">EIGRP auto-summary</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/eigrp-manual-summarization">EIGRP manual summarization</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">OSPF</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-overview">OSPF overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-neighbor-discovery">OSPF neighbor discovery</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-neighbor-states">OSPF neighbor states</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-areas-explained">OSPF areas explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/link-state-advertisement-lsa">Link-state advertisement (LSA)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/types-of-lsas-link-state-advertisements">Types of LSAs (Link-state advertisements)</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-ospf">Configure OSPF</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-multiarea-ospf">Configure multiarea OSPF</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/designated-router-and-backup-designated-router">Designated router and backup designated router</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-clear-text-authentication">OSPF clear text authentication</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-md5-authentication">OSPF MD5 authentication</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ospf-route-summarization">OSPF route summarization</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Layer 2 switching</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/layer-2-switching">Layer 2 switching</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/how-switches-learn-mac-addresses">How switches learn MAC addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/how-switches-forward-frames">How switches forward frames</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/port-security-feature">Port security feature</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/assign-the-switch-ip-address">Assign the switch IP address</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/assign-static-mac-address">Assign static MAC address</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">VLANs</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/vlans-explained">VLANs explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/access-and-trunk-ports-explained">Access and trunk ports explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/frame-tagging-explained">Frame tagging explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/inter-switch-link-isl-overview">Inter-Switch Link (ISL) overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/802-1q-overview">802.1q overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-vlans-on-switch">Configure VLANs</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-trunk-ports">Configure trunk ports</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-allowed-vlans-on-trunk">Configure allowed VLANs on trunk</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/routing-between-vlans">Routing between VLANs</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-router-on-a-stick">Configure router on a stick</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">VLAN Trunking Protocol (VTP)</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/vlan-trunking-protocol-vtp-overview">VLAN Trunking Protocol (VTP) overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/vtp-modes-explained">VTP modes explained</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-vtp">Configure VTP</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Access Control Lists (ACLs)</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/what-is-acl-access-control-list">What is ACL (Access Control List)?</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/standard-acls">Standard ACLs</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/extended-acls">Extended ACLs</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">Network Address Translation (NAT)</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/nat-definition">NAT definition</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/static-nat-configuration">Static NAT configuration</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/dynamic-nat">Dynamic NAT</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/pat-configuration">PAT configuration</a></li>
+<li class="listccna" style="padding:10px 0px 10px 15px;">IPv6</li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-overview">IPv6 overview</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-address-format">IPv6 address format</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-address-types">IPv6 address types</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-global-unicast-address">IPv6 global unicast address</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-unique-local-address">IPv6 unique local address</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-link-local-addresses">IPv6 link-local addresses</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/ipv6-eui-64-calculation">IPv6 EUI-64 calculation</a></li>
+<li class="listLine" style="padding:5px 0 5px 15px; border-bottom: 1px dotted #464545;"><a href="https://geek-university.com/ccna/configure-ipv6-on-a-cisco-router">Configure IPv6 on a Cisco router</a></li>
+</ul></div>
+		</div></div>                </div>
+            </div>
+                    </div>
+    </div>
+</section>
+<footer>
+    <div class="container" bis_skin_checked="1">
+        <div class="row" bis_skin_checked="1">
+            <div class="footertop" bis_skin_checked="1">
+                <div id="wysija-2" class="col-md-4 col-sm-4" bis_skin_checked="1"><div class="footerwidget widget_wysija" bis_skin_checked="1"><h4 class="footertitle"><span>Subscribe to our Newsletter</span></h4><div class="widget_wysija_cont" bis_skin_checked="1"><div id="msg-form-wysija-2" class="wysija-msg ajax" bis_skin_checked="1"></div><form id="form-wysija-2" method="post" action="https://geek-university.com/ccna/tcp-ip-suite-of-protocols/#wysija" class="widget_wysija">
+<p class="wysija-paragraph">
+    <label>Email <span class="wysija-required">*</span></label>
+    
+    	<input type="text" name="wysija[user][email]" class="wysija-input validate[required,custom[email]]" title="Email" value="">
+    
+    
+    
+    <span class="abs-req">
+        <input type="text" name="wysija[user][abs][email]" class="wysija-input validated[abs][email]" value="">
+    </span>
+    
+</p>
+<div class="g-recaptcha" data-sitekey="6LeEJRQTAAAAACpWXDJiKnf8OTfNfdLxCMONwO3a" data-size="compact" bis_skin_checked="1"><div style="width: 164px; height: 144px;" bis_skin_checked="1"><div bis_skin_checked="1"><iframe src="./TCP_IP suite of protocols _ CCNA_files/anchor.html" width="164" height="144" role="presentation" name="a-r4sswz8u0pay" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" bis_size="{&quot;x&quot;:150,&quot;y&quot;:6131,&quot;w&quot;:164,&quot;h&quot;:144,&quot;abs_x&quot;:150,&quot;abs_y&quot;:6131}"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+<input class="wysija-submit wysija-submit-field" type="submit" value="Subscribe!">
+
+    <input type="hidden" name="form_id" value="1">
+    <input type="hidden" name="action" value="save">
+    <input type="hidden" name="controller" value="subscribers">
+    <input type="hidden" value="1" name="wysija-page">
+
+    
+        <input type="hidden" name="wysija[user_list][list_ids]" value="1">
+    
+ </form></div></div></div><div id="nav_menu-4" class="col-md-4 col-sm-4" bis_skin_checked="1"><div class="footerwidget widget_nav_menu" bis_skin_checked="1"><h4 class="footertitle"><span>About</span></h4><div class="menu-about-container" bis_skin_checked="1"><ul id="menu-about" class="menu"><li id="menu-item-2161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2161"><a href="https://geek-university.com/about-us/">About</a></li>
+<li id="menu-item-10063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10063"><a href="https://geek-university.com/faq/">FAQ</a></li>
+<li id="menu-item-10200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10200"><a href="https://geek-university.com/verification/">Verification</a></li>
+<li id="menu-item-2162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2162"><a href="https://geek-university.com/contact/">Contact</a></li>
+<li id="menu-item-2168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2168"><a href="https://geek-university.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-2167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2167"><a href="https://geek-university.com/blog/">Blog</a></li>
+<li id="menu-item-9729" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9729"><a href="https://geek-university.com/donate/">Donate</a></li>
+</ul></div></div></div><div id="custom_html-11" class="widget_text col-md-4 col-sm-4" bis_skin_checked="1"><div class="widget_text footerwidget widget_custom_html" bis_skin_checked="1"><h4 class="footertitle"><span>Like us on Facebook</span></h4><div class="textwidget custom-html-widget" bis_skin_checked="1"><div id="fb-root" bis_skin_checked="1" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;" bis_skin_checked="1"><div bis_skin_checked="1"><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./TCP_IP suite of protocols _ CCNA_files/xd_arbiter.html" style="border: none;" bis_size="{&quot;x&quot;:1090,&quot;y&quot;:-3973,&quot;w&quot;:300,&quot;h&quot;:150,&quot;abs_x&quot;:1090,&quot;abs_y&quot;:-3973}"></iframe></div><div bis_skin_checked="1"></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like fb_iframe_widget" data-href="https://www.facebook.com/GeekUniversityCom" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true" bis_skin_checked="1" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=&amp;container_width=440&amp;href=https%3A%2F%2Fwww.facebook.com%2FGeekUniversityCom&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=large"><span style="vertical-align: bottom; width: 122px; height: 28px;"><iframe name="f2c2824b546465c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:like Facebook Social Plugin" src="./TCP_IP suite of protocols _ CCNA_files/like.html" style="border: none; visibility: visible; width: 122px; height: 28px;" bis_size="{&quot;x&quot;:1090,&quot;y&quot;:6064,&quot;w&quot;:1000,&quot;h&quot;:1000,&quot;abs_x&quot;:1090,&quot;abs_y&quot;:6064}" class=""></iframe></span></div></div></div></div>            </div>
+        </div>
+        <div class="row" bis_skin_checked="1">
+            <div class="footerbottom" bis_skin_checked="1">
+                                            </div>
+        </div>
+    </div> 
+    <div id="scrolltop" bis_skin_checked="1">
+        <a><i class="icon-arrow-1-up"></i><span>top</span></a>
+    </div>
+</footer>
+<div id="footerbottom" bis_skin_checked="1">
+    <div class="container" bis_skin_checked="1">
+        <div class="row" bis_skin_checked="1">
+            <div class="col-md-3" bis_skin_checked="1">
+                <h2 id="footerlogo">
+                    
+
+                    <a href="https://geek-university.com/"><img src="./TCP_IP suite of protocols _ CCNA_files/header_footer_logo.png" alt="Geek University"></a>
+                                </h2>
+                <span style="font-size: 8pt;">Geek University 2019</span>            </div>
+            <div class="col-md-9" bis_skin_checked="1">
+                <div id="footer_social_icons" bis_skin_checked="1"><ul class="socialicons square color"><li><a href="https://www.facebook.com/GeekUniversityCom" title="facebook" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/geek_uni_com" title="twitter" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li><li><a href="https://www.linkedin.com/company/geek-university" title="linkedin" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li></ul></div>            </div>
+        </div>
+    </div>
+</div>
+</div><!-- END PUSHER -->
+</div><!-- END MAIN -->
+	<!-- SCRIPTS -->
+<script async="" src="./TCP_IP suite of protocols _ CCNA_files/f.txt"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-7651984929092887",
+          enable_page_level_ads: true
+     });
+</script>        <div id="searchdiv" bis_skin_checked="1">
+            <form role="search" method="get" id="searchform" action="https://geek-university.com/">
+                <input type="text" value="" name="s" id="s" placeholder="Hit enter to search...">
+                            </form>
+            <span></span>
+        </div>
+		<script type="text/javascript">
+/* <![CDATA[ */
+var edd_scripts = {"ajaxurl":"https:\/\/geek-university.com\/wp-admin\/admin-ajax.php","position_in_cart":"","has_purchase_links":"","already_in_cart_message":"You have already added this item to your cart","empty_cart_message":"Your cart is empty","loading":"Loading","select_option":"Please select an option","is_checkout":"0","default_gateway":"paypal","redirect_to_checkout":"0","checkout_page":"https:\/\/geek-university.com\/checkout\/","permalinks":"1","quantities_enabled":"","taxes_enabled":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/edd-ajax.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/geek-university.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/thickbox.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var vibe_shortcode_strings = {"sending_mail":"Sending mail","error_string":"Error :","invalid_string":"Invalid ","captcha_mismatch":"Captcha Mismatch"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/shortcodes.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/course-module-js.min.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/wp-mediaelement.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var BP_DTheme = {"accepted":"Accepted","close":"Close","comments":"comments","leave_group_confirm":"Are you sure you want to leave this group?","mark_as_fav":"Favorite","my_favs":"My Favorites","rejected":"Rejected","remove_fav":"Remove Favorite","show_all":"Show all","show_all_comments":"Show all comments for this thread","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","view":"View","too_short":"Too short","weak":"Weak","good":"Good","strong":"Strong"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/buddypress.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var vibe_course_module_strings = {"timeout":"TIMEOUT","too_fast_answer":"Too Fast or Answer not marked.","answer_saved":"Answer Saved.","processing":"Processing...","saving_answer":"Saving Answer...please wait","remove_user_text":"This step is irreversible. Are you sure you want to remove the User from the course ?","remove_user_button":"Confirm, Remove User from Course","confirm":"Confirm","cancel":"Cancel","reset_user_text":"This step is irreversible. All Units, Quiz results would be reset for this user. Are you sure you want to Reset the Course for this User?","reset_user_button":"Confirm, Reset Course for this User","quiz_reset":"This step is irreversible. All Questions answers would be reset for this user. Are you sure you want to Reset the Quiz for this User? ","quiz_reset_button":"Confirm, Reset Quiz for this User","marks_saved":"Marks Saved","quiz_marks_saved":"Quiz Marks Saved","save_quiz":"Save Quiz progress","saved_quiz_progress":"Saved","submit_quiz":"Submit Quiz","sending_messages":"Sending Messages ...","adding_students":"Adding Students to Course ...","successfuly_added_students":"Students successfully added to Course","unable_add_students":"Unable to Add students to Course","select_fields":"Please select fields to download","download":"Download","theme_color":"#78c8c9","single_dark_color":"#232b2d","for_course":"for Course","active_filters":"Active Filters","clear_filters":"Clear all filters","remove_comment":"Are you sure you want to remove this note?","remove_comment_button":"Confirm, remove note","private_comment":"Make Private","add_comment":"Add your note","submit_quiz_error":"Please add questions or retake the quiz !","remove_announcement":"Are you sure you want to remove this Annoucement?","start_quiz_notification":"You're about to start the Quiz. Please click confirm to begin the quiz.","submit_quiz_notification":"Are you sure you want to submit the quiz. Submitting the quiz will freeze all your answers, you can not change them.  Please confirm.","check_results":"Check results","correct":"Correct","incorrect":"Incorrect","confirm_apply":"Are you sure you want to apply for this Course ?","instructor_uncomplete_unit":"Are you sure you want mark this unit \"incomplete\" for the user ?","instructor_complete_unit":"Are you sure you want to mark this unit \"complete\" for the user ?","unanswered_questions":"You have few unanswered questions. Are you sure you want to continue ?","enter_more_characters":"Please enter 4 or more characters ...","correct_answer":"Correct Answer","explanation":"Explanation","And":"and","go":"Go","security":"09eef84e53","confirm_course_retake":"Are you sure you want to retake course?"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/course.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/jquery.validationEngine-en.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/jquery.validationEngine.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"https:\/\/geek-university.com\/wp-admin\/admin-ajax.php","loadingTrans":"Loading...","is_rtl":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/front-subscribers.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/api.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/lib.core.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/lib.view.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wplms = {"more":"More","view_more":"View More","menu":"Menu","wplms_woocommerce_validate":"Please fill in all the required fields (indicated by *)","open_menu":"Open\/Close Menu","invalid_mail":"Invalid email entered !","signon_security":"17c34958de"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/wplms.min.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/client.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/client(1).js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/tag.item.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/tag.ui.js"></script>
+<script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/handler.image.js"></script>
+<script type="text/javascript" id="slb_footer">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB && SLB.has_child('View.init') ) { SLB.View.init({"ui_autofit":true,"ui_animate":false,"slideshow_autostart":false,"slideshow_duration":"6","group_loop":false,"ui_overlay_opacity":"0.8","ui_title_default":false,"theme_default":"slb_black","ui_labels":{"loading":"Loading","close":"Close","nav_next":"Next","nav_prev":"Previous","slideshow_start":"Start slideshow","slideshow_stop":"Stop slideshow","group_status":"Item %current% of %total%"}}); }
+if ( !!window.SLB && SLB.has_child('View.assets') ) { {$.extend(SLB.View.assets, {"1232046866":{"id":null,"type":"image","source":"https:\/\/geek-university.com\/wp-content\/images\/ccna\/tcp_ip_protocol_layers.jpg","internal":true}});} }
+/* THM */
+if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_baseline',{"name":"Baseline","parent":"","styles":[{"handle":"base","uri":"https:\/\/geek-university.com\/wp-content\/plugins\/simple-lightbox\/themes\/baseline\/css\/style.css","deps":[]}],"layout_raw":"<div class=\"slb_container\"><div class=\"slb_content\">{{item.content}}<div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><div class=\"slb_controls\"><span class=\"slb_close\">{{ui.close}}<\/span><span class=\"slb_slideshow\">{{ui.slideshow_control}}<\/span><\/div><div class=\"slb_loading\">{{ui.loading}}<\/div><\/div><div class=\"slb_details\"><div class=\"inner\"><div class=\"slb_data\"><div class=\"slb_data_content\"><span class=\"slb_data_title\">{{item.title}}<\/span><span class=\"slb_group_status\">{{ui.group_status}}<\/span><div class=\"slb_data_desc\">{{item.description}}<\/div><\/div><\/div><div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><\/div><\/div><\/div>"}); }if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_default',{"name":"Default (Light)","parent":"slb_baseline","styles":[{"handle":"base","uri":"https:\/\/geek-university.com\/wp-content\/plugins\/simple-lightbox\/themes\/default\/css\/style.css","deps":[]}]}); }if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_black',{"name":"Default (Dark)","parent":"slb_default","styles":[{"handle":"base","uri":"https:\/\/geek-university.com\/wp-content\/plugins\/simple-lightbox\/themes\/black\/css\/style.css","deps":[]}]}); }})})(jQuery);}/* ]]> */</script>
+<script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66676630-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+
+Served from: geek-university.com @ 2019-06-12 07:39:33 by W3 Total Cache
+--><script type="text/javascript" src="./TCP_IP suite of protocols _ CCNA_files/MathJax.js"></script><script id="texAllTheThingsPageScript" type="text/javascript" src="chrome-extension://cbimabofgmfdkicghcadidpemeenbffn/js/pageScript.js" inlinemath="[[&quot;$&quot;,&quot;$&quot;],[&quot;[;&quot;,&quot;;]&quot;]]" displaymath="[[&quot;$$&quot;,&quot;$$&quot;],[&quot;\\[&quot;,&quot;\\]&quot;]]" skiptags="[&quot;script&quot;,&quot;noscript&quot;,&quot;style&quot;,&quot;textarea&quot;,&quot;pre&quot;,&quot;code&quot;]"></script><div bis_skin_checked="1" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div bis_skin_checked="1" style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" bis_skin_checked="1" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" bis_skin_checked="1" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div bis_skin_checked="1" style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./TCP_IP suite of protocols _ CCNA_files/bframe.html" name="c-r4sswz8u0pay" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;" bis_size="{&quot;x&quot;:1,&quot;y&quot;:-9999,&quot;w&quot;:300,&quot;h&quot;:150,&quot;abs_x&quot;:1,&quot;abs_y&quot;:-9999}"></iframe></div></div></body></html>

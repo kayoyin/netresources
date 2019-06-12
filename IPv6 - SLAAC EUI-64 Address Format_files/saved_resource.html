@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://public-api.wordpress.com/wp-admin/rest-proxy/#https://widgets.wp.com -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./saved_resource(4)"></script>
+<script>var _wpcomProxyRequestHasCookie = false, _wpcomProxyRequestDC = 'dfw';</script>
+<script>!function(){var i,y,f,o,e,t,n,u,c,a="",r={dataType:"json"},m=!0,w=[],h=window.location.hash.replace("#","").split("/",3).join("/"),b=!1,g=!1,s=_wpcomProxyRequestHasCookie?"true":"false",p=["Allow","Date","Content-Type","Link","X-WP-Total","X-WP-TotalPages"];if(h){-1<jQuery.inArray(h,["https://mc.a8c.com","https://dev-mc.wordpress.com"])&&(b=!0);var d=function(e,o,t){if(void 0===d.prototype.browser){var n=!!window.opr&&!!opr.addons||!!window.opera||0<=navigator.userAgent.indexOf(" OPR/"),a="undefined"!=typeof InstallTrigger,r=0<Object.prototype.toString.call(window.HTMLElement).indexOf("Constructor"),s=!!document.documentMode,p=!s&&!!window.StyleMedia,i=!!window.chrome&&!!window.chrome.webstore;d.prototype.browser=n?"opera":a?"firefox":r?"safari":s?"msie":p?"edge":i?"chrome":"unknown"}return(new Image).src='https://pixel.wp.com/boom.gif?v=0.9&u=https://public-api.wordpress.com/pinghub&json={"beacons":["'+e+"."+d.prototype.browser+":"+o+"|"+t+'"]}',!0};for(o=function(e){var t,o,n,a,r,s,p=!1;if(g){if(m)return void w.push(e);t=e}else{if("string"==typeof e&&(e=JSON.parse(e)),h!==e.origin)return;if(m)return void w.push({data:e.data,origin:e.origin});"string"==typeof e.data?(t=JSON.parse(e.data),p=!0):t=e.data}if(void 0!==t.metaAPI&&t.metaAPI)return void 0!==t.metaAPI.accessAllUsersBlogs&&(b=!!t.metaAPI.accessAllUsersBlogs),void y(t.callback,p)({body:"metaAPIupdated",status:200});if("string"!=typeof t.apiVersion&&(t.apiVersion="1",t.version&&(t.apiVersion=t.version.replace(/[^0-9\.]/,""))),n=window.location.protocol+"//public-api.wordpress.com/rest/v"+t.apiVersion+t.path+(-1===t.path.indexOf("?")?"?":"&")+"http_envelope=1",t.apiNamespace&&(n=window.location.protocol+"//public-api.wordpress.com/"+t.apiNamespace+t.path+(-1===t.path.indexOf("?")?"?":"&")+"_envelope=1"),t.query&&("string"==typeof t.query?n+="&"+t.query.replace(/^&/,""):n+="&"+jQuery.param(t.query)),a=t.supports_args,r=!t.supports_error_obj,s={url:n,type:t.method,success:y(t.callback,p,a),error:f(t.callback,p,a,r)},t.path&&0===t.path.indexOf("/pinghub/"))x(t,s);else{if(t.token&&(s.beforeSend=function(e){e.setRequestHeader("Authorization","Bearer "+t.token)}),t.formData&&0<t.formData.length){for(var i in s.data=new FormData,s.cache=!1,s.contentType=!1,s.processData=!1,t.body)t.body.hasOwnProperty(i)&&s.data.append(i,t.body[i]);for(o=0;o<t.formData.length;o++)if("object"==typeof t.formData[o][1]&&void 0!==t.formData[o][1].fileContents){i=t.formData[o][0];var c=t.formData[o][1].fileName,d=new Blob([t.formData[o][1].fileContents],{type:t.formData[o][1].mimeType});s.data.append(i,d,c)}else s.data.append(t.formData[o][0],t.formData[o][1])}else t.body&&(s.data=t.body,t.contentType&&(s.contentType=t.contentType));t.supports_progress&&(s.xhr=function(){var e=new XMLHttpRequest;return e.upload.onprogress=u,e.onprogress=l,e}),jQuery.ajax(s)}function u(e){var o={upload:!0,lengthComputable:e.lengthComputable,loaded:e.loaded,total:e.total,callbackId:t.callback};window.parent.postMessage(o,h)}function l(e){var o={download:!0,lengthComputable:e.lengthComputable,loaded:e.loaded,total:e.total,callbackId:t.callback};window.parent.postMessage(o,h)}},window.postMessage&&(window.addEventListener||window.attachEvent)?jQuery(window).on("message",function(e){o(e.originalEvent)}):(g=!0,pm.bind("proxy",o)),e=document.cookie.split(/;\s*/),t=0;t<e.length;t++)if(e[t].match(/^wp_api=/)){e=e[t].split("="),a=e[1];break}a&&(r.beforeSend=function(e){b?e.setRequestHeader("Authorization","X-WPCOOKIE "+a+":1:"+h):e.setRequestHeader("Authorization","X-WPCOOKIE "+a+":0:"+h)}),jQuery.ajaxSetup(r),n=function(){for(var e;e=w.shift();)o(e)},-1<jQuery.inArray(h,["https://wordpress.com","http://widgets.wp.com","https://widgets.wp.com","https://dev-mc.a8c.com","https://mc.a8c.com","https://dserve.a8c.com","http://calypso.localhost:3000","https://calypso.localhost:3000","http://calypso.localhost:3001","https://calypso.localhost:3001","https://calypso.live","http://127.0.0.1:41050"])||h.match(/^https:\/\/[a-z0-9-]+\.wordpress\.com$/)?(m=!1,n()):jQuery.get(window.location.protocol+"//public-api.wordpress.com/rest/v1/sites/"+encodeURIComponent(h)+"?http_envelope=1&check_wpcom=1").done(function(e){if(void 0===e.code||200!==e.code||void 0===e.body.isWPcom||!0!==e.body.isWPcom)return window.removeEventListener("message",o),void(w=[]);m=!1,n()}),y=function(r,s,p){return function(e,o,t){var n,a;e=c(e,o,t),n=u(e,t),a=[e.body,e.code,n,r],p||(a=[e.body,e.code,r]),i(a,s)}},u=function(e,n){var o=[],a={},r={},s=n&&"function"==typeof n.getResponseHeader;return e&&e.headers&&(o=e.headers[0]&&e.headers[0].name?e.headers:jQuery.map(e.headers,function(e,o){return{name:o,value:e}})),jQuery.each(o,function(e,o){a[o.name.toUpperCase()]=o.value}),jQuery.each(p,function(e,o){var t=o.toUpperCase();a[t]?r[o]=a[t]:s&&(r[o]=n.getResponseHeader(o))}),r};var l=!(f=function(p,i,c,d){return function(e,o,t){var n,a,r,s;d?(s=0,r="error"):(n=u(null,e),s=e.status,r=e.responseJSON||{},e.responseText&&!e.responseJSON&&(r.message=e.responseText)),a=c?[r,s,n,p]:[r,s,p],i&&(a=JSON.stringify(a)),g?pm({data:a,type:"proxy",target:window.parent,origin:h}):window.parent.postMessage(a,h)}}),v=!(c=function(e,o,t){return"nocontent"!==o?(e&&(t||(t={}),e.code=e.code||e.status||t.status),e):{body:t.responseText,code:t.status}}),x=function(e,o){if("undefined"==typeof WebSocket)return l=l||d("pinghub.restproxy.ws_unsupported","1","c"),void o.success({body:{type:"error",data:"unsupported"},code:500});l=l||d("pinghub.restproxy.ws_supported","1","c"),v=s?v||d("pinghub.restproxy.cookie","1","c"):v||d("pinghub.restproxy.nocookie","1","c"),"connect"===e.action&&D(e.path,o.success),"disconnect"===e.action&&j(e.path,o.success),"send"===e.action&&_(e.path,e.message,o.success)},k={},D=function(o,t){if(o in k)t({body:{type:"error",text:"already subscribed"},code:444});else{var n=(new Date).getTime(),e=O(o);e.onopen=function(e){d("pinghub.conn_open_dc."+_wpcomProxyRequestDC,(new Date).getTime()-n,"ms"),t({body:{type:"open"},code:207})},e.onclose=function(e){d("pinghub.conn_close_code."+e.code,(new Date).getTime()-n,"ms"),T(o),t({body:{type:"close"},code:200})},e.onerror=function(e){d("pinghub.conn_err",(new Date).getTime()-n,"ms"),T(o),t({body:{type:"error"},code:500})},e.onmessage=function(e){t({body:{type:"message",data:e.data},code:207})}}},j=function(e,o){e in k?(k[e].close(),T(e),o({body:{type:"disconnect"},code:200})):o({body:{type:"error",data:"not connected"},code:200})},O=function(e){return k[e]=new WebSocket("wss://public-api.wordpress.com"+e)},T=function(e){delete k[e]},_=function(e,o,t){if(e in k)try{k[e].send(o),t({body:{type:"sent"},code:201})}catch(e){t({body:{type:"error"},code:600})}else t({body:{type:"error"},code:404})};(i=function(e,o){(o=o||!1)&&(e=JSON.stringify(e)),g?pm({data:e,type:"proxy",target:window.parent,origin:h}):window.parent.postMessage(e,h)})("ready")}}();</script>
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script>(function(){var a=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(){this.requestMethod=arguments[0],a.apply(this,arguments)};var h=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.send=function(){var i=this.onreadystatechange;return this.onreadystatechange=function(){if(4===this.readyState){var j='detector',k={posdMessageId:'PANELOS_MESSAGE',type:'VIDEO_XHR_CANDIDATE',from:j,to:j.substring(0,j.length-2),content:{requestMethod:this.requestMethod,url:this.responseURL,type:this.getResponseHeader('content-type'),content:this.response}};window.postMessage(k,'*')}return i?i.apply(this,arguments):void 0},h.apply(this,arguments)}})();</script></head>
+<body bis_status="ok"><div id="MathJax_Message" style="display: none;"></div>
+<script type="text/javascript" src="./MathJax.js"></script><script id="texAllTheThingsPageScript" type="text/javascript" src="chrome-extension://cbimabofgmfdkicghcadidpemeenbffn/js/pageScript.js" inlinemath="[[&quot;$&quot;,&quot;$&quot;],[&quot;[;&quot;,&quot;;]&quot;]]" displaymath="[[&quot;$$&quot;,&quot;$$&quot;],[&quot;\\[&quot;,&quot;\\]&quot;]]" skiptags="[&quot;script&quot;,&quot;noscript&quot;,&quot;style&quot;,&quot;textarea&quot;,&quot;pre&quot;,&quot;code&quot;]"></script></body></html>
